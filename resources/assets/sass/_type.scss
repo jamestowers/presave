@@ -1,0 +1,148 @@
+html{
+  font-size:  62%;
+}
+body {
+  font-family: $font-body;
+  @include font-size(1.4);
+  line-height:1.5;
+  color:$grey2;
+  font-weight: $font-weight-light;
+  text-rendering: optimizeLegibility;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+p{
+  margin: 0 0 15px;
+  &.small{
+    margin: 0 0 5px;
+  }
+}
+
+.bold-text{
+  font-family: $font-header;
+}
+
+code{
+  background:$grey8;
+  border: 1px solid $grey6;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: -2px 0;
+  font-size: 0.9em;
+}
+.huge{
+  @include font-size(9);
+  font-family: $font-header;
+  line-height: 1
+}
+.huge-icon{
+  @include font-size(24);
+  margin: 40px auto;
+  text-align: center;
+}
+small,
+.small{
+  @include font-size(1);
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a{
+  color: $color-link;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+  /* on hover */
+  &:hover{
+    color: $color-link-hover;
+  }
+
+  /* on click */
+  &:active {
+
+  }
+
+  /* mobile tap color */
+  &:link {
+    /*
+    this highlights links on iPhones/iPads.
+    so it basically works like the :hover selector
+    for mobile devices.
+    */
+    -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+  }
+}
+.description{
+  a{
+    text-decoration: underline;
+  }
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+.page-title{
+  @include font-size(3);
+  margin: 0;
+  span{
+    color: $color-secondary;
+  }
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: $font-header;
+  font-weight: $font-weight-normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  a{
+    color:$grey2;
+    &:hover{
+      color:$grey3;
+    }
+  }
+  .btn{
+    vertical-align: bottom;
+    margin: 0 10px 0;
+  }
+  /*
+  if you're going to use webfonts, be sure to check your weights
+  http://css-tricks.com/watch-your-font-weight/
+  */
+}
+
+h1, .h1 {
+  @include font-size(2.4);
+  margin: 0 0 $padding;
+}
+
+h2, .h2 {
+  @include font-size(2);
+  margin: 0 0 1rem;
+}
+
+h3, .h3 {
+  @include font-size(1.6);
+  margin: 0 0 15px;
+}
+
+h4, .h4 {
+  @include font-size(1.1);
+  font-weight: 700;
+}
+
+h5, .h5 {
+  line-height:2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+} 
+
+blockquote{
+  font-style: italic;
+  @include font-size(2);
+}

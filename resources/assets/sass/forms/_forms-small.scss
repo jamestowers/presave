@@ -1,0 +1,44 @@
+/**************************************
+FORMS
+***************************************/
+
+form:not(.inline-form){
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea{
+    &:not(.inline-field){
+      width:100%;
+    }
+  }
+}
+
+
+form.inline-form{
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea,
+  .inner-addon {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  button{
+    float: right;
+  }
+}
+
+textarea{
+  min-height:300px;
+  &.textarea-small{
+    min-height:200px;
+  }
+}

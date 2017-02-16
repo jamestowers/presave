@@ -1,0 +1,172 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.group:after { // (.clearfix)
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img{
+  display: inline-block;
+  width:auto; // required for height: auto to work in IE8
+  max-width:100%;
+  height:auto;
+}
+ul{
+  li{
+    padding: 10px;
+    //border-bottom: 1px solid $grey7;
+  }
+}
+
+canvas{
+  display: block;
+}
+section{
+  clear: both;
+}
+.inner{
+  width:100%;
+  max-width:940px;
+  margin: 0 auto;
+  clear: left;
+  &.narrow{
+    max-width: 800px;
+  }
+}
+.row{
+  clear: both;
+}
+
+
+
+// FLEX
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-column{
+  flex-direction: column;
+  flex: 1;
+}
+.flex-row{
+  flex-direction: row;
+  flex: 1;
+}
+
+
+
+.full-height{
+  height: 100%;
+}
+.hide{
+  display: none !important;
+}
+.hide-on-mobile{
+  display: none;
+}
+
+
+
+.bg-light{
+  background:$grey8;
+}
+.bg-dark{
+  background:$grey4;
+  color:$white;
+}
+.bg-white{
+  background:$white;
+}
+
+// FLOATS
+.clear{
+  clear: both;
+}
+.pull-left{
+  float: left !important;
+}
+.pull-right{
+  float: right !important;
+}
+.pull-center{
+  margin-left:auto;
+  margin-right: auto;
+}
+
+// TEXT ALIGNMENT
+.text-left{
+  text-align:left;
+}
+.text-right{
+  text-align:right;
+}
+.text-center{
+  text-align:center;
+}
+
+// IMAGE ALIGNMENT
+.alignleft, img.alignleft { 
+  margin-right: 1.5em; 
+  display: inline; 
+  float: left; 
+}
+.alignright, img.alignright { 
+  margin-left: 1.5em; 
+  display: inline; 
+  float: right; 
+}
+.aligncenter, img.aligncenter { 
+  margin-right: auto; 
+  margin-left: auto; 
+  display: block; 
+  clear: both; 
+}
+.pad{
+  padding: $padding $padding $padding $padding;
+}
+.pad-half{
+  padding: $padding-half;
+}
+
+.no-margin{
+  margin: 0;
+}
+
+// BORDERS
+.border-top{
+  border-top: 1px solid $grey6;
+}
+.border-right{
+  border-right: 1px solid $grey6;
+}
+.border-bottom{
+  border-bottom: 1px solid $grey6;
+}
+.border-left{
+  border-left: 1px solid $grey6;
+}
+
+// MESSAGES
+
+// ANIMATIONS
+.shaking{
+  animation: shake 0.6s linear infinite 0s;
+}
+
+
+/*********************
+GRID
+*********************/
+.col6-sm{
+  width: 50%;
+  position: relative;
+  float: left;
+}

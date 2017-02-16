@@ -1,0 +1,36 @@
+input[type="file"]{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    -webkit-appearance: none;
+}
+input[type="file"] + label {
+    background-color: $color-primary;
+    color:$white;
+    border-radius: 4px;
+    font: 16px $font-header;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+    &:before{
+      font-size: 1em;
+      vertical-align: middle;
+    }
+}
+input[type="file"]:focus + label,
+input[type="file"] + label:hover {
+    background-color: lighten($color-primary, 7);
+    transition: transform 0.1s ease-in;
+    transform: scale(1.05);
+}
+input[type="file"]:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+  * {
+    pointer-events: none;
+  }
+}

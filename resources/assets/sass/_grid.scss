@@ -1,0 +1,126 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+
+
+/*************************
+BIG MARGIN
+**************************/
+/*
+.col1    { width: 5.801104972%;  }   
+.col2    { width: 14.364640883%; } 
+.col3  { width: 22.928176794%; }  
+.col4   { width: 31.491712705%; }
+.col5   { width: 40.055248616%; }
+.col6    { width: 48.618784527%; }   
+.col7  { width: 57.182320438000005%; } 
+.col8  { width: 65.74585634900001%; } 
+.col9   { width: 74.30939226%; }  
+.col10    { width: 82.87292817100001%; }
+.col11 { width: 91.436464082%; }
+.col12 { width: 99.999999993%; } 
+
+// layout & column defaults
+[class^="col"], [class*=" col"] {
+  position: relative;
+  float: left;
+  margin-right: 2.762430939%;
+}
+
+.last {
+  float: right;
+  margin-right: 0;
+}
+*/
+
+
+
+/*************************
+SMALL MARGIN
+**************************/
+.col1    { width: 7.33333%;  }    
+.col2    { width: 15.6666666667%; }   
+.col3    { width: 24%; }  
+.col4    { width: 32.333333%; }  
+.col5    { width: 40.6666666667%; } 
+.col6    { width: 49%; }  
+.col7    { width: 57.33333337%; }
+.col8    { width: 65.666666667%; } 
+.col9    { width: 74%; } 
+.col10   { width: 82.3333333%; }  
+.col11   { width: 90.96666667%; }  
+.col12   { width: 100%; } 
+
+// layout & column defaults
+[class^="col"], [class*=" col"] {
+  position: relative;
+  float: left;
+  margin-right: 1%
+}
+
+.last {
+  margin-right:0;
+  &.col1    { width: 8.33333%;  }    
+  &.col2    { width: 16.6666666667%; }   
+  &.col3    { width: 25%; }  
+  &.col4    { width: 33.333333%; }  
+  &.col5    { width: 41.6666666667%; } 
+  &.col6    { width: 50%; }  
+  &.col7    { width: 58.33333337%; }
+  &.col8    { width: 66.666666667%; } 
+  &.col9    { width: 75%; } 
+  &.col10   { width: 83.3333333%; }  
+  &.col11   { width: 91.96666667%; }  
+  &.col12   { width: 100%; } 
+}
+
+
+
+
+/*************************
+NO MARGIN
+**************************/
+/*
+.col1    { width: 8.33333%;  }    
+.col2    { width: 16.6666666667%; }   
+.col3    { width: 25%; }  
+.col4    { width: 33.333333%; }  
+.col5    { width: 41.6666666667%; } 
+.col6    { width: 50%; }  
+.col7    { width: 58.33333337%; }
+.col8    { width: 66.666666667%; } 
+.col9    { width: 75%; } 
+.col10   { width: 83.3333333%; }  
+.col11   { width: 91.96666667%; }  
+.col12   { width: 100%; } 
+
+// layout & column defaults
+[class^="col"], [class*=" col"] {
+  position: relative;
+  float: left;
+}
+
+.last {
+  float: right;
+}
+*/
+

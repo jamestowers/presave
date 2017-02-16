@@ -1,0 +1,117 @@
+@import "forms-text-fields";
+@import "forms-buttons";
+//@import "forms-checkboxes";
+@import "forms-dropdowns";
+@import "forms-radio-buttons";
+@import "forms-file";
+
+/*********************
+FORM STYLES
+*********************/
+
+form{
+  margin: 0;
+}
+fieldset{
+  border: none;
+  border-bottom: 1px solid $grey6;
+  clear: both;
+  margin: $padding*2 0 10px;
+  padding: 0;
+  min-height: 300px;
+  &.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.form-group,
+.form-row{
+  clear: both;
+  transition: background 0.2s ease;
+  margin: $padding 0;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  &.current{
+    //background:$white;
+  }
+  &.valid{
+    .form-num{
+      &:before{
+        background:$color-primary;
+      }
+    }
+  }
+  &.error{
+    .form-num{
+      &:before{
+        background:$color-error;
+      }
+    }
+  }
+}
+
+.description{
+  font-weight: $font-weight-normal;
+  font-style: italic;
+  padding: 5px 10px 5px 0;
+  @include font-size(1);
+  clear: both;
+}
+
+label{
+  display:block;
+  @include font-size(1.4);
+  font-family: $font-header;
+  text-transform: uppercase;
+  padding-right:40px;
+  margin-bottom: 6px;
+  &.display-inline{
+    clear:none;
+    display: inline-block;
+    width:auto;
+  }
+}
+
+
+
+/*****************
+ERRORS
+*****************/
+.form-group .alert,
+.parsley-errors-list{
+  margin: 0;
+  display: none;
+  &.filled{
+    background: $color-error;
+    display: block;
+    list-style: none;
+    color:$white;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    clear: left;
+    @include flipInX();
+    li{
+      @include font-size(1.2);
+      padding: 4px;
+      text-align: left;
+      &:first-child{
+        margin-top: -10px;
+      }
+    }
+  }
+}
+
+.datepicker + .parsley-errors-list.filled{
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-left: 42px;
+}

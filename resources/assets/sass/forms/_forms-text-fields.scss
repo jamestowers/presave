@@ -1,0 +1,118 @@
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea{
+  background: $white;
+  //border: none;
+  border: 1px solid $grey7;
+  -webkit-appearance:none; // remove shadow
+  border-radius: 0;
+  font-family:$font-body;
+  font-weight:$font-weight-normal;
+  padding:14px 10px;
+  margin-bottom: 10px;
+  color:$grey2;
+  min-width: 44px;
+  &:not([class*="col"]),
+  &:not([class^="col"]){
+    width:100%;
+  }
+  &::-webkit-input-placeholder {
+    color:$grey2;
+    font-weight: $font-weight-normal;
+  }
+  &::-moz-placeholder {  
+     color:$grey2; 
+     font-weight: $font-weight-normal;
+  }
+  &:-ms-input-placeholder {  
+     color:$grey2;  
+     font-weight: $font-weight-normal;
+  }
+  &:disabled,
+  &[readonly] {
+    background: $grey8;
+    cursor: not-allowed;
+  }
+}
+input[type="number"]{
+  width:auto;
+}
+input[type="date"]{
+  &::-webkit-calendar-picker-indicator{
+      display: none;
+  }
+}
+input.datepicker{
+  width:100%;
+}
+.checkbox-group{
+  label{
+    text-align: left;
+  }
+}
+.checkbox{
+  width: 50%;
+  display: block;
+  float: left;
+  padding: 5px 0;
+  .field_with_errors{
+    display: inline;
+  }
+}
+input[type="checkbox"], 
+input[type="radio"] {
+  display: inline;
+  margin-right: 5px;
+  & + label{
+    clear: none;
+    display: inline;
+    margin-right: 10px;
+    padding-right:0;
+  }
+}
+
+.addon-field{
+  i{
+    background: transparent;
+    float: left;
+    padding: 12px;
+    width: 35px;
+    &+input{
+      width: calc(100% - 35px) !important;
+    }
+  }
+}
+
+
+form.inline{
+  label,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"]{
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 14px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea{
+    width:100%;
+  }
+}

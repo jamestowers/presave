@@ -1,0 +1,38 @@
+.radio-button{
+  position: relative;
+  input[type=radio],
+  label,
+  label:before{
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+  }
+  label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    text-align: center;
+    font-family: $font-header;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    padding-right: auto;
+    &:before {
+      z-index: -1;
+    }
+  }
+  input[type=radio] {
+    visibility: hidden;
+    &:checked {
+      & + label{
+        background-color: $color-primary;
+
+        &:after{
+          background-color: lighten($color-primary, 7);
+        }
+      }
+    }
+  }
+}
