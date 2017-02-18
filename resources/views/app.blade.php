@@ -5,27 +5,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, owner-scalable=no">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/images/icons/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/images/icons/manifest.json">
-  <link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#49d4ae">
-  <link rel="shortcut icon" href="/images/icons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png">
-  <meta name="msapplication-config" content="/images/icons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-
   <title>{{ config('app.name', 'Pre-Save') }}</title>
   
   <link rel="stylesheet" href="/css/app.css"/>
@@ -52,8 +31,19 @@
   <div id="app">
     
     <header class="header group">
+      
+        @if (Auth::check())
+            <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        @endif
 
-      <a href="#" id="menu-toggle" class="no-ajaxy"><span></span></a>
+        <a href="#" id="menu-toggle"><span></span></a>
 
     </header>
     

@@ -13,8 +13,7 @@
     export default {
 
         created(){
-            console.log('[Home] ready')
-            this.checkForLoggedInUser()
+            //
         },
 
         computed: {
@@ -29,9 +28,7 @@
         },
 
         methods:{
-            checkForLoggedInUser(){
-                console.log(this.$store.getters.user);
-            }
+            //
         }
     }
 </script>

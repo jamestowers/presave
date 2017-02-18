@@ -54,14 +54,14 @@ class SpotifyAPI
     /*public function requestAdminToken()
     {
         $this->session->requestCredentialsToken($this->adminScopes);
-        $accessToken = $session->getAccessToken();
+        $accessToken = $session->getClientCredentialsToken();
         $this->api->setAccessToken($accessToken);
     }*/
 
     public function requestToken($code)
     {
-        $this->session->requestAccessToken($code);
-        $accessToken = $this->session->getAccessToken();
+        //$this->session->requestAccessToken($code);
+        $accessToken = $this->session->getClientCredentialsToken();
         $refreshToken = $this->session->getRefreshToken();
 
         return [

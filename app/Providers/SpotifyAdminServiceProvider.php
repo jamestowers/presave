@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use SpotifyWebAPI;
+use App\Libraries\Spotify\SpotifyWebAPI;
 use Cache;
 
 class SpotifyAdminServiceProvider extends ServiceProvider
@@ -27,6 +27,7 @@ class SpotifyAdminServiceProvider extends ServiceProvider
 
 
             $tokenIsReady = false;
+            
             $attempts = 0;
             $maxAttempts = 5;
             do {
@@ -45,9 +46,9 @@ class SpotifyAdminServiceProvider extends ServiceProvider
             } while($tokenIsReady === false);
 
             // Once token is in cache we can continue and set it 
-            $client = new SpotifyWebApi\SpotifyWebApi;
+            $client = new SpotifyWebAPI($accessToken);
 
-            $client->setAccessToken($accessToken);
+            
 
             return $client;
         });

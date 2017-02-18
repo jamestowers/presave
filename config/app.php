@@ -180,6 +180,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
         App\Providers\SpotifyAdminServiceProvider::class,
+        App\Providers\SpotifyUserServiceProvider::class,
 
     ],
 

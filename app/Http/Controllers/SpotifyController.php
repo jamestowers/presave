@@ -2,29 +2,21 @@
 
 namespace App\Http\Controllers;
 use Auth;
-use App\Libraries\SpotifyAPI;
+use SpotifyAdmin;
+use App\Libraries\Spotify\SpotifyWebAPI;
 use Illuminate\Http\Request;
 
 class SpotifyController extends Controller
 {
-    protected $spotify;
 
-    protected $userScopes = [
-        'user-read-email',
-        'user-library-read',
-        'user-library-modify',
-        'playlist-modify-public',
-        'playlist-modify-private'
-    ];
-
-    public function __construct(SpotifyAPI $spotify)
+    public function __construct()
     {
-        $this->spotify = $spotify;
+        //
     }
 
     public function login(Request $request)
     {
-        $authUrl = $this->spotify->session->getAuthorizeUrl(['scope' => $this->userScopes]);
+        $authUrl = SpotifyAdmin::authUrl();
 
         if($request->wantsJson()){
             return response()->json($authUrl);
@@ -35,19 +27,16 @@ class SpotifyController extends Controller
 
     public function setUser(Request $request)
     {
-        $tokens = $this->spotify->requestToken($request->get('code'));
+        $tokens = SpotifyAdmin::requestUserToken($request->get('code'));
 
-        $this->spotify->setToken($tokens['access_token']);
-
-        $spotifyUser = $this->spotify->api->me();
-
+        $spotify = new SpotifyWebAPI($tokens->access_token);
+        $spotifyUser = $spotify->me();
+        
         $user = $this->storeUser($spotifyUser, $tokens);
         
         if (Auth::loginUsingId($user->id, true)) {
-            //return Redirect::route('getManageCompanyEmployee', ['page' => 3])
-            return redirect()->back();
-        }
-        else{
+            return redirect('/');
+        } else {
             abort(401, 'Could not log user in');
         }
     }
@@ -58,8 +47,9 @@ class SpotifyController extends Controller
 
         $user->name = $spotifyUser->display_name;
         $user->email = isset($spotifyUser->email) ? $spotifyUser->email : null;
-        $user->access_token = $tokens['access_token'];
-        $user->refresh_token = $tokens['refresh_token'];
+        $user->access_token = $tokens->access_token;
+        $user->refresh_token = $tokens->refresh_token;
+        $user->expires_at = \Carbon\Carbon::now()->addSeconds($tokens->expires_in);
         $user->save();
 
         return $user;
@@ -69,11 +59,12 @@ class SpotifyController extends Controller
     {   
         if($request->has('token')) {
 
-            $this->spotify->setToken($request->get('token'));
+            $spotify = new SpotifyWebAPI($request->get('token'));
+            //$this->spotify->setToken($request->get('token'));
 
             //$this->spotify->api->addMyAlbums('0xhcc6Lp1uTV4mokv50GXf');
 
-            $albums = $this->spotify->api->getMySavedAlbums()->items;
+            $albums = $spotify->getMySavedAlbums()->items;
 
             if($request->wantsJson()){
                 return response()->json($albums);

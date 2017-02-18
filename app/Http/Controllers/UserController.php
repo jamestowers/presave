@@ -25,10 +25,4 @@ class UserController extends Controller
         }
     }
 
-    /*public function getToken($code)
-    {
-        $this->spotify->requestToken($request->get('code'));
-    }*/
-
-
 }
