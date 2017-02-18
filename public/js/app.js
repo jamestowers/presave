@@ -9234,6 +9234,7 @@ var getUser = function getUser(_ref3, user) {
 
     Vue.http.get('/user').then(function (response) {
         if (response.data.user) {
+            console.log('User is logged in');
             commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["a" /* SET_USER */], { user: response.data.user });
         }
     }, function (error) {
@@ -10527,8 +10528,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = {
     created: function created() {
-        console.log('[Home] ready');
-        this.checkForLoggedInUser();
+        //
     },
 
 
@@ -10544,9 +10544,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        checkForLoggedInUser: function checkForLoggedInUser() {
-            console.log(this.$store.getters.user);
-        }
+        //
     }
 };
 

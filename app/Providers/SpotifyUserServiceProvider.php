@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
+use Auth;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
-
-use SpotifyWebAPI;
-use Cache;
+use App\Libraries\Spotify\SpotifyWebAPI;
 
 class SpotifyUserServiceProvider extends ServiceProvider
 {
@@ -16,6 +16,17 @@ class SpotifyUserServiceProvider extends ServiceProvider
      */
     protected $defer = true;
 
+
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
     /**
      * Register the application services.
      *
@@ -25,29 +36,32 @@ class SpotifyUserServiceProvider extends ServiceProvider
     {
         $this->app->singleton('spotifyUserWebAPI', function ($app) {
 
-
             $tokenIsReady = false;
+            //$rateLimitExceeded = false;
             $attempts = 0;
             $maxAttempts = 5;
             do {
-                if(Cache::has('spotify_access_token')){
-                    $accessToken = Cache::get('spotify_access_token');
+                if($user){
+                    //$user = Auth::user();
+                    // Tokens last an hour so this gives us 10 minutes 
+                    // to do whatever we need to.
+                    if($user->expires_at < Carbon::now()->addMinutes(50)){
+                        $accessToken = Auth::user()->access_token;
+                    }else{
+                        // Request new Access token
+                    }
+                    
                     $tokenIsReady = true;
                 }else{
-                    // Refresh token and cache it
-                    \Illuminate\Support\Facades\Artisan::call('spotify:refreshToken');
-                    // If that fails try it again up to $maxAttempts times.
-                    $attempts++;
-                    if($attempts === $maxAttempts){
-                        abort(500, 'Could not refresh Spotify access token');
-                    }
+                    // Use isnt logged in so redirect to log in
+                    return redirect('/');
                 }
             } while($tokenIsReady === false);
 
             // Once token is in cache we can continue and set it 
-            $client = new SpotifyWebApi\SpotifyWebApi;
+            $client = new SpotifyWebAPI($accessToken);
 
-            $client->setAccessToken($accessToken);
+            //$client->setAccessToken($accessToken);
 
             return $client;
         });

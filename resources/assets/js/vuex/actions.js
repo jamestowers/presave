@@ -18,6 +18,7 @@ export const getUser = ({ commit }, user) => {
     Vue.http.get('/user')
         .then(function(response){
             if(response.data.user){
+                console.log('User is logged in');
                 commit(types.SET_USER, { user: response.data.user });
             }
         }, 

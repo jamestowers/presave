@@ -9,7 +9,10 @@
         "jwilsson/spotify-web-api-php": "^1.0.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "laravelcollective/html": "^5.4.0"
+        "laravelcollective/html": "^5.4.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "guzzlehttp/streams": "~3.0",
+        "rtheunissen/guzzle-rate-limiter": "^0.3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
