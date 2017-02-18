@@ -83,6 +83,19 @@ class CampaignController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showBySlug($slug)
+    {
+        $campaign = $this->campaigns->whereSlug($slug)->first();
+
+        dd($campaign);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

@@ -2,9 +2,9 @@
 
 Auth::routes();
 
-/*Route::group(['domain' => '{slug}.presaver.dev'], function () {
-    Route::get('/', 'CampaignController@showBySlug', ['slug' => $slug]);
-});*/
+Route::group(['domain' => '{slug}.presaver.dev'], function () {
+    Route::get('/', 'CampaignController@showBySlug');
+});
 
 Route::get('/callback', 'SpotifyController@setUser');
 
