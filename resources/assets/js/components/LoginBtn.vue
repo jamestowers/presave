@@ -1,7 +1,6 @@
 <template>
     <a 
         v-if="authUrl" 
-        @click.prevent="callLogin"
         :href="authUrl" 
         role="button" 
         class="login-btn"
@@ -41,10 +40,6 @@
             onError(errors) {
                 this.showErrors(errors)
                 this.loading = false
-            },
-            callLogin(){
-                this.$http.get(this.authUrl)
-                    .then(function(response){console.log(response)}, this.onError);
             }
         }
         

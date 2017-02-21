@@ -9,64 +9,74 @@
             action="campaigns" 
             method="POST"
             enctype="multipart/form-data">
-
-            <label>Artist name</label>
-            <artist-search 
-                @artistSelected="onArtistSelected" 
-                :value="campaign.artist.spotify_id"
-                ></artist-search>
             
-            <label>Release title</label>
-            <input type="text" v-model="campaign.album_title" placeholder="Album title" />
-
-            <div class="group row">
-                <div class="col4">
-                    <input type="text" v-model="campaign.slug" placeholder="URL prefix" />
-                </div>
-                <div class="col8">.presaver.com</div>
+            <div class="form-row">
+                <label>Artist name</label>
+                <artist-search 
+                    @artistSelected="onArtistSelected" 
+                    :value="campaign.artist.spotify_id"
+                    ></artist-search>
             </div>
-
-            <label>Release artwork</label>
-            <file-upload 
-                @uploadComplete="onFileUploadComplete"
-                @uploadSuccess="onReleaseArtworkUploadSuccess"
-                @uploadError="onFileUploadError"
-                label="Choose image"
-                name="release_artwork" 
-                action="/api/upload"
-                :multiple="true"
-                :auto="true"
-                accept='image/*'
-                >
-                </file-upload>
+            <div class="form-row">
+                <label>Release title</label>
+                <input type="text" v-model="campaign.album_title" placeholder="Album title" />
+            </div>
+            <div class="form-row">
+                <div class="group row">
+                    <div class="col4">
+                        <input type="text" v-model="campaign.slug" placeholder="URL prefix" />
+                    </div>
+                    <div class="col8">.presaver.com</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Release artwork</label>
+                <file-upload 
+                    @uploadComplete="onFileUploadComplete"
+                    @uploadSuccess="onReleaseArtworkUploadSuccess"
+                    @uploadError="onFileUploadError"
+                    label="Choose image"
+                    name="release_artwork" 
+                    action="/api/upload"
+                    :multiple="true"
+                    :auto="true"
+                    accept='image/*'
+                    >
+                    </file-upload>
+            </div>
+            <div class="form-row">
+                <label>Description</label>
+                <textarea v-model="campaign.description"></textarea>
+            </div>
+            <div class="form-row">
+                <label>Release spotify ID</label>
+                <input type="text" v-model="campaign.album_spotify_id" placeholder="Spotify album id" />
+            </div>
+            <div class="form-row">
+                <label>Release date</label>
+                <datepicker 
+                    @selected="setDate" 
+                    placeholder="Release date" 
+                    format="dd MMM yyyy"
+                    :value="campaign.release_date"
+                    ></datepicker>
+            </div>
             
-            <label>Description</label>
-            <textarea v-model="campaign.description"></textarea>
-            
-            <label>Release spotify ID</label>
-            <input type="text" v-model="campaign.album_spotify_id" placeholder="Spotify album id" />
-            
-            <label>Release date</label>
-            <datepicker 
-                @selected="setDate" 
-                placeholder="Release date" 
-                format="dd MMM yyyy"
-                :value="campaign.release_date"
-                ></datepicker>
-            
-            <label>Background image</label>
-            <file-upload 
-                @uploadComplete="onFileUploadComplete"
-                @uploadSuccess="onBackgroundImageUploadSuccess"
-                @uploadError="onFileUploadError"
-                label="Choose background image"
-                name="background_image" 
-                action="/api/upload"
-                :multiple="true"
-                :auto="true"
-                accept='image/*'
-                >
-                </file-upload>
+            <div class="form-row">
+                <label>Background image</label>
+                <file-upload 
+                    @uploadComplete="onFileUploadComplete"
+                    @uploadSuccess="onBackgroundImageUploadSuccess"
+                    @uploadError="onFileUploadError"
+                    label="Choose background image"
+                    name="background_image" 
+                    action="/api/upload"
+                    :multiple="true"
+                    :auto="true"
+                    accept='image/*'
+                    >
+                    </file-upload>
+            </div>
             
             <input type="submit" name="submit" :value="submitButtonText" />
 

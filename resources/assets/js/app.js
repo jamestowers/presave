@@ -4,15 +4,18 @@ import VueRouter from 'vue-router'
 import store from './vuex/store';
 import { sync } from 'vuex-router-sync'
 import { mapActions } from 'vuex';
+import auth from './auth.js'
 //import { getErrors } from './vuex/actions';
 //require('./bootstrap');
-import { checkUserIsLogin } from './vuex/actions';
+//import { checkUserIsLogin } from './vuex/actions';
 
 import Errors from './components/Errors.vue';
 import Home from './components/Home.vue'
 import Campaign from './components/Campaign.vue'
 import Dashboard from './components/Dashboard.vue'
 import LoginBtn from './components/LoginBtn.vue'
+import Register from './components/Auth/Register.vue'
+import Login from './components/Auth/Login.vue'
 import CampaignEdit from './components/CampaignEdit.vue'
 
 window._ = require('lodash');
@@ -26,14 +29,22 @@ Vue.config.devtools = !is_production_env;
 Vue.config.debug = is_production_env;
 Vue.config.silent = is_production_env;
 Vue.http.options.root = is_production_env ? 'http://presaver.com/api' : '/api';
-Vue.http.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
-Vue.http.headers.common['Accept'] = 'application/json';
+Vue.http.options.credentials = true;
+Vue.http.headers.common = {
+    'X-CSRF-TOKEN': window.Laravel.csrfToken,
+    'X-Requested-With': 'XMLHttpRequest',
+    'Accept': 'application/json',
+    'Authorization': 'Bearer ' + localStorage.getItem('id_token')
+};
+// Vue.http.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
+// Vue.http.headers.common['Accept'] = 'application/json';
+// Vue.http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_token');
 
 Vue.use(VueRouter);
 
 let reg = new RegExp('www|presaver')
 let parts = window.location.host.split('.')
-let homeComponent = reg.test(parts[0]) ? Home : Campaign
+let homeComponent = reg.test(parts[0]) ? Dashboard : Campaign
 
 //console.log(homeComponent);
 const routes = [
@@ -45,7 +56,12 @@ const routes = [
     {
         path: '/login', 
         name: 'login',
-        component: LoginBtn
+        component: Login
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: Register
     },
     {
         path: '/dashboard', 
@@ -66,7 +82,7 @@ const routes = [
     }
 ]
 
-const router = new VueRouter({
+export const router = new VueRouter({
     mode: 'history',
     routes // short for routes: routes
 })
@@ -76,8 +92,8 @@ router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {
         // this route requires auth, check if logged in
         // if not, redirect to login page.
-        let authed = router.app.$store.getters.authed;
-        console.log(authed);
+        let authed = auth.authenticated
+        //console.log(auth.authenticated);
         if (!authed) {
             next({
                 path: '/login',
@@ -98,7 +114,13 @@ const app = new Vue({
 
     created(){
         //console.log('[App] App is ready');
-        store.dispatch('getUser');
+        //store.dispatch('getUser');
+    },
+
+    mounted: function () {
+        this.$nextTick(function () {
+           auth.check()
+        })
     },
 
     router,
@@ -106,13 +128,7 @@ const app = new Vue({
     store,
 
     components: {
-        Errors,
-        CampaignEdit
-    },
-
-    methods: {
-        /*...mapActions([
-            'checkUserIsLogin',
-        ])*/
+        Errors
     }
+
 });

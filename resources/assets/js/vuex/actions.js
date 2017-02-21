@@ -14,15 +14,10 @@ export const clearErrors = ({ commit }) => {
 
 
 /* USER */
-export const getUser = ({ commit }, user) => {
-    Vue.http.get('/user')
-        .then(function(response){
-            if(response.data.user){
-                console.log('User is logged in');
-                commit(types.SET_USER, { user: response.data.user });
-            }
-        }, 
-        function(error){
-            console.error(error);
-        });
+export const setUser = ({ commit }, user) => {
+    commit(types.SET_USER, { user: user });
+};
+
+export const clearUser = ({ commit }) => {
+    commit(types.SET_USER, { user: user });
 };

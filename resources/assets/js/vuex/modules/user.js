@@ -1,20 +1,21 @@
-import { SET_USER } from '../mutation-types';
+import { SET_USER, CLEAR_USER } from '../mutation-types';
 
 const state = {
-    authed: false,
     user: []
 }
 
 const getters = {
-    user: (state) => state.user,
-    authed: (state) => state.authed
+    user: (state) => state.user
 }
 
 const mutations = {
 
   [SET_USER](state, payload){
     state.user = payload.user;
-    state.authed = true;
+  },
+
+  [CLEAR_USER](state){
+    state.user = [];
   }
 
 }

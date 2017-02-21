@@ -48,7 +48,7 @@
       //padding: $padding-half;
       text-align: center;
       margin-bottom: 20px;
-      position: relative;
+      position: fixed;
       transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
       transform-origin: top center;
       transition: transform 0.4s ease-out;
