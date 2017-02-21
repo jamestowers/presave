@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"upload",
+				"uploadFile"
+			],
+			[
 				"spo",
 				"spotifyUser"
 			],
@@ -510,82 +514,53 @@
 			[
 				"c",
 				"createClass"
-			],
-			[
-				"categ",
-				"categoryData"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-<<<<<<< HEAD
-			"file": "routes/web.php",
+			"file": "resources/assets/js/components/FileUpload.vue",
 			"settings":
 			{
-				"buffer_size": 480,
-=======
-			"file": "app/Providers/SpotifyAdminServiceProvider.php",
-			"settings":
-			{
-				"buffer_size": 1647,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/SpotifyController.php",
-			"settings":
-			{
-				"buffer_size": 2097,
->>>>>>> custom_spotify_lib
+				"buffer_size": 4857,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/assets/js/app.js",
+			"file": "app/Libraries/helpers.php",
 			"settings":
 			{
-<<<<<<< HEAD
-				"buffer_size": 2869,
-=======
-				"buffer_size": 1755,
->>>>>>> custom_spotify_lib
+				"buffer_size": 427,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-<<<<<<< HEAD
-			"file": "database/migrations/2017_02_14_134110_create_campaigns_table.php",
+			"file": "resources/assets/js/components/CampaignEdit.vue",
 			"settings":
 			{
-				"buffer_size": 1293,
-=======
-			"file": "app/Providers/SpotifyUserServiceProvider.php",
-			"settings":
-			{
-				"buffer_size": 1905,
->>>>>>> custom_spotify_lib
+				"buffer_size": 3771,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Libraries/Spotify/SpotifyWebAPI.php",
+			"file": "routes/api.php",
 			"settings":
 			{
-				"buffer_size": 3205,
+				"buffer_size": 425,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "routes/web.php",
+			"file": "app/Http/Controllers/CampaignController.php",
 			"settings":
 			{
-				"buffer_size": 503,
+				"buffer_size": 3619,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -677,21 +652,9 @@
 	[
 		"/Users/james/projects/presaver",
 		"/Users/james/projects/presaver/app",
-<<<<<<< HEAD
-		"/Users/james/projects/presaver/app/Console",
-		"/Users/james/projects/presaver/app/Console/Commands",
-		"/Users/james/projects/presaver/app/Facades",
-		"/Users/james/projects/presaver/app/Libraries",
-		"/Users/james/projects/presaver/app/Providers",
-		"/Users/james/projects/presaver/database",
-=======
 		"/Users/james/projects/presaver/app/Http",
 		"/Users/james/projects/presaver/app/Http/Controllers",
 		"/Users/james/projects/presaver/app/Libraries",
-		"/Users/james/projects/presaver/app/Libraries/Spotify",
-		"/Users/james/projects/presaver/app/Providers",
->>>>>>> custom_spotify_lib
-		"/Users/james/projects/presaver/database/migrations",
 		"/Users/james/projects/presaver/resources",
 		"/Users/james/projects/presaver/resources/assets",
 		"/Users/james/projects/presaver/resources/assets/js",
@@ -706,8 +669,21 @@
 	],
 	"file_history":
 	[
-<<<<<<< HEAD
-=======
+		"/Users/james/projects/redbull/app/Http/Controllers/RewardController.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/AjaxForm.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/FileUpload.vue",
+		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms.scss",
+		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms-file.scss",
+		"/Users/james/projects/presaver/resources/views/campaigns/createOrUpdate.blade.php",
+		"/Users/james/projects/presaver/routes/web.php",
+		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyWebAPI.php",
+		"/Users/james/projects/presaver/app/Providers/SpotifyUserServiceProvider.php",
+		"/Users/james/projects/presaver/resources/assets/js/app.js",
+		"/Users/james/projects/presaver/app/Providers/SpotifyAdminServiceProvider.php",
+		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyController.php",
+		"/Users/james/projects/presaver/resources/views/app.blade.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/Dashboard/Nav.vue",
 		"/Users/james/projects/presaver/config/app.php",
 		"/Users/james/projects/presaver/app/Libraries/Spotify/Session.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/Home.vue",
@@ -717,53 +693,22 @@
 		"/Users/james/projects/presaver/resources/assets/js/vuex/actions.js",
 		"/Users/james/projects/presaver/app/Http/Controllers/CampaignController.php",
 		"/Users/james/projects/presaver/database/migrations/2017_02_14_134110_create_campaigns_table.php",
-		"/Users/james/projects/presaver/routes/web.php",
->>>>>>> custom_spotify_lib
 		"/Users/james/projects/presaver/vendor/jwilsson/spotify-web-api-php/src/Session.php",
-		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyWebAPI.php",
 		"/Users/james/projects/presaver/routes/api.php",
 		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyAdminController.php",
-		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyController.php",
-<<<<<<< HEAD
-		"/Users/james/projects/presaver/app/Libraries/Spotify/Session.php",
 		"/Users/james/projects/presaver/app/Console/Commands/SpotifyRefreshToken.php",
 		"/Users/james/projects/presaver/vendor/jwilsson/spotify-web-api-php/src/Request.php",
-		"/Users/james/projects/presaver/resources/assets/js/app.js",
-		"/Users/james/projects/presaver/resources/assets/js/components/Home.vue",
 		"/Users/james/projects/presaver/resources/assets/js/components/LoginBtn.vue",
-		"/Users/james/projects/presaver/routes/web.php",
-=======
-		"/Users/james/projects/presaver/app/Console/Commands/SpotifyRefreshToken.php",
-		"/Users/james/projects/presaver/vendor/jwilsson/spotify-web-api-php/src/Request.php",
-		"/Users/james/projects/presaver/resources/assets/js/app.js",
-		"/Users/james/projects/presaver/resources/assets/js/components/LoginBtn.vue",
->>>>>>> custom_spotify_lib
-		"/Users/james/projects/presaver/app/Providers/SpotifyAdminServiceProvider.php",
 		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyRequestInterface.php",
 		"/Users/james/projects/presaver/app/Libraries/APIRequest.php",
 		"/Users/james/projects/presaver/composer.json",
 		"/Users/james/projects/api.tracks2/composer.json",
 		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyAPI.php",
-<<<<<<< HEAD
-		"/Users/james/projects/presaver/config/app.php",
 		"/Users/james/projects/presaver/app/Libraries/SpotifyAPI.php",
-		"/Users/james/projects/presaver/app/Providers/SpotifyServiceProvider.php",
-		"/Users/james/projects/presaver/vendor/jwilsson/spotify-web-api-php/src/SpotifyWebAPI.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit.vue",
-		"/Users/james/projects/presaver/resources/assets/js/components/ArtistSearch.vue",
-		"/Users/james/projects/presaver/app/Http/Controllers/CampaignController.php",
-		"/Users/james/projects/presaver/package.json",
-		"/Users/james/projects/presaver/app/Artist.php",
-		"/Users/james/projects/presaver/app/Campaign.php",
-		"/Users/james/projects/presaver/database/migrations/2017_02_14_134110_create_campaigns_table.php",
-=======
-		"/Users/james/projects/presaver/app/Libraries/SpotifyAPI.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit.vue",
 		"/Users/james/projects/presaver/resources/assets/js/components/ArtistSearch.vue",
 		"/Users/james/projects/presaver/package.json",
 		"/Users/james/projects/presaver/app/Artist.php",
 		"/Users/james/projects/presaver/app/Campaign.php",
->>>>>>> custom_spotify_lib
 		"/Users/james/projects/presaver/database/migrations/2017_02_14_134109_create_artists_table.php",
 		"/Users/james/projects/presaver/resources/assets/sass/_utils.scss",
 		"/Users/james/projects/presaver/resources/assets/js/components/ArtistSearchResult.vue",
@@ -774,18 +719,14 @@
 		"/Users/james/projects/presaver/app/User.php",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/mutation-types.js",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/store.js",
-		"/Users/james/projects/presaver/resources/views/app.blade.php",
 		"/Users/james/projects/presaver/config/auth.php",
 		"/Users/james/projects/presaver/public/js/app.js",
 		"/Users/james/projects/presaver/app/Console/Kernel.php",
 		"/Users/james/projects/presaver/app/Facades/SpotifyAdminWebAPIFacade.php",
 		"/Users/james/projects/presaver/app/Facades/SpotifyAdminWebAPI.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/Dashboard/Nav.vue",
 		"/Users/james/projects/presaver/resources/assets/sass/_type.scss",
 		"/Users/james/projects/presaver/resources/views/auth/login.blade.php",
 		"/Users/james/projects/presaver/resources/views/auth/register.blade.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/AjaxForm.vue",
-		"/Users/james/projects/presaver/resources/views/campaigns/createOrUpdate.blade.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit",
 		"/Users/james/projects/presaver/app/Providers/AuthServiceProvider.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/passport/PersonalAccessTokens.vue",
@@ -855,16 +796,11 @@
 		"/Users/james/projects/blend/web/static/css/_players.scss",
 		"/Users/james/projects/blend/web/templates/video/show.html.eex",
 		"/Users/james/projects/blend/web/templates/video/player.html.eex",
-		"/Users/james/projects/blend/web/static/css/_themes.scss",
-		"/Users/james/projects/blend/web/static/css/_layout.scss",
-		"/Users/james/projects/blend/web/static/css/_icons.scss",
-		"/Users/james/projects/blend/web/static/js/components/GoogleMapMarker.vue",
-		"/Users/james/projects/blend/web/templates/admin/account/form.html.eex",
-		"/Users/james/projects/blend/web/static/js/components/Loading.vue"
+		"/Users/james/projects/blend/web/static/css/_themes.scss"
 	],
 	"find":
 	{
-		"height": 64.0
+		"height": 48.0
 	},
 	"find_in_files":
 	{
@@ -919,8 +855,13 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-<<<<<<< HEAD
-=======
+			"onUpload",
+			"Complete",
+			"$mimeType",
+			"let",
+			"var",
+			"buttonLabel",
+			"return ",
 			"$body = $response->getBody();\n        $result = json_decode($body->getContents());",
 			"$client->request",
 			"$headers = $this->getHeaders();\n\n        $client = new Client(['headers' => $headers]);",
@@ -930,7 +871,6 @@
 			"['",
 			"$response",
 			"\"",
->>>>>>> custom_spotify_lib
 			"getAccessToken",
 			"Client",
 			"get",
@@ -1042,27 +982,7 @@
 			"KrpanoPlayer",
 			"vm.",
 			"this.",
-			"vm.",
-			"AjaxForm",
-			"&:before{",
-			":elseif",
-			"(response)",
-			"this",
-			"AjaxForm",
-<<<<<<< HEAD
-			"GoogleMap",
-			"provider",
-			"gmap-",
-			"<%= label f, :",
-			"<%= textarea",
-			"_input f",
-			"<%= text_input f",
-			"<%= label f, :",
-			"<%= label f, :name",
-			", class: \""
-=======
-			"GoogleMap"
->>>>>>> custom_spotify_lib
+			"vm."
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1208,231 +1128,121 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-<<<<<<< HEAD
-					"file": "routes/web.php",
+					"file": "resources/assets/js/components/FileUpload.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 480,
-=======
-					"file": "app/Providers/SpotifyAdminServiceProvider.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1647,
+						"buffer_size": 4857,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								774,
-								774
+								2931,
+								2931
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 436.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Http/Controllers/SpotifyController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2097,
->>>>>>> custom_spotify_lib
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								139,
-								139
-=======
-								1647,
-								1647
->>>>>>> custom_spotify_lib
-							]
-						],
-						"settings":
-						{
-<<<<<<< HEAD
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-=======
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 692.0,
->>>>>>> custom_spotify_lib
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "resources/assets/js/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1755,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								929,
-								929
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "app/Providers/SpotifyUserServiceProvider.php",
-					"semi_transient": false,
-					"settings":
-					{
-<<<<<<< HEAD
-						"buffer_size": 2869,
-=======
-						"buffer_size": 1905,
->>>>>>> custom_spotify_lib
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								2204,
-								2204
-=======
-								658,
-								658
->>>>>>> custom_spotify_lib
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-<<<<<<< HEAD
-						"translation.y": 1185.0,
-=======
-						"translation.y": 545.0,
->>>>>>> custom_spotify_lib
+						"translation.y": 1839.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-<<<<<<< HEAD
-					"buffer": 2,
-					"file": "database/migrations/2017_02_14_134110_create_campaigns_table.php",
+					"buffer": 1,
+					"file": "app/Libraries/helpers.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1293,
-=======
-					"buffer": 4,
-					"file": "app/Libraries/Spotify/SpotifyWebAPI.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3205,
->>>>>>> custom_spotify_lib
+						"buffer_size": 427,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-<<<<<<< HEAD
-								725,
-								725
-=======
-								1952,
-								1952
->>>>>>> custom_spotify_lib
+								427,
+								427
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "resources/assets/js/components/CampaignEdit.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3771,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								858,
+								858
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-<<<<<<< HEAD
-						"translation.y": 0.0,
-=======
-						"translation.y": 45.0,
->>>>>>> custom_spotify_lib
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "routes/web.php",
+					"buffer": 3,
+					"file": "routes/api.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 503,
+						"buffer_size": 425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								223,
-								223
+								140,
+								140
 							]
 						],
 						"settings":
@@ -1443,7 +1253,37 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Http/Controllers/CampaignController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2873,
+								3616
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2291.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1477,11 +1317,7 @@
 		"cols":
 		[
 			0.0,
-<<<<<<< HEAD
-			0.520564579867,
-=======
-			0.454875419239,
->>>>>>> custom_spotify_lib
+			0.415157833835,
 			1.0
 		],
 		"rows":
@@ -1513,50 +1349,66 @@
 		"selected_items":
 		[
 			[
-<<<<<<< HEAD
+				"helpe",
+				"app/Libraries/helpers.php"
+			],
+			[
 				"campaign",
 				"app/Http/Controllers/CampaignController.php"
 			],
 			[
-				"web",
-				"routes/web.php"
+				"api",
+				"routes/api.php"
 			],
 			[
-				"session.php",
-				"vendor/jwilsson/spotify-web-api-php/src/Session.php"
+				"ajaxf",
+				"resources/assets/js/components/AjaxForm.vue"
 			],
 			[
-				"session",
-				"app/Libraries/Spotify/Session.php"
+				"fileu",
+				"resources/assets/js/components/FileUpload.vue"
 			],
 			[
-				"spotifyad",
-				"app/Http/Controllers/SpotifyAdminController.php"
-=======
+				"fileupl",
+				"resources/assets/js/components/FileUpload.vue"
+			],
+			[
+				"campaigned",
+				"resources/assets/js/components/CampaignEdit.vue"
+			],
+			[
+				"forms",
+				"resources/assets/sass/forms/_forms.scss"
+			],
+			[
+				"formsfi",
+				"resources/assets/sass/forms/_forms-file.scss"
+			],
+			[
+				"campaigncrea",
+				"resources/views/campaigns/createOrUpdate.blade.php"
+			],
+			[
+				"nav",
+				"resources/assets/js/components/Dashboard/Nav.vue"
+			],
+			[
+				"app.b",
+				"resources/views/app.blade.php"
+			],
+			[
+				"app.js",
+				"resources/assets/js/app.js"
+			],
+			[
 				"configapp",
 				"config/app.php"
->>>>>>> custom_spotify_lib
 			],
 			[
 				"configap",
 				"config/app.php"
 			],
 			[
-<<<<<<< HEAD
-				"request.php",
-				"vendor/jwilsson/spotify-web-api-php/src/Request.php"
-			],
-			[
-				"spotifyc",
-				"app/Http/Controllers/SpotifyController.php"
-			],
-			[
-				"loginbt",
-				"resources/assets/js/components/LoginBtn.vue"
-			],
-			[
-				"home.v",
-=======
 				"web",
 				"routes/web.php"
 			],
@@ -1574,28 +1426,11 @@
 			],
 			[
 				"home.vu",
->>>>>>> custom_spotify_lib
 				"resources/assets/js/components/Home.vue"
 			],
 			[
-				"app.js",
-				"resources/assets/js/app.js"
-			],
-			[
-<<<<<<< HEAD
-				"composer",
-				"composer.json"
-			],
-			[
-				"configapp",
-				"config/app.php"
-=======
 				"spotifyc",
 				"app/Http/Controllers/SpotifyController.php"
-			],
-			[
-				"campaign",
-				"app/Http/Controllers/CampaignController.php"
 			],
 			[
 				"session.php",
@@ -1610,10 +1445,6 @@
 				"app/Http/Controllers/SpotifyAdminController.php"
 			],
 			[
-				"api",
-				"routes/api.php"
-			],
-			[
 				"request.php",
 				"vendor/jwilsson/spotify-web-api-php/src/Request.php"
 			],
@@ -1624,7 +1455,6 @@
 			[
 				"composer",
 				"composer.json"
->>>>>>> custom_spotify_lib
 			],
 			[
 				"spotyify",
@@ -1831,10 +1661,6 @@
 				"resources/assets/js/components/Example.vue"
 			],
 			[
-				"app.b",
-				"resources/views/app.blade.php"
-			],
-			[
 				"usercont",
 				"app/Http/Controllers/UserController.php"
 			],
@@ -1927,10 +1753,6 @@
 				"web/templates/layout/app.html.eex"
 			],
 			[
-				"ajaxf",
-				"web/static/js/components/AjaxForm.vue"
-			],
-			[
 				"locationf",
 				"web/static/js/components/account/LocationsForm.vue"
 			],
@@ -2015,10 +1837,6 @@
 				"config/dev.exs"
 			],
 			[
-				"nav",
-				"web/static/css/_nav.scss"
-			],
-			[
 				"nav-sma",
 				"web/static/css/_nav-small.scss"
 			],
@@ -2041,53 +1859,6 @@
 			[
 				"creato",
 				"web/templates/landing/creators_feature.html.eex"
-			],
-			[
-				"creator",
-				"web/templates/landing/creators.html.eex"
-			],
-			[
-				"router",
-				"web/router.ex"
-			],
-			[
-				"hero.s",
-				"web/static/css/_hero.scss"
-			],
-			[
-				"homeind",
-				"web/templates/home/index.html.eex"
-			],
-			[
-				"screen-sm",
-				"web/static/css/_screen-small.scss"
-			],
-			[
-				"header.s",
-				"web/static/css/_header.scss"
-			],
-			[
-				"hero.sc",
-				"web/static/css/_hero.scss"
-<<<<<<< HEAD
-			],
-			[
-				"nav-sm",
-				"web/static/css/_nav-small.scss"
-			],
-			[
-				"homeindex",
-				"web/templates/home/index.html.eex"
-			],
-			[
-				"home",
-				"web/static/css/_home.scss"
-			],
-			[
-				"nav-",
-				"web/static/css/_nav-small.scss"
-=======
->>>>>>> custom_spotify_lib
 			]
 		],
 		"width": 0.0
@@ -2100,7 +1871,11 @@
 		[
 			[
 				"",
-				"~/projects/blend/blend.sublime-project"
+				"~/projects/chickenman-vs-megatron/chickenman-vs-megatron.sublime-workspace"
+			],
+			[
+				"chic",
+				"~/projects/chickenman-vs-megatron/chickenman-vs-megatron.sublime-workspace"
 			],
 			[
 				"mia",
@@ -2138,7 +1913,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

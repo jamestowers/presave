@@ -20,7 +20,6 @@ input[type="button"],
 button{
   background: $color-primary;
   border-radius: 20px;
-  color:$white;
   display: inline-block;
   flex-grow: 0;
   margin-bottom: $padding;
@@ -67,7 +66,6 @@ button{
     outline-offset: -2px; */
 
     text-decoration: none;
-    color:$white;
     &:after{
       width:100%;
     }
@@ -283,41 +281,5 @@ a[role="button"]{
     background: $grey6;
     padding: 13px 5px 13px 5px;
     @include font-size(1.1);
-  }
-}
-
-
-
-/*********************
-FILE INPUT
-*********************/
-
-input[type="file"]{
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-input[type="file"] + label {
-    @include font-size(1.2);
-    padding: 10px 20px;
-    display: inline-block;
-    cursor: pointer;
-    &:before{
-      @include font-size(1.8);
-      vertical-align: middle;
-    }
-}
-input[type="file"]:focus + label,
-input[type="file"] + label:hover {
-    background-color: lighten($color-primary, 7);
-}
-input[type="file"]:focus + label {
-  outline: 1px dotted #000;
-  outline: -webkit-focus-ring-color auto 5px;
-  * {
-    pointer-events: none;
   }
 }

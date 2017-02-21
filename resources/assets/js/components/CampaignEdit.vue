@@ -9,25 +9,63 @@
             action="campaigns" 
             method="POST"
             enctype="multipart/form-data">
+
+            <label>Artist name</label>
+            <artist-search 
+                @artistSelected="onArtistSelected" 
+                :value="campaign.artist.spotify_id"
+                ></artist-search>
             
+            <label>Release title</label>
             <input type="text" v-model="campaign.album_title" placeholder="Album title" />
 
-            <textarea v-model="campaign.description"></textarea>
+            <div class="group row">
+                <div class="col4">
+                    <input type="text" v-model="campaign.slug" placeholder="URL prefix" />
+                </div>
+                <div class="col8">.presaver.com</div>
+            </div>
 
-            <input type="text" v-model="campaign.album_spotify_id" placeholder="Spotify album id" />
-
-            <artist-search @artistSelected="onArtistSelected" :value="campaign.artist.spotify_id"></artist-search>
-
-            <datepicker @selected="setDate" placeholder="Release date" :value="campaign.release_date"></datepicker>
-            
+            <label>Release artwork</label>
             <file-upload 
-                title="Add upload files"
-                :name="bg_image" 
-                :drop="true"
+                @uploadComplete="onFileUploadComplete"
+                @uploadSuccess="onReleaseArtworkUploadSuccess"
+                @uploadError="onFileUploadError"
+                label="Choose image"
+                name="release_artwork" 
+                action="/api/upload"
+                :multiple="true"
                 :auto="true"
                 accept='image/*'
-                post-action="/post.method"
-                put-action="/put.method">
+                >
+                </file-upload>
+            
+            <label>Description</label>
+            <textarea v-model="campaign.description"></textarea>
+            
+            <label>Release spotify ID</label>
+            <input type="text" v-model="campaign.album_spotify_id" placeholder="Spotify album id" />
+            
+            <label>Release date</label>
+            <datepicker 
+                @selected="setDate" 
+                placeholder="Release date" 
+                format="dd MMM yyyy"
+                :value="campaign.release_date"
+                ></datepicker>
+            
+            <label>Background image</label>
+            <file-upload 
+                @uploadComplete="onFileUploadComplete"
+                @uploadSuccess="onBackgroundImageUploadSuccess"
+                @uploadError="onFileUploadError"
+                label="Choose background image"
+                name="background_image" 
+                action="/api/upload"
+                :multiple="true"
+                :auto="true"
+                accept='image/*'
+                >
                 </file-upload>
             
             <input type="submit" name="submit" :value="submitButtonText" />
@@ -42,7 +80,8 @@
     import {showErrors} from '../mixins';
     import Datepicker from 'vuejs-datepicker'
     import ArtistSearch from './ArtistSearch.vue';
-    import FileUpload from 'vue-upload-component'
+    //import FileUpload from 'vue-upload-component'
+    import FileUpload from './FileUpload.vue'
 
     export default {
 
@@ -58,10 +97,12 @@
         data() {
             return{
                 campaign: {
-                    album_title: null,
+                    release_title: null,
+                    slug: this.UrlSlug,
                     description: null,
-                    album_spotify_id: null,
-                    bg_image: null,
+                    release_spotify_id: null,
+                    release_artwork: null,
+                    background_image: null,
                     release_date: null,
                     artist: {}
                 }
@@ -71,7 +112,15 @@
         computed: {
             submitButtonText() {
                 return this.success ? 'Saved': 'Save'
-            }
+            },
+            urlSlug(){
+                if(this.campaign.album_title){
+                    return this.campaign.album_title
+                        .toLowerCase()
+                        .replace(/[^\w ]+/g,'')
+                        .replace(/ +/g,'-');
+                }
+            },
         },
 
         created(){
@@ -97,7 +146,7 @@
                     })
             },
             onArtistSelected(artist) {
-                console.log(artist)
+                //console.log(artist)
                 this.campaign.artist = artist
             },
             setDate(e){
@@ -110,7 +159,7 @@
                     .then(this.onSuccess, this.onError);
             },
             onSuccess(response) {
-                console.log('[Campaign submit] Success')
+                console.log(response.data)
                 this.loading = false
                 this.success = true
                 let vm = this
@@ -121,6 +170,20 @@
             onError(errors) {
                 this.showErrors(errors)
                 this.loading = false
+            },
+            onReleaseArtworkUploadSuccess(files){
+                console.log(files)
+                this.campaign.background_image = files[0].name
+            },
+            onBackgroundImageUploadSuccess(files){
+                console.log(files)
+                this.campaign.background_image = files[0].name
+            },
+            onFileUploadError(error){
+                console.error(error);
+            },
+            onFileUploadComplete(){
+                //
             }
         }
     }

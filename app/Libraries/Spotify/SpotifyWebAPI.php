@@ -132,6 +132,7 @@ class SpotifyWebAPI
         $options = array_merge((array) $options, [
             'q' => $query,
             'type' => $type,
+            'limit' => 5
         ]);
 
 

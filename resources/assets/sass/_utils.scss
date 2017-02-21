@@ -32,15 +32,17 @@ section{
   max-width:940px;
   margin: 0 auto;
   clear: left;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  flex-direction: inherit;
   &.narrow{
-    max-width: 800px;
+    max-width: 600px;
   }
 }
 .row{
   clear: both;
 }
-
-
 
 // FLEX
 .flex{
@@ -74,18 +76,6 @@ section{
 }
 
 
-
-.bg-light{
-  background:$grey8;
-}
-.bg-dark{
-  background:$grey4;
-  color:$white;
-}
-.bg-white{
-  background:$white;
-}
-
 // FLOATS
 .clear{
   clear: both;
@@ -112,23 +102,6 @@ section{
   text-align:center;
 }
 
-// IMAGE ALIGNMENT
-.alignleft, img.alignleft { 
-  margin-right: 1.5em; 
-  display: inline; 
-  float: left; 
-}
-.alignright, img.alignright { 
-  margin-left: 1.5em; 
-  display: inline; 
-  float: right; 
-}
-.aligncenter, img.aligncenter { 
-  margin-right: auto; 
-  margin-left: auto; 
-  display: block; 
-  clear: both; 
-}
 .pad{
   padding: $padding $padding $padding $padding;
 }
@@ -154,19 +127,7 @@ section{
   border-left: 1px solid $grey6;
 }
 
-// MESSAGES
-
 // ANIMATIONS
 .shaking{
   animation: shake 0.6s linear infinite 0s;
-}
-
-
-/*********************
-GRID
-*********************/
-.col6-sm{
-  width: 50%;
-  position: relative;
-  float: left;
 }

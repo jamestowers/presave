@@ -1,34 +1,13 @@
 <template>
-    <div id="home">
-        <album-selector v-if="isLoggedIn"></album-selector>
-        <login-btn v-else></login-btn>
+    <div id="home" class="pad">
+        <h1>HOME</h1>
     </div>
 </template>
 
 <script>
-
-    import LoginBtn from './LoginBtn.vue';
-    import AlbumSelector from './AlbumSelector.vue';
-
     export default {
-
         created(){
-            //
-        },
-
-        computed: {
-            isLoggedIn(){
-                return this.$store.getters.authed
-            }
-        },
-
-        components: {
-            LoginBtn,
-            AlbumSelector
-        },
-
-        methods:{
-            //
+            //console.log('what?');
         }
     }
 </script>

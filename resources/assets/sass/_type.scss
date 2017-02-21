@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 html{
   font-size:  62%;
 }
@@ -38,11 +40,6 @@ code{
   font-family: $font-header;
   line-height: 1
 }
-.huge-icon{
-  @include font-size(24);
-  margin: 40px auto;
-  text-align: center;
-}
 small,
 .small{
   @include font-size(1);
@@ -76,11 +73,6 @@ a{
     -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
   }
 }
-.description{
-  a{
-    text-decoration: underline;
-  }
-}
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
@@ -98,7 +90,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: $font-header;
   font-weight: $font-weight-normal;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: $letter-spacing-header;
   line-height: 1.5;
   a{
     color:$grey2;

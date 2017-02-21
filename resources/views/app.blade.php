@@ -5,7 +5,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, owner-scalable=no">
 
-  <title>{{ config('app.name', 'Pre-Save') }}</title>
+  <title>@yield('title') | {{ config('app.name', 'Pre-Save') }}</title>
   
   <link rel="stylesheet" href="/css/app.css"/>
 
@@ -75,16 +75,10 @@
     
 
       <errors></errors>
-
-      <router-view></router-view>
+    
+      {{-- <router-view></router-view> --}}
         
-      {{-- @yield('content') --}}
-      
-      @if (Auth::check())
-        <script>
-          
-        </script>
-      @endif
+      @yield('content')
 
     
     <footer>

@@ -14,7 +14,7 @@
 
 <script>
     
-    import DashboardNav from './dashboard/Nav.vue'
+    import DashboardNav from './Nav.vue'
 
     export default {
 
@@ -33,8 +33,9 @@
         display: flex;
     }
     #dashboard{
+        min-height: 100vh;
         nav{
-            flex: 0 0 160px;
+            flex: 0 0 100px;
         }
     }
     main{

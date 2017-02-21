@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="container narrow">
+    <div class="inner narrow">
         
         <h1 class="page-title">@yield('title')</h1>
         

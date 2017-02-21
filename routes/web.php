@@ -2,6 +2,8 @@
 
 Auth::routes();
 
+//Route::get('/', 'CampaignController');
+
 Route::group(['domain' => '{slug}.presaver.dev'], function () {
     Route::get('/', 'CampaignController@showBySlug');
 });
@@ -17,4 +19,4 @@ Route::group(['middleware' => 'auth'], function()
 
 Route::get('/{vue_capture?}', function () {
    return view('vue-template');
- })->where('vue_capture', '[\/\w\.-]*');
+})->where('vue_capture', '[\/\w\.-]*');

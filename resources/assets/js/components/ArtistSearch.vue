@@ -1,7 +1,15 @@
 <template>
     <div class="artist-search">
-        <input @keyup="artistSearch" v-model="searchTerm" type="text" placeholder="Artist name" />
+
+        <input 
+            @keyup="artistSearch" 
+            v-model="searchTerm" 
+            type="text"
+            class="artist-search-input" 
+            placeholder="Artist name" />
+
         <input v-if="artist" name="artist_id" type="hidden" :value="artist.id" />
+        
         <div v-if="artists.length" class="artist-search-results" :class="{ open: this.isOpen }">
             <ul>
                 <li 
@@ -30,7 +38,8 @@
             return {
                 searchTerm: '',
                 artist: {
-                    id: this.value
+                    id: this.value,
+                    name: ''
                 },
                 artists: [],
                 isOpen: false
@@ -44,8 +53,10 @@
                 this.$emit('artistSelected', this.artist);
             },
             artistSearch(e){
-                this.$http.get('search?term=' + this.searchTerm + '&type=artist')
-                    .then(this.onSuccess, this.onError)
+                if(this.searchTerm.length > 1){
+                    this.$http.get('search?term=' + this.searchTerm + '&type=artist')
+                        .then(this.onSuccess, this.onError)
+                }
             },
             onSuccess(response){
                 this.artists = response.data.artists.items
@@ -64,26 +75,46 @@
     
     @import "../../sass/variables.scss";
     
+    .artist-search{
+        position: relative;
+    }
+
+    input[type="text"].artist-search-input{
+        margin-bottom: 0;
+    }
+
     .artist-search-results{
         display: none;
+        background: $grey4;
+        color: $white;
+        position: absolute;
+        top:100%;
+        width: 100%;
+        z-index: 2;
         &.open{
             display: block;
         }
+        ul{
+            margin: 0;
+        }
         li{
-            background: $white;
-            border-bottom: 1px solid $grey7;
+            border: 1px solid $grey3;
+            border-width: 0 1px 1px 1px;
+            cursor: pointer;
             display: flex;
+            font-size: 1.2rem;
             align-items: center;
-            font-weight: $font-weight-bold;
             padding: 0;
+            &:hover{
+                background: $grey3;
+            }
         }
         .thumbnail{
-            margin-right: $padding-half;
-            flex: 0 0 60px;
-            height: 60px;
+            margin-right: 10px;
+            flex: 0 0 40px;
+            height: 40px;
             position: relative;
             img {
-                border-radius: 100%;
                 position: absolute;
                 display: block;
                 content: '';
