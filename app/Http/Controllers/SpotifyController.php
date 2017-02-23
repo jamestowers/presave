@@ -25,28 +25,42 @@ class SpotifyController extends Controller
         return view('login');
     }
 
-    public function setUser(Request $request)
+    public function callback(Request $request)
     {
         $tokens = SpotifyAdmin::requestUserToken($request->get('code'));
+        
+        $fan = $this->storeFan($tokens);
+
+        if(!$request->cookie('spotify_token')){
+            $cookie = cookie(
+                'spotify_token', 
+                $tokens->access_token, 
+                $tokens->expires_in/60,
+                null, // path
+                null, //domain
+                false, // secure,
+                false // httpOnly
+            );
+        }
+   
+        // Cant use $request->cookie() as Laravel encrypts cookies so 
+        // we wont be able to access from JS
+        if(isset($_COOKIE['campaign_slug'])){ 
+            $redirectTo = route('campaign', $_COOKIE['campaign_slug']);
+        }else{
+            $redirectTo = '/campaign';
+        }
+        return redirect($redirectTo)->cookie($cookie);
+    }
+
+    public function storeFan($tokens) {
 
         $spotify = new SpotifyWebAPI($tokens->access_token);
         $spotifyUser = $spotify->me();
-        
-        $user = $this->storeUser($spotifyUser, $tokens);
-        
-        if (Auth::loginUsingId($user->id, true)) {
-            return redirect('/');
-        } else {
-            abort(401, 'Could not log user in');
-        }
-    }
 
-    public function storeUser($spotifyUser, $tokens) {
-
-        $user = \App\User::firstOrNew(['spotify_user_id' => $spotifyUser->id]);
-
+        $user = \App\Fan::firstOrNew(['email' => $spotifyUser->email]);
         $user->name = $spotifyUser->display_name;
-        $user->email = isset($spotifyUser->email) ? $spotifyUser->email : null;
+        $user->email = $spotifyUser->email;
         $user->access_token = $tokens->access_token;
         $user->refresh_token = $tokens->refresh_token;
         $user->expires_at = \Carbon\Carbon::now()->addSeconds($tokens->expires_in);
@@ -60,17 +74,35 @@ class SpotifyController extends Controller
         if($request->has('token')) {
 
             $spotify = new SpotifyWebAPI($request->get('token'));
-            //$this->spotify->setToken($request->get('token'));
-
-            //$this->spotify->api->addMyAlbums('0xhcc6Lp1uTV4mokv50GXf');
 
             $albums = $spotify->getMySavedAlbums()->items;
 
             if($request->wantsJson()){
+                $sorted = array_map(function($p) { return ['id' => $p->id, 'name' => $p->name]; }, $albums);
                 return response()->json($albums);
             }
 
             return view('albums', compact('albums'));
+        }
+        else{
+            abort(401, 'You are not logged in');
+        }
+    }
+
+    public function getUserPlaylists(Request $request) 
+    {   
+        if($request->has('token')) {
+
+            $spotify = new SpotifyWebAPI($request->get('token'));
+
+            $playlists = $spotify->getMyPlaylists()->items;
+
+            if($request->wantsJson()){
+                $sorted = array_map(function($p) { return ['id' => $p->id, 'name' => $p->name]; }, $playlists);
+                return response()->json($sorted);
+            }
+
+            return view('playlists', compact('playlists'));
         }
         else{
             abort(401, 'You are not logged in');

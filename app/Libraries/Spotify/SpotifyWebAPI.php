@@ -11,8 +11,8 @@ class SpotifyWebAPI
     //const API_URL = 'https://api.spotify.com/v1';
 
     protected $accessToken = null;
-    protected $refreshToken = null;
-    protected $expiresIn = null;
+    //protected $refreshToken = null;
+    //protected $expiresIn = null;
 
     protected $session;
     
@@ -32,6 +32,7 @@ class SpotifyWebAPI
      */
     public function __construct($token)
     {
+        $this->accessToken = $token;
         $provider = new SpotifyRequestInterface($token);
         $this->request = new APIRequest($provider);
         $this->session = new Session();
@@ -62,9 +63,9 @@ class SpotifyWebAPI
     {
         $tokens = $this->session->requestAccessToken($code);
         
-        $this->accessToken = $tokens->access_token;
+        /*$this->accessToken = $tokens->access_token;
         $this->refreshToken = $tokens->refresh_token;
-        $this->expiresIn = $tokens->expires_in;
+        $this->expiresIn = $tokens->expires_in;*/
 
         return $tokens;
     }
@@ -73,9 +74,9 @@ class SpotifyWebAPI
     {
         $tokens = $this->session->requestNewAccessToken($user->refresh_token);
         
-        $this->accessToken = $tokens->access_token;
+        /*$this->accessToken = $tokens->access_token;
         $this->refreshToken = $tokens->refresh_token;
-        $this->expiresIn = $tokens->expires_in;
+        $this->expiresIn = $tokens->expires_in;*/
 
         return $tokens;
     }
@@ -98,6 +99,15 @@ class SpotifyWebAPI
         $headers = $this->authHeaders();
 
         $uri = '/me/albums';
+
+        return $this->request->api('GET', $uri, $options, $headers);
+    }
+
+    public function getMyPlaylists($options = [])
+    {
+        $headers = $this->authHeaders();
+        
+        $uri = '/me/playlists';
 
         return $this->request->api('GET', $uri, $options, $headers);
     }

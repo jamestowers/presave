@@ -15,10 +15,10 @@ class CampaignController extends Controller
     {
         $this->campaigns = $campaign;
 
-        $this->middleware('auth', ['except' => [
+        /*$this->middleware('auth', ['except' => [
             'show',
             'showBySlug',
-        ]]);
+        ]]);*/
     }
     /**
      * Display a listing of the resource.
@@ -79,7 +79,7 @@ class CampaignController extends Controller
 
     public function exists($spotifyId)
     {
-        return $this->campaigns->whereAlbumSpotifyId($spotifyId)->exists();
+        return $this->campaigns->whereReleaseSpotifyId($spotifyId)->exists();
     }
 
     /**

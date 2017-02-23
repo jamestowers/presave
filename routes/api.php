@@ -2,8 +2,6 @@
 
 use Illuminate\Http\Request;
 
-Route::get('/spotify-login', 'SpotifyController@login');
-
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/register', 'Auth\RegisterController@register');
 
@@ -15,14 +13,13 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
     Route::post('/upload', 'CampaignController@handleFileUpload');
 
+    Route::resource('/campaigns', 'CampaignController');
+
     Route::get('/search', 'SpotifyAdminController@search');
 });
 
-
+//Route::get('/spotify-login', 'SpotifyController@login');
+Route::get('/auth-url', 'SpotifyController@login');
 Route::get('/get-albums', 'SpotifyController@getUserAlbums');
-
-/*Route::middleware('auth')->get('/user', function (Request $request) {
-    return $request->user();
-});*/
-
-//Route::get('/albums', 'UserController@albums');
+Route::get('/get-playlists', 'SpotifyController@getUserPlaylists');
+Route::get('/save-to-playlist', 'SpotifyController@saveAlbum');

@@ -18,7 +18,7 @@ class CreateCampaignsTable extends Migration
             //$table->string('title');
             $table->string('release_spotify_id')->unique()->nullable();
             $table->string('release_title');
-            $table->string('release_artwork');
+            $table->string('release_artwork')->nullable();
             $table->string('slug')->unique();
             $table->integer('artist_id')->unsigned()->nullable();
             $table->foreign('artist_id')->references('id')->on('artists');

@@ -18,6 +18,8 @@
         
         mixins: [showErrors],
 
+        props: ['redirect'],
+
         data() {
             return {
                 authUrl: null
@@ -25,12 +27,13 @@
         },
 
         created(){
+            this.$cookie.set('campaign_slug', this.redirect, { expires: '10m', domain: 'presaver.dev' })
             this.getAuthUrl()
         },
 
         methods: {
             getAuthUrl(){
-                this.$http.get('login')
+                this.$http.get('auth-url')
                     .then(this.onSuccess, this.onError);
             },
             onSuccess(response) {
@@ -40,7 +43,11 @@
             onError(errors) {
                 this.showErrors(errors)
                 this.loading = false
-            }
+            },
+            /*setRedirectToSession() {
+                this.$cookie.set('campaign_slug', this.redirect, {expires: '10m', domain: 'localhost'})
+                //localStorage.setItem('spotifyCallbackRedirect', this.redirect)
+            }*/
         }
         
     }
@@ -53,6 +60,7 @@
 
     .login-btn{
         color: $grey2;
+        padding: 10px;
     }
 
 </style>

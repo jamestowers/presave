@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router'
+import VueCookie from 'vue-cookie';
 
 import store from './vuex/store';
 import { sync } from 'vuex-router-sync'
@@ -23,6 +24,11 @@ window.Vue = require('vue');
 
 require('vue-resource');
 
+Vue.use(VueCookie);
+Vue.use(VueRouter);
+
+/*localStorage.removeItem('id_token')
+localStorage.removeItem('user')*/
 
 const is_production_env = process.env.NODE_ENV == 'production';
 Vue.config.devtools = !is_production_env;
@@ -33,20 +39,16 @@ Vue.http.options.credentials = true;
 Vue.http.headers.common = {
     'X-CSRF-TOKEN': window.Laravel.csrfToken,
     'X-Requested-With': 'XMLHttpRequest',
-    'Accept': 'application/json',
-    'Authorization': 'Bearer ' + localStorage.getItem('id_token')
+    'Accept': 'application/json'
+    //'Authorization': 'Bearer ' + Vue.cookie.get('session_token')
 };
-// Vue.http.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
-// Vue.http.headers.common['Accept'] = 'application/json';
-// Vue.http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_token');
 
-Vue.use(VueRouter);
 
 let reg = new RegExp('www|presaver')
 let parts = window.location.host.split('.')
 let homeComponent = reg.test(parts[0]) ? Dashboard : Campaign
 
-//console.log(homeComponent);
+
 const routes = [
     {
         path: '/', 
@@ -88,12 +90,11 @@ export const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    //console.log(to, from, next);
     if(to.matched.some(record => record.meta.requiresAuth)) {
         // this route requires auth, check if logged in
         // if not, redirect to login page.
-        let authed = auth.authenticated
-        //console.log(auth.authenticated);
+        let authed = (Vue.cookie.get('session_token') !== null)
+        //console.log('Logged in: ' + authed);
         if (!authed) {
             next({
                 path: '/login',
@@ -105,6 +106,7 @@ router.beforeEach((to, from, next) => {
     } else {
         next() // make sure to always call next()!
     }
+
 });
 
 sync(store, router)
@@ -112,6 +114,11 @@ sync(store, router)
 const app = new Vue({
     el: '#app',
 
+    data(){
+        return{
+            //
+        }
+    },
     created(){
         //console.log('[App] App is ready');
         //store.dispatch('getUser');
@@ -119,8 +126,20 @@ const app = new Vue({
 
     mounted: function () {
         this.$nextTick(function () {
-           auth.check()
+            if(this.$cookie.get('session_token')){
+                Vue.http.headers.common['Authorization'] = 'Bearer ' + this.$cookie.get('session_token')
+                auth.check()
+            }
+
+            if(this.$cookie.get('spotify_token')){
+                this.$store.dispatch('setSpotifyToken', {
+                    token: this.$cookie.get('spotify_token')
+                });
+                Vue.http.headers.common['Authorization'] = 'Bearer ' + this.$cookie.get('spotify_token')
+            }
+
         })
+
     },
 
     router,

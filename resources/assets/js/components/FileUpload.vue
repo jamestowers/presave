@@ -1,18 +1,40 @@
 <template>
-    <div class="file-upload">
+    <div class="file-upload" :class="computedClasses">
+        <div 
+            v-if="supportsUpload"
+            @drag.stop.prevent="" 
+            @dragover.stop.prevent="" 
+            @dragstart.stop.prevent="onDragStart"
+            @dragenter.stop.prevent="onDragStart"
+            @dragend.stop.prevent="onDragStop"
+            @dragleave.stop.prevent="onDragStop"
+            @drop.stop.prevent="onFileDrop"
+            >
+            <input 
+                @change="onFileChange"
+                ref="fileInput"
+                type="file" 
+                :name="name"
+                :id="name"
+                multiple="multiple" />
+            
+            <label :for="name">{{ buttonLabel }}</label>
 
-        <input 
-            @change="onFileChange"
-            ref="fileInput"
-            type="file" 
-            :name="name"
-            :id="name"
-            multiple="multiple" />
-        
-        <label :for="name">{{ buttonLabel }}</label>
+            <div v-if="errors.length" class="file-upload-errors">
+                <ul>
+                    <li v-for="error in errors">{{ error }}</li>
+                </ul>
+            </div>
 
-        <div class="progress">
-            <div ref="progressBar" class="progress-bar"></div>
+            <div v-if="isUploading" class="progress">
+                <div ref="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div v-else>
+            <div class="file-upload-errors">
+                Your browser doesn't support file uploads
+            </div>
         </div>
 
     </div>
@@ -36,7 +58,12 @@
                 required: true
             },
             accept: {
-                type: String
+                type: String,
+                default: 'image/*'
+            },
+            maxSize: {
+                type: Number,
+                default: Number.MAX_SAFE_INTEGER
             },
             multiple: {
                 type: Boolean,
@@ -47,27 +74,92 @@
         data(){
             return {
                 files: [],
+                fileTypes: [],
                 isUploading: false,
-                buttonLabel: this.label
+                buttonLabel: this.label,
+                draggingOver: false,
+                errors: []
             }
         },
 
         computed: {
-            //
+            supportsUpload () {
+                if (navigator.userAgent.match(/(Android (1.0|1.1|1.5|1.6|2.0|2.1))|(Windows Phone (OS 7|8.0))|(XBLWP)|(ZuneWP)|(w(eb)?OSBrowser)|(webOS)|(Kindle\/(1.0|2.0|2.5|3.0))/)) {
+                    return false
+                }
+                const el = document.createElement('input')
+                el.type = 'file'
+                return !el.disabled
+            },
+            supportsDragAndDrop () {
+                const div = document.createElement('div')
+                return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && !('ontouchstart' in window || navigator.msMaxTouchPoints)
+            },
+            computedClasses () {
+                return{
+                    'dragging-over': this.draggingOver
+                }
+            }
+        },
+
+        mounted() {
+            if (this.accept !== 'image/*') {
+                this.fileTypes = this.accept.split(',')
+                this.fileTypes = this.fileTypes.map(s => s.trim())
+            }
         },
 
         methods: {
-            onFileChange(el) {
-                this.files = el.target.files
-                if(this.files.length === 0){
+            onDragStart () {
+                if (!this.supportsDragAndDrop) {
+                    return
+                }
+                this.draggingOver = true
+            },
+            onDragStop () {
+                if (!this.supportsDragAndDrop) {
+                    return
+                }
+                this.draggingOver = false
+            },
+            onFileDrop (e) {
+                this.onDragStop()
+                this.onFileChange(e)
+            },
+            onFileChange(e) {
+                let files = e.target.files || e.dataTransfer.files
+                if(files.length === 0){
                     this.buttonLabel = this.label
+                    return
+                } 
+
+                // Size limit check
+                if (files[0].size <= 0 || files[0].size > this.maxSize * 1024 * 1024) {
+                    this.errors.push('The file size exceeds the ' + this.maxSize + 'MB limit.')
+                    return
+                }
+
+                // File type check
+                if (this.accept === 'image/*') {
+                    if (files[0].type.substr(0, 6) !== 'image/') {
+                        this.errors.push('This file type is not supported, images only please')
+                        return
+                    }
                 } else {
-                    if(this.files.length > 1){
-                        this.buttonLabel = this.files.length + ' files selected'
-                    }else{
-                        this.buttonLabel = this.$refs.fileInput.value.split('\\').pop()
+                    if (this.fileTypes.indexOf(files[0].type) === -1) {
+                        this.errors.push('This file type is not supported.')
+                        return
                     }
                 }
+
+                if(files.length > 1){
+                    this.buttonLabel = files.length + ' files selected'
+                }else{
+                    this.buttonLabel = files[0].name// || this.$refs.fileInput.value.split('\\').pop()
+                }
+
+
+                this.files = files
                 this.uploadFile()
             },
 
@@ -81,40 +173,30 @@
                     data.append('files', file);
                 }*/
 
-                var request = new XMLHttpRequest();
-
-                request.onreadystatechange = function(){
-                    if(request.readyState == 4){
-                        try {
-                            var resp = JSON.parse(request.response);
-                            self.onUploadSuccess(resp.files)
-                        } catch (e){
-                            var resp = {
-                                status: 'error',
-                                data: 'Unknown error occurred: [' + request.responseText + ']'
-                            };
-                            self.onUploadError(resp)
+                this.$http.post(this.action, data, {
+                    progress(e) {
+                        if (e.lengthComputable) {
+                            self.$refs.progressBar.style.width = Math.ceil((e.loaded / e.total) * 100) + '%';
                         }
                     }
-                };
-
-                request.upload.addEventListener('progress', function(e){
-                    self.$refs.progressBar.style.width = Math.ceil(e.loaded/e.total) * 100 + '%';
-                }, false);
-
-                request.open('POST', this.action);
-                request.send(data);
+                }).then(this.onUploadSuccess, this.onUploadError)
 
             },
 
-            onUploadSuccess(files){
-                //console.log($files)
+            onUploadSuccess(response){
+                //console.log(response.data)
                 this.onUploadComplete()
-                this.$emit('uploadSuccess', files)
+                this.$emit('uploadSuccess', response.data.files)
             },
 
-            onUploadError(resp){
-                //console.error(resp.status + ': ' + resp.data);
+            onUploadError(response){
+                //console.error(error);
+                let resp = {
+                    error: true,
+                    data: {
+                        message: response.error
+                    }
+                }
                 this.onUploadComplete()
                 this.$emit('uploadError', resp)
             },
@@ -134,6 +216,16 @@
     
     .file-upload{
         padding-bottom: $padding;
+        &.dragging-over{
+            background: $grey7;
+        }
+    }
+    .file-upload-errors{
+        color: $color-error;
+        font-weight: $font-weight-bold;
+        ul{
+            margin: 0;
+        }
     }
     input[type="file"]{
         width: 0.1px;

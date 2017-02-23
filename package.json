@@ -17,5 +17,8 @@
     "vuejs-datepicker": "^0.6.2",
     "vuex": "^2.1.2",
     "vuex-router-sync": "^4.1.2"
+  },
+  "dependencies": {
+    "vue-cookie": "^1.1.3"
   }
 }

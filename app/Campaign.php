@@ -13,6 +13,8 @@ class Campaign extends Model
         'id'
     ];
 
+    protected $with = ['artist'];
+
     /**
      * The attributes that should be mutated to dates.
      *

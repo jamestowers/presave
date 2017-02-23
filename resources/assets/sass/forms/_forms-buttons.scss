@@ -19,8 +19,9 @@ input[type="submit"],
 input[type="button"],
 button{
   background: $color-primary;
-  border-radius: 20px;
-  display: inline-block;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
   flex-grow: 0;
   margin-bottom: $padding;
   font-weight: $font-weight-bold;
@@ -39,6 +40,9 @@ button{
   white-space: nowrap;
   transition: all 0.1s $ease-out-quint;
   z-index: 0;
+  svg{
+    margin-right: 10px;
+  }
   &:after{
     //background: lighten(inherit, 10);
     display: block;
@@ -66,6 +70,7 @@ button{
     outline-offset: -2px; */
 
     text-decoration: none;
+    color: currentColor;
     &:after{
       width:100%;
     }

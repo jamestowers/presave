@@ -1,5 +1,5 @@
 <template>
-    <div class="inner narrow">
+    <div class="flex-center full-height flex-column full-width bg-dark">
         <div class="alert alert-danger" v-if="error && !success">
             <p>There was an error, unable to complete registration.</p>
         </div>
@@ -25,6 +25,7 @@
                 <input type="password" id="password" v-model="password" required>
                 <span class="help-block" v-if="error && response.password">{{ response.password }}</span>
             </div>
+            <router-link to="/login" class="pull-left">Login</router-link>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div>

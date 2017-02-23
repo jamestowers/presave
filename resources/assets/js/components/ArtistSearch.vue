@@ -50,6 +50,7 @@
             onClick(artist){
                 this.artist = artist
                 this.isOpen = false
+                this.searchTerm = this.artist.name
                 this.$emit('artistSelected', this.artist);
             },
             artistSearch(e){

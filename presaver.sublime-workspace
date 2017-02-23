@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"dra",
+				"draggingOver"
+			],
+			[
+				"spot",
+				"spotify_token"
+			],
+			[
+				"set",
+				"setUser"
+			],
+			[
+				"access",
+				"access_token"
+			],
+			[
+				"Red",
+				"redirectTo"
+			],
+			[
+				"release_",
+				"release_artwork"
+			],
+			[
+				"art",
+				"artist"
+			],
+			[
+				"sea",
+				"searchTerm"
+			],
+			[
 				"Campaign",
 				"CampaignEdit"
 			],
@@ -46,10 +78,6 @@
 			[
 				"on",
 				"onClick"
-			],
-			[
-				"set",
-				"setToken"
 			],
 			[
 				"refresh",
@@ -444,10 +472,6 @@
 				"oldArtist"
 			],
 			[
-				"art",
-				"artists"
-			],
-			[
 				"spotify",
 				"spotify_artist"
 			],
@@ -490,85 +514,51 @@
 			[
 				"tracks",
 				"tracks_array"
-			],
-			[
-				"echo",
-				"echonest_data"
-			],
-			[
-				"owner",
-				"owner_id"
-			],
-			[
-				"first",
-				"firstOrCreate"
-			],
-			[
-				"insert_",
-				"insert_playlist_into_db"
-			],
-			[
-				"cat",
-				"categoryData"
-			],
-			[
-				"cate",
-				"category"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "app/Http/Controllers/SpotifyController.php",
+			"settings":
+			{
+				"buffer_size": 3324,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "resources/assets/js/app.js",
 			"settings":
 			{
-				"buffer_size": 3194,
+				"buffer_size": 3892,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/assets/js/components/PlaylistSelector.vue",
+			"settings":
+			{
+				"buffer_size": 1621,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/assets/js/components/Nav.vue",
+			"file": "app/Libraries/Spotify/SpotifyWebAPI.php",
 			"settings":
 			{
-				"buffer_size": 5173,
+				"buffer_size": 3494,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/assets/js/components/LoginBtn.vue",
+			"file": "database/migrations/2017_02_23_165520_create_artist_fan_table.php",
 			"settings":
 			{
-				"buffer_size": 1733,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/assets/js/auth.js",
-			"settings":
-			{
-				"buffer_size": 1872,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/UserController.php",
-			"settings":
-			{
-				"buffer_size": 671,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/Auth/LoginController.php",
-			"settings":
-			{
-				"buffer_size": 1102,
+				"buffer_size": 829,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -581,10 +571,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 252.0,
-		"last_filter": "Package Control: ins",
+		"height": 354.0,
+		"last_filter": "Package Control: ",
 		"selected_items":
 		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
 			[
 				"Package Control: ins",
 				"Package Control: Install Package"
@@ -595,10 +589,6 @@
 			],
 			[
 				"pa",
-				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
 				"Package Control: Install Package"
 			],
 			[
@@ -638,7 +628,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -664,85 +654,103 @@
 		"/Users/james/projects/presaver/app/Console",
 		"/Users/james/projects/presaver/app/Http",
 		"/Users/james/projects/presaver/app/Http/Controllers",
-		"/Users/james/projects/presaver/app/Http/Controllers/Auth",
 		"/Users/james/projects/presaver/app/Http/Requests",
+		"/Users/james/projects/presaver/app/Libraries",
 		"/Users/james/projects/presaver/app/Libraries/Spotify",
-		"/Users/james/projects/presaver/config",
-		"/Users/james/projects/presaver/database/migrations",
 		"/Users/james/projects/presaver/resources",
 		"/Users/james/projects/presaver/resources/assets",
 		"/Users/james/projects/presaver/resources/assets/js",
-		"/Users/james/projects/presaver/resources/assets/js/components/Auth",
+		"/Users/james/projects/presaver/resources/assets/js/components",
 		"/Users/james/projects/presaver/resources/assets/js/vuex",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/modules",
-		"/Users/james/projects/presaver/resources/lang",
-		"/Users/james/projects/presaver/resources/views"
+		"/Users/james/projects/presaver/resources/assets/sass"
 	],
 	"file_history":
 	[
-		"/Users/james/projects/presaver/resources/assets/js/components/Nav.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/Campaign.vue",
+		"/Users/james/projects/presaver/database/migrations/2017_02_22_164933_create_fans_table.php",
+		"/Users/james/projects/presaver/database/migrations/2017_02_22_202114_create_tokens_table.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/Dropdown.vue",
+		"/Users/james/projects/presaver/app/Libraries/APIRequest.php",
+		"/Users/james/projects/presaver/resources/assets/js/app.js",
+		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyWebAPI.php",
+		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyController.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/PlaylistSelector.vue",
+		"/Users/james/projects/presaver/routes/api.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/AjaxForm.vue",
+		"/Users/james/projects/presaver/app/Http/Controllers/Auth/LoginController.php",
+		"/Users/james/projects/presaver/resources/assets/js/auth.js",
+		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyRequestInterface.php",
+		"/Users/james/projects/presaver/app/Http/Middleware/EncryptCookies.php",
+		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/Middleware/GetUserFromToken.php",
+		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/Middleware/BaseMiddleware.php",
+		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/JWTAuth.php",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/actions.js",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/modules/user.js",
-		"/Users/james/projects/presaver/routes/web.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/Auth/Login.vue",
-		"/Users/james/projects/presaver/routes/api.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/Nav.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/LoginBtn.vue",
+		"/Users/james/projects/presaver/app/Http/Controllers/UserController.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/FileUpload.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/Errors.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/AlbumSelector.vue",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/mutation-types.js",
+		"/Users/james/projects/presaver/app/Token.php",
+		"/Users/james/projects/presaver/routes/web.php",
+		"/Users/james/projects/presaver/vendor/laravel/framework/src/Illuminate/Cookie/CookieJar.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/Auth/Register.vue",
+		"/Users/james/projects/presaver/app/Http/Controllers/Auth/RegisterController.php",
+		"/Users/james/projects/presaver/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/Auth/Login.vue",
+		"/Users/james/projects/presaver/config/app.php",
+		"/Users/james/projects/presaver/config/session.php",
+		"/Users/james/projects/presaver/.env",
+		"/Users/james/projects/presaver/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/Users/james/projects/presaver/app/Http/Controllers/CampaignController.php",
+		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms-buttons.scss",
+		"/Users/james/projects/presaver/resources/views/app.blade.php",
+		"/Users/james/projects/presaver/app/Campaign.php",
+		"/Users/james/projects/presaver/resources/assets/sass/_type.scss",
+		"/Users/james/projects/presaver/resources/assets/js/mixins.js",
+		"/Users/james/projects/presaver/resources/assets/js/components/ArtistSearch.vue",
+		"/Users/james/projects/presaver/node_modules/request/lib/auth.js",
+		"/Users/james/projects/presaver/app/User.php",
+		"/Users/james/projects/presaver/app/Http/Kernel.php",
+		"/Users/james/projects/presaver/app/Providers/AuthServiceProvider.php",
+		"/Users/james/projects/presaver/config/auth.php",
+		"/Users/james/projects/presaver/composer.json",
+		"/Users/james/projects/presaver/vendor/laravel/passport/src/Http/Middleware/CreateFreshApiToken.php",
+		"/Users/james/projects/presaver/resources/assets/sass/app.scss",
+		"/Users/james/projects/presaver/resources/assets/sass/_layout.scss",
+		"/Users/james/projects/presaver/resources/assets/js/vuex/store.js",
+		"/Users/james/projects/presaver/resources/assets/sass/_utils.scss",
+		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms.scss",
 		"/Users/james/projects/presaver/app/Http/Requests/RegisterFormRequest.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/Home.vue",
-		"/Users/james/projects/presaver/node_modules/request/lib/auth.js",
-		"/Users/james/projects/presaver/resources/assets/js/components/Auth/Register.vue",
-		"/Users/james/projects/presaver/config/app.php",
-		"/Users/james/projects/presaver/app/Http/Controllers/Auth/RegisterController.php",
-		"/Users/james/projects/presaver/resources/assets/js/auth.js",
-		"/Users/james/projects/presaver/app/Http/Kernel.php",
 		"/Users/james/projects/presaver/app/Console/Kernel.php",
-		"/Users/james/projects/presaver/config/auth.php",
 		"/Users/james/projects/presaver/resources/views/login.blade.php",
-		"/Users/james/projects/presaver/resources/assets/js/app.js",
-		"/Users/james/projects/presaver/resources/assets/js/components/LoginBtn.vue",
-		"/Users/james/projects/presaver/app/Http/Controllers/CampaignController.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit.vue",
 		"/Users/james/projects/presaver/resources/views/auth/login.blade.php",
 		"/Users/james/projects/presaver/resources/views/vue-template.blade.php",
-		"/Users/james/projects/presaver/resources/assets/sass/_utils.scss",
 		"/Users/james/projects/presaver/resources/views/campaigns/show.blade.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/Dashboard.vue",
-		"/Users/james/projects/presaver/resources/views/app.blade.php",
 		"/Users/james/projects/presaver/resources/views/campaigns/createOrUpdate.blade.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/ArtistSearch.vue",
-		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyWebAPI.php",
 		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyAdminController.php",
-		"/Users/james/projects/presaver/resources/assets/sass/_type.scss",
 		"/Users/james/projects/presaver/resources/assets/sass/_variables.scss",
-		"/Users/james/projects/presaver/resources/assets/js/components/FileUpload.vue",
 		"/Users/james/projects/presaver/database/migrations/2017_02_14_134110_create_campaigns_table.php",
-		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms.scss",
-		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms-buttons.scss",
-		"/Users/james/projects/presaver/resources/assets/js/components/Campaign.vue",
 		"/Users/james/projects/presaver/resources/assets/js/components/Dashboard/Nav.vue",
 		"/Users/james/projects/presaver/webpack.mix.js",
-		"/Users/james/projects/presaver/resources/assets/sass/app.scss",
-		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyController.php",
-		"/Users/james/projects/presaver/app/Campaign.php",
-		"/Users/james/projects/presaver/.env",
-		"/Users/james/projects/presaver/resources/assets/js/mixins.js",
 		"/Users/james/projects/presaver/app/Providers/SpotifyUserServiceProvider.php",
 		"/usr/local/php5-7.1.0RC5-20161101-103316/lib/php.ini",
 		"/Users/james/projects/presaver/app/Libraries/helpers.php",
 		"/Users/james/projects/redbull/app/Http/Controllers/RewardController.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/AjaxForm.vue",
 		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms-file.scss",
 		"/Users/james/projects/presaver/app/Providers/SpotifyAdminServiceProvider.php",
 		"/Users/james/projects/presaver/app/Libraries/Spotify/Session.php",
-		"/Users/james/projects/presaver/database/migrations/2014_10_12_000000_create_users_table.php",
 		"/Users/james/projects/presaver/app/Providers/SpotifyServiceProvider.php",
 		"/Users/james/projects/presaver/vendor/jwilsson/spotify-web-api-php/src/SpotifyWebAPI.php",
 		"/Users/james/projects/presaver/vendor/jwilsson/spotify-web-api-php/src/Session.php",
 		"/Users/james/projects/presaver/app/Console/Commands/SpotifyRefreshToken.php",
 		"/Users/james/projects/presaver/vendor/jwilsson/spotify-web-api-php/src/Request.php",
-		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyRequestInterface.php",
-		"/Users/james/projects/presaver/app/Libraries/APIRequest.php",
-		"/Users/james/projects/presaver/composer.json",
 		"/Users/james/projects/api.tracks2/composer.json",
 		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyAPI.php",
 		"/Users/james/projects/presaver/app/Libraries/SpotifyAPI.php",
@@ -750,16 +758,11 @@
 		"/Users/james/projects/presaver/app/Artist.php",
 		"/Users/james/projects/presaver/database/migrations/2017_02_14_134109_create_artists_table.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/ArtistSearchResult.vue",
-		"/Users/james/projects/presaver/resources/assets/js/components/AlbumSelector.vue",
-		"/Users/james/projects/presaver/app/Http/Controllers/UserController.php",
-		"/Users/james/projects/presaver/app/User.php",
-		"/Users/james/projects/presaver/resources/assets/js/vuex/store.js",
 		"/Users/james/projects/presaver/public/js/app.js",
 		"/Users/james/projects/presaver/app/Facades/SpotifyAdminWebAPIFacade.php",
 		"/Users/james/projects/presaver/app/Facades/SpotifyAdminWebAPI.php",
 		"/Users/james/projects/presaver/resources/views/auth/register.blade.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit",
-		"/Users/james/projects/presaver/app/Providers/AuthServiceProvider.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/passport/PersonalAccessTokens.vue",
 		"/Users/james/projects/presaver/vendor/psy/psysh/src/Psy/ConfigPaths.php",
 		"/Users/james/projects/presaver/resources/views/createOrUpdate.blade.php",
@@ -768,7 +771,6 @@
 		"/Users/james/projects/presaver/config/services.php",
 		"/Users/james/projects/presaver/app/Libraries/Request.php",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/modules/errors.js",
-		"/Users/james/projects/presaver/resources/assets/js/components/Errors.vue",
 		"/Users/james/projects/presaver/resources/assets/sass/_mixins.scss",
 		"/Users/james/projects/presaver/resources/assets/sass/_footer.scss",
 		"/Users/james/projects/accounts/resources/assets/js/app.js",
@@ -792,22 +794,7 @@
 		"/Users/james/projects/blend/webpack.config.js",
 		"/Users/james/projects/blend/config/dev.exs",
 		"/Users/james/projects/blend/web/static/js/components/Player.vue",
-		"/Users/james/projects/blend/web/templates/network/index.html.eex",
-		"/Users/james/projects/blend/web/static/css/_variables.scss",
-		"/Users/james/projects/blend/web/static/js/app.js",
-		"/Users/james/projects/blend/web/templates/account/edit.html.eex",
-		"/Users/james/projects/blend/web/static/js/components/AjaxForm.vue",
-		"/Users/james/projects/blend/web/static/css/_msgbox.scss",
-		"/Users/james/projects/blend/web/static/css/app.scss",
-		"/Users/james/projects/blend/package.json",
-		"/Users/james/projects/blend/web/templates/admin/account/index.html.eex",
-		"/Users/james/projects/blend/web/templates/admin/account/accounts.html.eex",
-		"/Users/james/projects/blend/web/static/js/mixins.js",
-		"/Users/james/projects/blend/web/static/vendor/msgbox.css",
-		"/Users/james/projects/blend/node_modules/vue-msgbox/src/msgbox.vue",
-		"/Users/james/projects/blend/web/templates/layout/app.html.eex",
-		"/Users/james/projects/blend/web/static/js/app/videoPlayerClass.js",
-		"/Users/james/projects/blend/web/static/js/components/msgbox.vue"
+		"/Users/james/projects/blend/web/templates/network/index.html.eex"
 	],
 	"find":
 	{
@@ -866,6 +853,66 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"fan",
+			"parent",
+			"campaign-description",
+			"Dropdown",
+			"o",
+			"album",
+			"playlist.",
+			"album",
+			"AlbumSelector",
+			"Album",
+			"album",
+			"Albums",
+			"profile",
+			"user",
+			"this.$http.headers",
+			"this.$cookie.get('session_token')",
+			"0",
+			"message",
+			"this.files",
+			".size",
+			"$this->accessToken",
+			"token",
+			"Vue.http",
+			" Vue.http",
+			"Vue.cookie",
+			"user",
+			"SET_USER",
+			"USER",
+			"user",
+			"setRedirectToSession",
+			"session_token",
+			"Vue.cookie.get('session_token')",
+			"localStorage.getItem('id_token')",
+			"localStorage.setItem('id_token', response.data.meta.token)",
+			"localStorage.getItem('id_token')",
+			"register",
+			"access_token",
+			"access",
+			"->nullable()",
+			"json('",
+			"$rediectTo",
+			"campaign",
+			"var",
+			"user.authenticated",
+			"'/' + ",
+			":src=\"",
+			"files[0].path + '/' +",
+			"release_artwork",
+			"album_spotify_id",
+			"files[0].path + '/' +files[0].name",
+			"files[0].name",
+			"files",
+			"[0]",
+			"[this.count]",
+			"response",
+			"album_title",
+			"auth.user.authenticated",
+			".state",
+			" =",
+			"height",
 			"sign",
 			"login",
 			"640",
@@ -933,67 +980,7 @@
 			"errors",
 			"ERRORS",
 			"errors",
-			"Error",
-			"SET_USER",
-			"errors",
-			"ERROR",
-			"LoginBtn",
-			";\n",
-			"spotifyAdminWebAPI",
-			"SpotifyWebAPI",
-			"spotifyWebAPI",
-			"CampaignEdit",
-			"<a href=\"\"></a>",
-			"first_",
-			"album_title",
-			"v-model=\"",
-			"''",
-			"this.campaign.",
-			"artist",
-			"name=\"",
-			"campaign",
-			"title",
-			"ajax-f",
-			"AlbumSelector",
-			"release_date",
-			"artist",
-			"title",
-			"reward",
-			"$reward",
-			"artist_id",
-			"parent",
-			"user",
-			"\\Auth",
-			"getAccessToken",
-			"' =>",
-			"config('",
-			"env('",
-			"@include line-height(",
-			"line-height",
-			"LoginBtn",
-			"$user->",
-			"$api",
-			"$session->",
-			"address_",
-			"players",
-			"method",
-			"storeLocation",
-			"backflip",
-			"fallbackLoader",
-			"loader:",
-			"loader",
-			"google-cluster",
-			"red",
-			"-ms-",
-			"cancel",
-			"85",
-			"#26a2ff",
-			"#000",
-			"#999",
-			"#ff4949",
-			"#dedede",
-			"-webkit-",
-			"#ddd"
+			"Error"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1144,150 +1131,85 @@
 			[
 				{
 					"buffer": 0,
-					"file": "resources/assets/js/app.js",
+					"file": "app/Http/Controllers/SpotifyController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3194,
+						"buffer_size": 3324,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1672,
-								1672
+								1250,
+								1250
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"history_list_is_closing": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 457.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/assets/js/components/Nav.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5173,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4347,
-								4347
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1884.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 2,
-					"file": "resources/assets/js/components/LoginBtn.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1733,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1009,
-								1009
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "resources/assets/js/auth.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1872,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								788,
-								788
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 75.0,
+						"translation.y": 497.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/Http/Controllers/UserController.php",
+					"buffer": 1,
+					"file": "resources/assets/js/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 671,
+						"buffer_size": 3892,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								110,
-								110
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2246.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/assets/js/components/PlaylistSelector.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1621,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								835,
+								835
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -1297,22 +1219,58 @@
 					},
 					"stack_index": 4,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
-					"buffer": 5,
-					"file": "app/Http/Controllers/Auth/LoginController.php",
+					"buffer": 3,
+					"file": "app/Libraries/Spotify/SpotifyWebAPI.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1102,
+						"buffer_size": 3494,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								58,
-								58
+								505,
+								505
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1244.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "database/migrations/2017_02_23_165520_create_artist_fan_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								650,
+								650
 							]
 						],
 						"settings":
@@ -1325,7 +1283,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1359,7 +1317,7 @@
 		"cols":
 		[
 			0.0,
-			0.415335758266,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -1391,16 +1349,256 @@
 		"selected_items":
 		[
 			[
+				"app.js",
+				"resources/assets/js/app.js"
+			],
+			[
+				"campaign",
+				"resources/assets/js/components/Campaign.vue"
+			],
+			[
+				"playlistse",
+				"resources/assets/js/components/PlaylistSelector.vue"
+			],
+			[
+				"spotifycontr",
+				"app/Http/Controllers/SpotifyController.php"
+			],
+			[
+				"dropdown",
+				"resources/assets/js/components/Dropdown.vue"
+			],
+			[
+				"api",
+				"routes/api.php"
+			],
+			[
+				"ajax",
+				"resources/assets/js/components/AjaxForm.vue"
+			],
+			[
+				"encryptcoo",
+				"app/Http/Middleware/EncryptCookies.php"
+			],
+			[
+				"spotifycon",
+				"app/Http/Controllers/SpotifyController.php"
+			],
+			[
+				"spotifywe",
+				"app/Libraries/Spotify/SpotifyWebAPI.php"
+			],
+			[
+				"app.j",
+				"resources/assets/js/app.js"
+			],
+			[
+				"getu",
+				"vendor/tymon/jwt-auth/src/Middleware/GetUserFromToken.php"
+			],
+			[
+				"auth",
+				"resources/assets/js/auth.js"
+			],
+			[
+				"loginc",
+				"app/Http/Controllers/Auth/LoginController.php"
+			],
+			[
+				"user.js",
+				"resources/assets/js/vuex/modules/user.js"
+			],
+			[
+				"actions.",
+				"resources/assets/js/vuex/actions.js"
+			],
+			[
+				"usercon",
+				"app/Http/Controllers/UserController.php"
+			],
+			[
+				"ajaxfo",
+				"resources/assets/js/components/AjaxForm.vue"
+			],
+			[
+				"campaigned",
+				"resources/assets/js/components/CampaignEdit.vue"
+			],
+			[
+				"fileupl",
+				"resources/assets/js/components/FileUpload.vue"
+			],
+			[
+				"spotifyc",
+				"app/Http/Controllers/SpotifyController.php"
+			],
+			[
+				"loginbt",
+				"resources/assets/js/components/LoginBtn.vue"
+			],
+			[
+				"loginb",
+				"resources/assets/js/components/LoginBtn.vue"
+			],
+			[
+				"campaig",
+				"resources/assets/js/components/Campaign.vue"
+			],
+			[
+				"albu",
+				"resources/assets/js/components/AlbumSelector.vue"
+			],
+			[
+				"cookieja",
+				"vendor/laravel/framework/src/Illuminate/Cookie/CookieJar.php"
+			],
+			[
+				"campaign.vu",
+				"resources/assets/js/components/Campaign.vue"
+			],
+			[
+				"web",
+				"routes/web.php"
+			],
+			[
+				"auth.j",
+				"resources/assets/js/auth.js"
+			],
+			[
+				"register.vu",
+				"resources/assets/js/components/Auth/Register.vue"
+			],
+			[
+				"login.v",
+				"resources/assets/js/components/Auth/Login.vue"
+			],
+			[
+				"configsess",
+				"config/session.php"
+			],
+			[
+				".env",
+				".env"
+			],
+			[
+				"configap",
+				"config/app.php"
+			],
+			[
+				"camapigncon",
+				"app/Http/Controllers/CampaignController.php"
+			],
+			[
+				"auth.js",
+				"resources/assets/js/auth.js"
+			],
+			[
+				"spotfyc",
+				"app/Http/Controllers/SpotifyController.php"
+			],
+			[
+				"type",
+				"resources/assets/sass/_type.scss"
+			],
+			[
+				"campaign.ph",
+				"app/Campaign.php"
+			],
+			[
+				"app.blad",
+				"resources/views/app.blade.php"
+			],
+			[
+				"formsbutt",
+				"resources/assets/sass/forms/_forms-buttons.scss"
+			],
+			[
+				"campaigne",
+				"resources/assets/js/components/CampaignEdit.vue"
+			],
+			[
+				"action",
+				"resources/assets/js/vuex/actions.js"
+			],
+			[
 				"nav",
 				"resources/assets/js/components/Nav.vue"
 			],
 			[
-				"home",
-				"resources/assets/js/components/Home.vue"
+				"forms",
+				"resources/assets/sass/forms/_forms-buttons.scss"
 			],
 			[
-				"auth.js",
-				"node_modules/request/lib/auth.js"
+				"oginbt",
+				"resources/assets/js/components/LoginBtn.vue"
+			],
+			[
+				"formbutt",
+				"resources/assets/sass/forms/_forms-buttons.scss"
+			],
+			[
+				"mixins.js",
+				"resources/assets/js/mixins.js"
+			],
+			[
+				"fileup",
+				"resources/assets/js/components/FileUpload.vue"
+			],
+			[
+				"campaignco",
+				"app/Http/Controllers/CampaignController.php"
+			],
+			[
+				"artists",
+				"resources/assets/js/components/ArtistSearch.vue"
+			],
+			[
+				"getuserfrom",
+				"vendor/tymon/jwt-auth/src/Middleware/GetUserFromToken.php"
+			],
+			[
+				"api.p",
+				"routes/api.php"
+			],
+			[
+				"createfreshapitoken",
+				"vendor/laravel/passport/src/Http/Middleware/CreateFreshApiToken.php"
+			],
+			[
+				"configaut",
+				"config/auth.php"
+			],
+			[
+				"authser",
+				"app/Providers/AuthServiceProvider.php"
+			],
+			[
+				"user",
+				"app/User.php"
+			],
+			[
+				"composer",
+				"composer.json"
+			],
+			[
+				"utils.sc",
+				"resources/assets/sass/_utils.scss"
+			],
+			[
+				"forms.",
+				"resources/assets/sass/forms/_forms.scss"
+			],
+			[
+				"app.scs",
+				"resources/assets/sass/app.scss"
+			],
+			[
+				"login.vu",
+				"resources/assets/js/components/Auth/Login.vue"
+			],
+			[
+				"home",
+				"resources/assets/js/components/Home.vue"
 			],
 			[
 				"usercontr",
@@ -1411,14 +1609,6 @@
 				"config/app.php"
 			],
 			[
-				"api",
-				"routes/api.php"
-			],
-			[
-				"web",
-				"routes/web.php"
-			],
-			[
 				"registerc",
 				"app/Http/Controllers/Auth/RegisterController.php"
 			],
@@ -1427,24 +1617,8 @@
 				"config/auth.php"
 			],
 			[
-				"loginb",
-				"resources/assets/js/components/LoginBtn.vue"
-			],
-			[
 				"login",
 				"resources/views/login.blade.php"
-			],
-			[
-				"app.j",
-				"resources/assets/js/app.js"
-			],
-			[
-				"app.js",
-				"resources/assets/js/app.js"
-			],
-			[
-				"campaigned",
-				"resources/assets/js/components/CampaignEdit.vue"
 			],
 			[
 				"loginbtn",
@@ -1461,10 +1635,6 @@
 			[
 				"login.b",
 				"resources/views/login.blade.php"
-			],
-			[
-				"app.blad",
-				"resources/views/app.blade.php"
 			],
 			[
 				"show",
@@ -1495,10 +1665,6 @@
 				"resources/assets/sass/forms/_forms-buttons.scss"
 			],
 			[
-				"type",
-				"resources/assets/sass/_type.scss"
-			],
-			[
 				"varia",
 				"resources/assets/sass/_variables.scss"
 			],
@@ -1523,10 +1689,6 @@
 				"resources/views/app.blade.php"
 			],
 			[
-				"formbutt",
-				"resources/assets/sass/forms/_forms-buttons.scss"
-			],
-			[
 				"file",
 				"resources/assets/js/components/FileUpload.vue"
 			],
@@ -1535,32 +1697,8 @@
 				"resources/assets/sass/_variables.scss"
 			],
 			[
-				"utils.sc",
-				"resources/assets/sass/_utils.scss"
-			],
-			[
-				"loginbt",
-				"resources/assets/js/components/LoginBtn.vue"
-			],
-			[
-				"campaign.vu",
-				"resources/assets/js/components/Campaign.vue"
-			],
-			[
 				"campaign.vue",
 				"resources/assets/js/components/Campaign.vue"
-			],
-			[
-				"campaig",
-				"app/Campaign.php"
-			],
-			[
-				".env",
-				".env"
-			],
-			[
-				"spotifycon",
-				"app/Http/Controllers/SpotifyController.php"
 			],
 			[
 				"spotifuco",
@@ -1579,10 +1717,6 @@
 				"app/Http/Controllers/SpotifyController.php"
 			],
 			[
-				"campaign",
-				"app/Campaign.php"
-			],
-			[
 				"helpe",
 				"app/Libraries/helpers.php"
 			],
@@ -1595,14 +1729,6 @@
 				"resources/assets/js/components/FileUpload.vue"
 			],
 			[
-				"fileupl",
-				"resources/assets/js/components/FileUpload.vue"
-			],
-			[
-				"forms",
-				"resources/assets/sass/forms/_forms.scss"
-			],
-			[
 				"formsfi",
 				"resources/assets/sass/forms/_forms-file.scss"
 			],
@@ -1613,10 +1739,6 @@
 			[
 				"app.b",
 				"resources/views/app.blade.php"
-			],
-			[
-				"configap",
-				"config/app.php"
 			],
 			[
 				"home.v",
@@ -1635,10 +1757,6 @@
 				"resources/assets/js/components/Home.vue"
 			],
 			[
-				"spotifyc",
-				"app/Http/Controllers/SpotifyController.php"
-			],
-			[
 				"session.php",
 				"vendor/jwilsson/spotify-web-api-php/src/Session.php"
 			],
@@ -1649,10 +1767,6 @@
 			[
 				"request.php",
 				"vendor/jwilsson/spotify-web-api-php/src/Request.php"
-			],
-			[
-				"composer",
-				"composer.json"
 			],
 			[
 				"spotyify",
@@ -1675,20 +1789,8 @@
 				"app/Http/Controllers/SpotifyController.php"
 			],
 			[
-				"campaigne",
-				"resources/assets/js/components/CampaignEdit.vue"
-			],
-			[
 				"dashb",
 				"resources/assets/js/components/Dashboard.vue"
-			],
-			[
-				"user",
-				"app/User.php"
-			],
-			[
-				"action",
-				"resources/assets/js/vuex/actions.js"
 			],
 			[
 				"album",
@@ -1703,10 +1805,6 @@
 				"app/Http/Controllers/SpotifyController.php"
 			],
 			[
-				"usercon",
-				"app/Http/Controllers/UserController.php"
-			],
-			[
 				"userc",
 				"app/Http/Controllers/UserController.php"
 			],
@@ -1717,14 +1815,6 @@
 			[
 				"package",
 				"package.json"
-			],
-			[
-				"ajax",
-				"resources/assets/js/components/AjaxForm.vue"
-			],
-			[
-				"authser",
-				"app/Providers/AuthServiceProvider.php"
 			],
 			[
 				"authserv",
@@ -1769,138 +1859,6 @@
 			[
 				"type.scs",
 				"resources/assets/sass/_type.scss"
-			],
-			[
-				"mixins",
-				"resources/assets/sass/_mixins.scss"
-			],
-			[
-				"app.scss",
-				"resources/assets/sass/app.scss"
-			],
-			[
-				"variables.sc",
-				"resources/assets/sass/_variables.scss"
-			],
-			[
-				"errors.vu",
-				"resources/assets/js/components/Errors.vue"
-			],
-			[
-				"mixins.scss",
-				"resources/assets/sass/_mixins.scss"
-			],
-			[
-				"app.blade",
-				"resources/views/app.blade.php"
-			],
-			[
-				"hanlder",
-				"app/Exceptions/Handler.php"
-			],
-			[
-				"handler",
-				"app/Exceptions/Handler.php"
-			],
-			[
-				"bootstrap",
-				"resources/assets/js/bootstrap.js"
-			],
-			[
-				"login.blad",
-				"resources/views/login.blade.php"
-			],
-			[
-				"app.sc",
-				"resources/assets/sass/app.scss"
-			],
-			[
-				"login.bl",
-				"resources/views/login.blade.php"
-			],
-			[
-				"example.vu",
-				"resources/assets/js/components/Example.vue"
-			],
-			[
-				"usercont",
-				"app/Http/Controllers/UserController.php"
-			],
-			[
-				"configser",
-				"config/services.php"
-			],
-			[
-				"featured",
-				"web/static/js/components/FeaturedCreator.vue"
-			],
-			[
-				"preview",
-				"web/templates/video/preview.html.eex"
-			],
-			[
-				"tiles",
-				"web/templates/browse/tiles.html.eex"
-			],
-			[
-				"browseinde",
-				"web/templates/browse/index.html.eex"
-			],
-			[
-				"browseindex",
-				"node_modules/browserify-cipher/index.js"
-			],
-			[
-				"google",
-				"web/static/js/components/GoogleMap.vue"
-			],
-			[
-				"location",
-				"web/static/js/components/account/LocationsForm.vue"
-			],
-			[
-				"webp",
-				"webpack.config.js"
-			],
-			[
-				"feature",
-				"web/static/js/components/FeaturedCreator.vue"
-			],
-			[
-				"player",
-				"web/static/js/components/Player.vue"
-			],
-			[
-				"networkind",
-				"web/templates/network/index.html.eex"
-			],
-			[
-				"googl",
-				"web/static/js/components/GoogleMap.vue"
-			],
-			[
-				"app.scs",
-				"web/static/css/app.scss"
-			],
-			[
-				"account.ht",
-				"web/templates/admin/account/accounts.html.eex"
-			],
-			[
-				"accountind",
-				"web/templates/admin/account/index.html.eex"
-			],
-			[
-				"network",
-				"web/templates/network/index.html.eex"
-			],
-			[
-				"goog",
-				"web/static/js/components/GoogleMap.vue"
-			],
-			[
-				"packa",
-				"package.json"
 			]
 		],
 		"width": 0.0
@@ -1913,7 +1871,7 @@
 		[
 			[
 				"",
-				"~/projects/chickenman-vs-megatron/chickenman-vs-megatron.sublime-workspace"
+				"~/projects/blend/blend.sublime-project"
 			],
 			[
 				"chic",
@@ -1963,7 +1921,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 231.0,
+	"side_bar_width": 200.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

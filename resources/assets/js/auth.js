@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { router } from './app.js';
+import { router } from './app';
 import store from './vuex/store';
 
 export default {
@@ -7,19 +7,31 @@ export default {
         authenticated: false,
         profile: null
     },
+
+    setUser(data, token = null){
+        store.dispatch('setUser', {
+            profile: data.data,
+            token: Vue.cookie.get('session_token')
+        })
+        this.user.authenticated = true
+        console.log('Logged in: ' + store.getters.user.name);
+    },
+
     check() {
-        if (localStorage.getItem('id_token') !== null) {
+        if (Vue.cookie.get('session_token') !== null) {
             Vue.http.get('user').then(response => {
-                store.dispatch('setUser', {
-                    authenticated: true,
-                    profile: response.data.data
-                });
+                if(response.data){
+                    this.setUser(response.data)
+                }else{
+                    return false
+                }
             })
         }
+        return false;
     },
+
     register(context, name, email, password) {
-        Vue.http.post(
-            'register',
+        Vue.http.post('register',
             {
                 name: name,
                 email: email,
@@ -27,12 +39,16 @@ export default {
             }
         ).then(response => {
             context.success = true
+            router.push({
+                name: 'login'
+            })
         }, response => {
             context.response = response.data
             context.error = true
             store.dispatch('setErrors', [response.data.error])
         })
     },
+
     login(context, email, password) {
         Vue.http.post(
             'login',
@@ -42,30 +58,28 @@ export default {
             }
         ).then(response => {
             context.error = false
-            localStorage.setItem('id_token', response.data.meta.token)
-            Vue.http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_token')
+            Vue.cookie.set('session_token', response.data.meta.token, { expires: '1M' })
+            Vue.http.headers.common['Authorization'] = 'Bearer ' + response.data.meta.token
 
-            store.dispatch('setUser', {
-                authenticated: true,
-                profile: response.data.data
-            })
+            this.setUser(response.data)
 
+            let redirectTo = store.state.route.query.redirect || '/dashboard'
             router.push({
-                name: 'campaigns'
+                path: redirectTo
             })
         }, response => {
             context.error = true
             store.dispatch('setErrors', [response.data.error])
         })
     },
+
     logout() {
-        localStorage.removeItem('id_token')
-        this.user.authenticated = false
-        this.user.profile = null
-        store.dispatch('clearUser', this.user);
+
+        Vue.cookie.delete('session_token')
+        store.dispatch('clearUser');
 
         router.push({
-            name: '/'
+            path: '/'
         })
     }
 }

@@ -24,7 +24,7 @@
 
         methods: {
             fetchAlbums() {
-                let token = this.$store.getters.user.access_token;
+                let token = this.$store.getters.spotifyToken;
                 this.$http.get('get-albums?token=' + token)
                     .then(this.onSuccess, this.onError)
             },

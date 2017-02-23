@@ -19,7 +19,11 @@
             </div>
             <div class="form-row">
                 <label>Release title</label>
-                <input type="text" v-model="campaign.album_title" placeholder="Album title" />
+                <input type="text" v-model="campaign.release_title" placeholder="Album title" />
+            </div>
+            <div class="form-row">
+                <label>Release spotify ID</label>
+                <input type="text" v-model="campaign.release_spotify_id" placeholder="Spotify album id" />
             </div>
             <div class="form-row">
                 <div class="group row">
@@ -31,26 +35,30 @@
             </div>
             <div class="form-row">
                 <label>Release artwork</label>
-                <file-upload 
-                    @uploadComplete="onFileUploadComplete"
-                    @uploadSuccess="onReleaseArtworkUploadSuccess"
-                    @uploadError="onFileUploadError"
-                    label="Choose image"
-                    name="release_artwork" 
-                    action="/api/upload"
-                    :multiple="true"
-                    :auto="true"
-                    accept='image/*'
-                    >
-                    </file-upload>
+
+                <div v-if="campaign.release_artwork" class="thumbnail col4">
+                    <img :src="`uploads/${campaign.release_artwork}`" alt="" />
+                </div>
+                
+                <div class="col8">
+                    <file-upload 
+                        @uploadComplete="onFileUploadComplete"
+                        @uploadSuccess="onReleaseArtworkUploadSuccess"
+                        @uploadError="onFileUploadError"
+                        label="Choose image"
+                        name="release_artwork" 
+                        action="/api/upload"
+                        :multiple="true"
+                        :auto="true"
+                        accept='image/*'
+                        >
+                        </file-upload>
+                </div>
+
             </div>
             <div class="form-row">
                 <label>Description</label>
                 <textarea v-model="campaign.description"></textarea>
-            </div>
-            <div class="form-row">
-                <label>Release spotify ID</label>
-                <input type="text" v-model="campaign.album_spotify_id" placeholder="Spotify album id" />
             </div>
             <div class="form-row">
                 <label>Release date</label>
@@ -64,18 +72,25 @@
             
             <div class="form-row">
                 <label>Background image</label>
-                <file-upload 
-                    @uploadComplete="onFileUploadComplete"
-                    @uploadSuccess="onBackgroundImageUploadSuccess"
-                    @uploadError="onFileUploadError"
-                    label="Choose background image"
-                    name="background_image" 
-                    action="/api/upload"
-                    :multiple="true"
-                    :auto="true"
-                    accept='image/*'
-                    >
-                    </file-upload>
+
+                <div v-if="campaign.background_image" class="thumbnail col4">
+                    <img :src="`uploads/${campaign.background_image}`" alt="" />
+                </div>
+                
+                <div class="col8">
+                    <file-upload 
+                        @uploadComplete="onFileUploadComplete"
+                        @uploadSuccess="onBackgroundImageUploadSuccess"
+                        @uploadError="onFileUploadError"
+                        label="Choose background image"
+                        name="background_image" 
+                        action="/api/upload"
+                        :multiple="true"
+                        :auto="true"
+                        accept='image/*'
+                        >
+                        </file-upload>
+                </div>
             </div>
             
             <input type="submit" name="submit" :value="submitButtonText" />
@@ -124,8 +139,8 @@
                 return this.success ? 'Saved': 'Save'
             },
             urlSlug(){
-                if(this.campaign.album_title){
-                    return this.campaign.album_title
+                if(this.campaign.release_title){
+                    return this.campaign.release_title
                         .toLowerCase()
                         .replace(/[^\w ]+/g,'')
                         .replace(/ +/g,'-');
@@ -160,16 +175,16 @@
                 this.campaign.artist = artist
             },
             setDate(e){
-                console.log(e); 
+                //console.log(e); 
                 this.campaign.release_date = e
             },
             onSubmit(){
-                console.log(this.campaign);
-                this.$http.post('/campaigns', this.campaign)
+                //console.log(this.campaign);
+                this.$http.post('campaigns', this.campaign)
                     .then(this.onSuccess, this.onError);
             },
             onSuccess(response) {
-                console.log(response.data)
+                //console.log(response.data)
                 this.loading = false
                 this.success = true
                 let vm = this
@@ -182,15 +197,13 @@
                 this.loading = false
             },
             onReleaseArtworkUploadSuccess(files){
-                console.log(files)
-                this.campaign.background_image = files[0].name
+                this.campaign.release_artwork = files[0].name
             },
             onBackgroundImageUploadSuccess(files){
-                console.log(files)
                 this.campaign.background_image = files[0].name
             },
             onFileUploadError(error){
-                console.error(error);
+                this.showErrors(error)
             },
             onFileUploadComplete(){
                 //
@@ -198,3 +211,15 @@
         }
     }
 </script>
+
+<style lang="scss">
+    
+    @import "../../sass/variables.scss";
+
+    #campaign-edit{
+        .thumbnail{
+
+        }
+    }
+
+</style>

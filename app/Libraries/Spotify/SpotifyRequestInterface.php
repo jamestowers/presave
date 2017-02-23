@@ -65,10 +65,10 @@ class SpotifyRequestInterface implements APIRequestInterface
     public function handle401Error(Response $response)
     {
         // TODO: handle 401 errors that aren't token related 
-        printf($this->getErrorMessage($response) . "\n");
+        \Log::info($this->getErrorMessage($response) . "\n");
         
         \Illuminate\Support\Facades\Artisan::call('spotify:refreshToken');
-        return false;
+        return true;
     }
 
     /**

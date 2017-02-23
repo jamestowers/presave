@@ -1,12 +1,29 @@
 <template>
-    <div v-if="campaign" id="campaign"> 
+    <div v-if="campaign" id="campaign" class="text-center pad"> 
 
-        <div class="background" :style="{ backgroundImage: 'url(/uploads/' + campaign.bg_image + ')' }"></div>
+        <div class="background" :style="{ backgroundImage: 'url(/uploads/' + campaign.background_image + ')' }"></div>
         <div class="inner">
-            <h1>{{ campaign.album_title }}</h1>
-            <div class="campaign-description">{{ campaign.description }}</div>
-            <album-selector v-if="isLoggedIn"></album-selector>
-            <login-btn v-else></login-btn>
+            <h1 class="huge">{{ campaign.artist.name }}</h1>
+            
+            <section v-if="!isLoggedIn">
+                
+                <h1>{{ campaign.release_title }}</h1>
+                <!-- <div v-if="campaign.release_artwork" class="thumbnail col4">
+                    <img :src="`uploads/${campaign.release_artwork}`" alt="" />
+                </div> -->
+
+                <div class="campaign-description">{{ campaign.description }}</div>
+
+            </section>
+
+            <login-btn v-if="!isLoggedIn" :redirect="campaign.slug"></login-btn>
+
+            <div v-else>
+                <h1>"{{ campaign.release_title }}" will be saved to your albums when it's released</h1>
+
+                <h2>Alternatively, save it to this playlist:</h2>
+                <playlist-selector v-if="isLoggedIn"></playlist-selector>
+            </div>
         </div>
     </div>
 </template>
@@ -14,7 +31,7 @@
 <script>
 
     import LoginBtn from './LoginBtn.vue';
-    import AlbumSelector from './AlbumSelector.vue';
+    import PlaylistSelector from './PlaylistSelector.vue';
 
     export default {
 
@@ -27,19 +44,18 @@
         },
 
         created(){
-            console.log(this.campaign);
-            //this.fetchCampaign()
+            //
         },
 
         computed: {
             isLoggedIn(){
-                return this.$store.getters.authed
+                return this.$store.getters.spotifyToken !== null
             }
         },
 
         components: {
             LoginBtn,
-            AlbumSelector
+            PlaylistSelector
         },
 
         methods:{
@@ -83,5 +99,8 @@
             right:0;
             z-index: -1;
         }
+    }
+    .campaign-description{
+        margin-bottom: $padding;
     }
 </style>

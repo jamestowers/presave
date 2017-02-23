@@ -5,14 +5,14 @@
 //Route::get('/', 'CampaignController');
 
 Route::group(['domain' => '{slug}.presaver.dev'], function () {
-    Route::get('/', 'CampaignController@showBySlug');
+    Route::get('/', 'CampaignController@showBySlug')->name('campaign');
 });
 
-Route::get('/callback', 'SpotifyController@setUser');
+Route::get('/callback', 'SpotifyController@callback');
 
 Route::get('/user', 'UserController@getUser');
 
-Route::group(['middleware' => 'auth'], function()
+Route::group(['middleware' => 'jwt.auth'], function()
 {
     Route::resource('/campaigns', 'CampaignController');
 });

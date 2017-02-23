@@ -26,13 +26,13 @@ class UserController extends Controller
         ]);
     }
 
-    public function getUser()
+    /*public function getUser()
     {
         if(Auth::check()){
             return [ 'user' => Auth::user() ];
         } else {
             return [ 'user' => false ];
         }
-    }
+    }*/
 
 }
