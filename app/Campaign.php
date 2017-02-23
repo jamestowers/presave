@@ -31,4 +31,9 @@ class Campaign extends Model
     {
         return $this->belongsTo('App\Artist');
     }
+
+    public function fan()
+    {
+        return $this->belongsToMany('App\Fan');
+    }
 }

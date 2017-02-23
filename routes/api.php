@@ -20,6 +20,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
 //Route::get('/spotify-login', 'SpotifyController@login');
 Route::get('/auth-url', 'SpotifyController@login');
+Route::get('/spotify-user', 'SpotifyController@me');
 Route::get('/get-albums', 'SpotifyController@getUserAlbums');
 Route::get('/get-playlists', 'SpotifyController@getUserPlaylists');
-Route::get('/save-to-playlist', 'SpotifyController@saveAlbum');
+Route::post('/follow', 'FanController@followCampaign');

@@ -1,26 +1,18 @@
 <template>
     <div class="playlist-selector pad">
-        <ajax-form
-            action="save-to-playlist">
             
-            <dropdown 
-                @clicked="onPlaylistSelect"
-                :options="playlists" 
-                name="playlistId" 
-                option-key="id" 
-                option-value="name"
-                ></dropdown>
-
-            <input type="checkbox" name="mailing-list" id="mailing-list" checked="checked" value="1" />
-            <label for="mailing-list">Sign up to the official mailing list</label>
-
-        </ajax-form>
+        <dropdown 
+            @clicked="onPlaylistSelect"
+            :options="playlists" 
+            name="playlistId" 
+            option-key="id" 
+            option-value="name"
+            ></dropdown>
     </div>
 </template>
 
 <script>
     
-    import AjaxForm from './AjaxForm.vue';
     import Dropdown from './Dropdown.vue';
     import {showErrors} from '../mixins';
 
@@ -35,7 +27,6 @@
         },
 
         components:{
-            AjaxForm,
             Dropdown
         },
 

@@ -22,7 +22,17 @@
                 <h1>"{{ campaign.release_title }}" will be saved to your albums when it's released</h1>
 
                 <h2>Alternatively, save it to this playlist:</h2>
-                <playlist-selector v-if="isLoggedIn"></playlist-selector>
+
+                <ajax-form action="follow">
+                    
+                    <playlist-selector v-if="isLoggedIn"></playlist-selector>
+                    
+                    <input type="checkbox" name="mailing-list" id="mailing-list" checked="checked" value="1" />
+                    <label for="mailing-list">Sign up to the official mailing list</label>
+
+                    <input type="hidden" name="campaignId" :value="campaign.id" />
+
+                </ajax-form>
             </div>
         </div>
     </div>
@@ -31,21 +41,12 @@
 <script>
 
     import LoginBtn from './LoginBtn.vue';
+    import AjaxForm from './AjaxForm.vue';
     import PlaylistSelector from './PlaylistSelector.vue';
 
     export default {
 
         props: ['campaign'],
-
-        data(){
-            return {
-                //
-            }
-        },
-
-        created(){
-            //
-        },
 
         computed: {
             isLoggedIn(){
@@ -55,6 +56,7 @@
 
         components: {
             LoginBtn,
+            AjaxForm,
             PlaylistSelector
         },
 

@@ -61,6 +61,7 @@
                 let vm = this
                 let requestType = this.getRequestType()
                 let data = formToObject(this.$refs.form)
+                console.log(data);
                 this.$http[requestType](this.action, data)
                     .then(this.onSuccess, this.onError);
             },

@@ -56,17 +56,18 @@ class SpotifyController extends Controller
     public function storeFan($tokens) {
 
         $spotify = new SpotifyWebAPI($tokens->access_token);
-        $spotifyUser = $spotify->me();
+        $user = $spotify->me();
 
-        $user = \App\Fan::firstOrNew(['email' => $spotifyUser->email]);
-        $user->name = $spotifyUser->display_name;
-        $user->email = $spotifyUser->email;
-        $user->access_token = $tokens->access_token;
-        $user->refresh_token = $tokens->refresh_token;
-        $user->expires_at = \Carbon\Carbon::now()->addSeconds($tokens->expires_in);
-        $user->save();
+        $fan = \App\Fan::firstOrNew(['email' => $user->email]);
+        $fan->name = $user->display_name;
+        $fan->spotify_user_id = $user->id;
+        $fan->email = $user->email;
+        $fan->access_token = $tokens->access_token;
+        $fan->refresh_token = $tokens->refresh_token;
+        $fan->expires_at = \Carbon\Carbon::now()->addSeconds($tokens->expires_in);
+        $fan->save();
 
-        return $user;
+        return $fan;
     }
 
     public function getUserAlbums(Request $request) 

@@ -10592,8 +10592,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LoginBtn_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LoginBtn_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__LoginBtn_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PlaylistSelector_vue__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PlaylistSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__PlaylistSelector_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PlaylistSelector_vue__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PlaylistSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__PlaylistSelector_vue__);
 //
 //
 //
@@ -10624,6 +10626,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -10633,16 +10646,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     props: ['campaign'],
 
-    data: function data() {
-        return {
-            //
-        };
-    },
-    created: function created() {
-        //
-    },
-
-
     computed: {
         isLoggedIn: function isLoggedIn() {
             return this.$store.getters.spotifyToken !== null;
@@ -10651,7 +10654,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     components: {
         LoginBtn: __WEBPACK_IMPORTED_MODULE_0__LoginBtn_vue___default.a,
-        PlaylistSelector: __WEBPACK_IMPORTED_MODULE_1__PlaylistSelector_vue___default.a
+        AjaxForm: __WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue___default.a,
+        PlaylistSelector: __WEBPACK_IMPORTED_MODULE_2__PlaylistSelector_vue___default.a
     },
 
     methods: {
@@ -30016,7 +30020,31 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "redirect": _vm.campaign.slug
     }
-  }) : _c('div', [_c('h1', [_vm._v("\"" + _vm._s(_vm.campaign.release_title) + "\" will be saved to your albums when it's released")]), _vm._v(" "), _c('h2', [_vm._v("Alternatively, save it to this playlist:")]), _vm._v(" "), (_vm.isLoggedIn) ? _c('playlist-selector') : _vm._e()], 1)], 1)]) : _vm._e()
+  }) : _c('div', [_c('h1', [_vm._v("\"" + _vm._s(_vm.campaign.release_title) + "\" will be saved to your albums when it's released")]), _vm._v(" "), _c('h2', [_vm._v("Alternatively, save it to this playlist:")]), _vm._v(" "), _c('ajax-form', {
+    attrs: {
+      "action": "follow"
+    }
+  }, [(_vm.isLoggedIn) ? _c('playlist-selector') : _vm._e(), _vm._v(" "), _c('input', {
+    attrs: {
+      "type": "checkbox",
+      "name": "mailing-list",
+      "id": "mailing-list",
+      "checked": "checked",
+      "value": "1"
+    }
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "mailing-list"
+    }
+  }, [_vm._v("Sign up to the official mailing list")]), _vm._v(" "), _c('input', {
+    attrs: {
+      "type": "hidden",
+      "name": "campaignId"
+    },
+    domProps: {
+      "value": _vm.campaign.id
+    }
+  })], 1)], 1)], 1)]) : _vm._e()
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -34269,11 +34297,9 @@ module.exports = __webpack_require__(13);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AjaxForm_vue__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AjaxForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__AjaxForm_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Dropdown_vue__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Dropdown_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Dropdown_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Dropdown_vue__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Dropdown_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Dropdown_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins__ = __webpack_require__(6);
 //
 //
 //
@@ -34287,14 +34313,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -34302,7 +34320,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = {
 
-    mixins: [__WEBPACK_IMPORTED_MODULE_2__mixins__["a" /* showErrors */]],
+    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins__["a" /* showErrors */]],
 
     data: function data() {
         return {
@@ -34312,8 +34330,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     components: {
-        AjaxForm: __WEBPACK_IMPORTED_MODULE_0__AjaxForm_vue___default.a,
-        Dropdown: __WEBPACK_IMPORTED_MODULE_1__Dropdown_vue___default.a
+        Dropdown: __WEBPACK_IMPORTED_MODULE_0__Dropdown_vue___default.a
     },
 
     created: function created() {
@@ -34381,10 +34398,6 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "playlist-selector pad"
-  }, [_c('ajax-form', {
-    attrs: {
-      "action": "save-to-playlist"
-    }
   }, [_c('dropdown', {
     attrs: {
       "options": _vm.playlists,
@@ -34395,19 +34408,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "clicked": _vm.onPlaylistSelect
     }
-  }), _vm._v(" "), _c('input', {
-    attrs: {
-      "type": "checkbox",
-      "name": "mailing-list",
-      "id": "mailing-list",
-      "checked": "checked",
-      "value": "1"
-    }
-  }), _vm._v(" "), _c('label', {
-    attrs: {
-      "for": "mailing-list"
-    }
-  }, [_vm._v("Sign up to the official mailing list")])], 1)], 1)
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -34807,6 +34808,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var vm = this;
             var requestType = this.getRequestType();
             var data = __WEBPACK_IMPORTED_MODULE_0_form_to_object___default()(this.$refs.form);
+            console.log(data);
             this.$http[requestType](this.action, data).then(this.onSuccess, this.onError);
         },
         onSuccess: function onSuccess(response) {
