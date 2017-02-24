@@ -31,7 +31,7 @@ class SpotifyController extends Controller
         
         $fan = $this->storeFan($tokens);
 
-        if(!$request->cookie('spotify_token')){
+        //if(!$request->cookie('spotify_token')){
             $cookie = cookie(
                 'spotify_token', 
                 $tokens->access_token, 
@@ -41,7 +41,7 @@ class SpotifyController extends Controller
                 false, // secure,
                 false // httpOnly
             );
-        }
+        //}
    
         // Cant use $request->cookie() as Laravel encrypts cookies so 
         // we wont be able to access from JS
