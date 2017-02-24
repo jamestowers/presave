@@ -63,6 +63,10 @@
             }
         },
 
+        created(){
+            console.log('[Campaign]');
+        },
+
         computed: {
             isLoggedIn(){
                 return this.$store.getters.spotifyToken !== null

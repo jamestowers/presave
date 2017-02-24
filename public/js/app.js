@@ -10760,6 +10760,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             saved: false
         };
     },
+    created: function created() {
+        console.log('[Campaign]');
+    },
 
 
     computed: {
