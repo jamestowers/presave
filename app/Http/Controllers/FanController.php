@@ -24,7 +24,7 @@ class FanController extends Controller
             $fan->artists()->attach($campaign->artist->id, ['mailing_list_opt_in' => $request->has('mailing_list')]);
         }
 
-        return response()->json(['fan' => $fan]);
+        return response()->json(['fan' => $fan, 'campaign' => $campaign]);
     }
 
     private function getTokenFromHeader(Request $request)

@@ -31,7 +31,6 @@ Vue.use(VueRouter);
 localStorage.removeItem('user')*/
 
 const is_production_env = process.env.NODE_ENV == 'production';
-console.log('production?: ' + is_production_env);
 Vue.config.devtools = !is_production_env;
 Vue.config.debug = is_production_env;
 Vue.config.silent = is_production_env;

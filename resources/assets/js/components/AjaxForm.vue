@@ -53,7 +53,7 @@
 
         methods: {
             beforeSubmit() {
-                console.log('[AjaxFrom] Submitting...')
+                //console.log('[AjaxFrom] Submitting...')
                 this.loading = true
             },
             onSubmit() {
@@ -61,14 +61,15 @@
                 let vm = this
                 let requestType = this.getRequestType()
                 let data = formToObject(this.$refs.form)
-                console.log(data);
                 this.$http[requestType](this.action, data)
                     .then(this.onSuccess, this.onError);
             },
             onSuccess(response) {
-                console.log('[AjaxFrom] Success')
+                //console.log('[AjaxFrom] Success')
                 this.loading = false
                 this.success = true
+                this.$emit('ajaxFormSuccess', response.data)
+                this.onComplete()
                 let vm = this
                 setTimeout(function(){
                     vm.success = false
@@ -76,7 +77,12 @@
             },
             onError(errors) {
                 this.showErrors(errors)
+                this.$emit('ajaxFormError', errors)
+                this.onComplete()
                 this.loading = false
+            },
+            onComplete(){
+                this.$emit('ajaxFormComplete')
             },
             getRequestType() {
                 return this.method.toLowerCase()

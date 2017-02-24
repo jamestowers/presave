@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"spotif",
+				"spotifyUser"
+			],
+			[
 				"dra",
 				"draggingOver"
 			],
@@ -510,20 +514,43 @@
 			[
 				"echon",
 				"echonest_data"
-			],
-			[
-				"tracks",
-				"tracks_array"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/Http/Controllers/SpotifyController.php",
+			"file": "resources/assets/js/components/AjaxForm.vue",
 			"settings":
 			{
-				"buffer_size": 3324,
+				"buffer_size": 2550,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/FanController.php",
+			"settings":
+			{
+				"buffer_size": 1001,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/assets/js/components/PlaylistSelector.vue",
+			"settings":
+			{
+				"buffer_size": 1260,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Fan.php",
+			"settings":
+			{
+				"buffer_size": 433,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -533,33 +560,24 @@
 			"settings":
 			{
 				"buffer_size": 3892,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/assets/js/components/PlaylistSelector.vue",
-			"settings":
-			{
-				"buffer_size": 1621,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Libraries/Spotify/SpotifyWebAPI.php",
+			"file": "resources/assets/js/components/Campaign.vue",
 			"settings":
 			{
-				"buffer_size": 3494,
+				"buffer_size": 3627,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "database/migrations/2017_02_23_165520_create_artist_fan_table.php",
+			"file": "app/Http/Controllers/CampaignController.php",
 			"settings":
 			{
-				"buffer_size": 829,
-				"encoding": "UTF-8",
+				"buffer_size": 4107,
 				"line_ending": "Unix"
 			}
 		}
@@ -653,38 +671,48 @@
 		"/Users/james/projects/presaver/app",
 		"/Users/james/projects/presaver/app/Console",
 		"/Users/james/projects/presaver/app/Http",
-		"/Users/james/projects/presaver/app/Http/Controllers",
-		"/Users/james/projects/presaver/app/Http/Requests",
-		"/Users/james/projects/presaver/app/Libraries",
 		"/Users/james/projects/presaver/app/Libraries/Spotify",
+		"/Users/james/projects/presaver/database",
+		"/Users/james/projects/presaver/database/migrations",
 		"/Users/james/projects/presaver/resources",
 		"/Users/james/projects/presaver/resources/assets",
 		"/Users/james/projects/presaver/resources/assets/js",
 		"/Users/james/projects/presaver/resources/assets/js/components",
 		"/Users/james/projects/presaver/resources/assets/js/vuex",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/modules",
-		"/Users/james/projects/presaver/resources/assets/sass"
+		"/Users/james/projects/presaver/resources/assets/sass",
+		"/Users/james/projects/presaver/vendor/tymon",
+		"/Users/james/projects/presaver/vendor/tymon/jwt-auth",
+		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src",
+		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/Middleware"
 	],
 	"file_history":
 	[
-		"/Users/james/projects/presaver/resources/assets/js/components/Campaign.vue",
+		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyController.php",
+		"/Users/james/projects/presaver/app/Http/Controllers/CampaignController.php",
+		"/Users/james/projects/presaver/app/Campaign.php",
+		"/Users/james/projects/presaver/routes/api.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/AjaxForm.vue",
+		"/Users/james/projects/presaver/app/Http/Controllers/FanController.php",
+		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyWebAPI.php",
+		"/Users/james/projects/presaver/database/migrations/2017_02_23_213440_create_campaign_fan_table.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/PlaylistSelector.vue",
+		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/JWTAuth.php",
+		"/Users/james/projects/presaver/app/Fan.php",
+		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/Middleware/BaseMiddleware.php",
+		"/Users/james/projects/presaver/resources/assets/js/auth.js",
+		"/Users/james/projects/presaver/database/migrations/2017_02_14_134110_create_campaigns_table.php",
 		"/Users/james/projects/presaver/database/migrations/2017_02_22_164933_create_fans_table.php",
+		"/Users/james/projects/presaver/database/migrations/2017_02_23_165520_create_artist_fan_table.php",
+		"/Users/james/projects/presaver/resources/assets/js/components/Campaign.vue",
 		"/Users/james/projects/presaver/database/migrations/2017_02_22_202114_create_tokens_table.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/Dropdown.vue",
 		"/Users/james/projects/presaver/app/Libraries/APIRequest.php",
 		"/Users/james/projects/presaver/resources/assets/js/app.js",
-		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyWebAPI.php",
-		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyController.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/PlaylistSelector.vue",
-		"/Users/james/projects/presaver/routes/api.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/AjaxForm.vue",
 		"/Users/james/projects/presaver/app/Http/Controllers/Auth/LoginController.php",
-		"/Users/james/projects/presaver/resources/assets/js/auth.js",
 		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyRequestInterface.php",
 		"/Users/james/projects/presaver/app/Http/Middleware/EncryptCookies.php",
 		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/Middleware/GetUserFromToken.php",
-		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/Middleware/BaseMiddleware.php",
-		"/Users/james/projects/presaver/vendor/tymon/jwt-auth/src/JWTAuth.php",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/actions.js",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/modules/user.js",
 		"/Users/james/projects/presaver/resources/assets/js/components/Nav.vue",
@@ -706,10 +734,8 @@
 		"/Users/james/projects/presaver/config/session.php",
 		"/Users/james/projects/presaver/.env",
 		"/Users/james/projects/presaver/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/Users/james/projects/presaver/app/Http/Controllers/CampaignController.php",
 		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms-buttons.scss",
 		"/Users/james/projects/presaver/resources/views/app.blade.php",
-		"/Users/james/projects/presaver/app/Campaign.php",
 		"/Users/james/projects/presaver/resources/assets/sass/_type.scss",
 		"/Users/james/projects/presaver/resources/assets/js/mixins.js",
 		"/Users/james/projects/presaver/resources/assets/js/components/ArtistSearch.vue",
@@ -736,7 +762,6 @@
 		"/Users/james/projects/presaver/resources/views/campaigns/createOrUpdate.blade.php",
 		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyAdminController.php",
 		"/Users/james/projects/presaver/resources/assets/sass/_variables.scss",
-		"/Users/james/projects/presaver/database/migrations/2017_02_14_134110_create_campaigns_table.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/Dashboard/Nav.vue",
 		"/Users/james/projects/presaver/webpack.mix.js",
 		"/Users/james/projects/presaver/app/Providers/SpotifyUserServiceProvider.php",
@@ -790,11 +815,7 @@
 		"/Users/james/projects/blend/web/templates/browse/index.html.eex",
 		"/Users/james/projects/blend/web/templates/browse/tiles.html.eex",
 		"/Users/james/projects/blend/web/templates/video/preview.html.eex",
-		"/Users/james/projects/blend/node_modules/browserify-cipher/index.js",
-		"/Users/james/projects/blend/webpack.config.js",
-		"/Users/james/projects/blend/config/dev.exs",
-		"/Users/james/projects/blend/web/static/js/components/Player.vue",
-		"/Users/james/projects/blend/web/templates/network/index.html.eex"
+		"/Users/james/projects/blend/node_modules/browserify-cipher/index.js"
 	],
 	"find":
 	{
@@ -853,6 +874,15 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"640",
+			"$spotifyUser",
+			"$user",
+			"campaign",
+			"artist",
+			"parseToken",
+			"spotify_token",
+			"token",
+			"user",
 			"fan",
 			"parent",
 			"campaign-description",
@@ -971,16 +1001,7 @@
 			"\"",
 			"getAccessToken",
 			"Client",
-			"get",
-			"$this->spotify",
-			"'spotifyAdmin",
-			"SpotifyAdmin",
-			"account",
-			"-selector",
-			"errors",
-			"ERRORS",
-			"errors",
-			"Error"
+			"get"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1126,35 +1147,34 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/Controllers/SpotifyController.php",
+					"file": "resources/assets/js/components/AjaxForm.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3324,
+						"buffer_size": 2550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1250,
-								1250
+								1764,
+								1764
 							]
 						],
 						"settings":
 						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 497.0,
+						"translation.y": 965.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1162,32 +1182,32 @@
 				},
 				{
 					"buffer": 1,
-					"file": "resources/assets/js/app.js",
+					"file": "app/Http/Controllers/FanController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3892,
+						"buffer_size": 1001,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								100,
+								100
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2246.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1196,15 +1216,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1621,
+						"buffer_size": 1260,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								835,
-								835
+								296,
+								296
 							]
 						],
 						"settings":
@@ -1219,58 +1239,116 @@
 					},
 					"stack_index": 4,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 3,
-					"file": "app/Libraries/Spotify/SpotifyWebAPI.php",
+					"file": "app/Fan.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3494,
+						"buffer_size": 433,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								505,
-								505
+								367,
+								367
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/assets/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3228,
+								3228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1244.0,
+						"translation.y": 2200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "resources/assets/js/components/Campaign.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								779,
+								779
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 321.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "database/migrations/2017_02_23_165520_create_artist_fan_table.php",
+					"buffer": 6,
+					"file": "app/Http/Controllers/CampaignController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 829,
+						"buffer_size": 4107,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								650,
-								650
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1283,7 +1361,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1317,7 +1395,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.541436476935,
 			1.0
 		],
 		"rows":
@@ -1349,16 +1427,56 @@
 		"selected_items":
 		[
 			[
-				"app.js",
-				"resources/assets/js/app.js"
+				"campaigncontr",
+				"app/Http/Controllers/CampaignController.php"
+			],
+			[
+				"fancontr",
+				"app/Http/Controllers/FanController.php"
+			],
+			[
+				"ajax",
+				"resources/assets/js/components/AjaxForm.vue"
 			],
 			[
 				"campaign",
+				"app/Campaign.php"
+			],
+			[
+				"fan",
+				"app/Fan.php"
+			],
+			[
+				"campaign.v",
 				"resources/assets/js/components/Campaign.vue"
 			],
 			[
 				"playlistse",
 				"resources/assets/js/components/PlaylistSelector.vue"
+			],
+			[
+				"middlewa",
+				"vendor/tymon/jwt-auth/src/Middleware/BaseMiddleware.php"
+			],
+			[
+				"spotifywe",
+				"app/Libraries/Spotify/SpotifyWebAPI.php"
+			],
+			[
+				"api",
+				"routes/api.php"
+			],
+			[
+				"auth",
+				"resources/assets/js/auth.js"
+			],
+			[
+				"fan.p",
+				"app/Fan.php"
+			],
+			[
+				"app.js",
+				"resources/assets/js/app.js"
 			],
 			[
 				"spotifycontr",
@@ -1369,14 +1487,6 @@
 				"resources/assets/js/components/Dropdown.vue"
 			],
 			[
-				"api",
-				"routes/api.php"
-			],
-			[
-				"ajax",
-				"resources/assets/js/components/AjaxForm.vue"
-			],
-			[
 				"encryptcoo",
 				"app/Http/Middleware/EncryptCookies.php"
 			],
@@ -1385,20 +1495,12 @@
 				"app/Http/Controllers/SpotifyController.php"
 			],
 			[
-				"spotifywe",
-				"app/Libraries/Spotify/SpotifyWebAPI.php"
-			],
-			[
 				"app.j",
 				"resources/assets/js/app.js"
 			],
 			[
 				"getu",
 				"vendor/tymon/jwt-auth/src/Middleware/GetUserFromToken.php"
-			],
-			[
-				"auth",
-				"resources/assets/js/auth.js"
 			],
 			[
 				"loginc",
@@ -1835,30 +1937,6 @@
 			[
 				"varibales",
 				"node_modules/less/test/css/variables.css"
-			],
-			[
-				"adda",
-				"app/Jobs/AddAlbumToUserAccount.php"
-			],
-			[
-				"pack",
-				"package.json"
-			],
-			[
-				"albumse",
-				"resources/assets/js/components/AlbumSelector.vue"
-			],
-			[
-				"service",
-				"config/services.php"
-			],
-			[
-				"configserv",
-				"config/services.php"
-			],
-			[
-				"type.scs",
-				"resources/assets/sass/_type.scss"
 			]
 		],
 		"width": 0.0
@@ -1920,8 +1998,8 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 200.0,
+	"side_bar_visible": false,
+	"side_bar_width": 349.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
