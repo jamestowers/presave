@@ -27,7 +27,7 @@
         },
 
         created(){
-            this.$cookie.set('campaign_slug', this.redirect, { expires: '10m', domain: 'presaver.dev' })
+            this.$cookie.set('campaign_slug', this.redirect, { expires: '10m', domain: this.$root.domain })
             this.getAuthUrl()
         },
 

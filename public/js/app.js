@@ -10254,7 +10254,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
     data: function data() {
         return {
-            //
+            domain: window.Laravel.domain
         };
     },
     created: function created() {
@@ -11503,7 +11503,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     created: function created() {
-        this.$cookie.set('campaign_slug', this.redirect, { expires: '10m', domain: 'presaver.dev' });
+        this.$cookie.set('campaign_slug', this.redirect, { expires: '10m', domain: this.$root.domain });
         this.getAuthUrl();
     },
 

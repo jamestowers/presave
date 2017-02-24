@@ -116,7 +116,7 @@ const app = new Vue({
 
     data(){
         return{
-            //
+            domain: window.Laravel.domain
         }
     },
     created(){

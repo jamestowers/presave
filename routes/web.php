@@ -4,7 +4,7 @@
 
 //Route::get('/', 'CampaignController');
 
-Route::group(['domain' => '{slug}.presave.tracks2.com'], function () {
+Route::group(['domain' => '{slug}' . config('session.domain')], function () {
     Route::get('/', 'CampaignController@showBySlug')->name('campaign');
 });
 
