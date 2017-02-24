@@ -44,7 +44,7 @@ Vue.http.headers.common = {
 };
 
 
-let reg = new RegExp('www|presaver')
+let reg = new RegExp('www|presaver|presave|46.101.24.242')
 let parts = window.location.host.split('.')
 let homeComponent = reg.test(parts[0]) ? Dashboard : Campaign
 
