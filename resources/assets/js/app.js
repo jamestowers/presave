@@ -34,7 +34,7 @@ const is_production_env = process.env.NODE_ENV == 'production';
 Vue.config.devtools = !is_production_env;
 Vue.config.debug = is_production_env;
 Vue.config.silent = is_production_env;
-Vue.http.options.root = is_production_env ? 'http://presaver.com/api' : '/api';
+Vue.http.options.root = is_production_env ? 'https://presave.tracks2.com/api' : '/api';
 Vue.http.options.credentials = true;
 Vue.http.headers.common = {
     'X-CSRF-TOKEN': window.Laravel.csrfToken,
@@ -44,7 +44,7 @@ Vue.http.headers.common = {
 };
 
 
-let reg = new RegExp('www|presaver|presave|46.101.24.242')
+let reg = new RegExp('www|presaver|presave')
 let parts = window.location.host.split('.')
 let homeComponent = reg.test(parts[0]) ? Dashboard : Campaign
 

@@ -30,7 +30,7 @@
                     <div class="col4">
                         <input type="text" v-model="campaign.slug" placeholder="URL prefix" />
                     </div>
-                    <div class="col8">.presaver.com</div>
+                    <div class="col8">.presave.tracks2.com</div>
                 </div>
             </div>
             <div class="form-row">

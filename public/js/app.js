@@ -10181,7 +10181,7 @@ var is_production_env = process.env.NODE_ENV == 'production';
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.devtools = !is_production_env;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.debug = is_production_env;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.silent = is_production_env;
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.http.options.root = is_production_env ? 'http://presaver.com/api' : '/api';
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.http.options.root = is_production_env ? 'https://presave.tracks2.com/api' : '/api';
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.http.options.credentials = true;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.http.headers.common = {
     'X-CSRF-TOKEN': window.Laravel.csrfToken,
@@ -10190,7 +10190,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.http.headers.common = {
     //'Authorization': 'Bearer ' + Vue.cookie.get('session_token')
 };
 
-var reg = new RegExp('www|presaver|presave|46.101.24.242');
+var reg = new RegExp('www|presaver|presave');
 var parts = window.location.host.split('.');
 var homeComponent = reg.test(parts[0]) ? __WEBPACK_IMPORTED_MODULE_10__components_Dashboard_vue___default.a : __WEBPACK_IMPORTED_MODULE_9__components_Campaign_vue___default.a;
 
@@ -30795,7 +30795,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "col8"
-  }, [_vm._v(".presaver.com")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(".presave.tracks2.com")])])]), _vm._v(" "), _c('div', {
     staticClass: "form-row"
   }, [_c('label', [_vm._v("Release artwork")]), _vm._v(" "), (_vm.campaign.release_artwork) ? _c('div', {
     staticClass: "thumbnail col4"
