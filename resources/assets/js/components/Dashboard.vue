@@ -20,6 +20,10 @@
 
         components: {
             DashboardNav
+        },
+
+        created(){
+            console.log('[Dashboard]');
         }
     }
 </script>

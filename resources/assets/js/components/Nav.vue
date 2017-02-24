@@ -41,6 +41,10 @@
             }
         },
 
+        created(){
+            console.log('[Nav]');
+        },
+
         computed: {
             isLoggedIn(){
                 return this.$store.getters.authenticated
