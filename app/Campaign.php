@@ -27,6 +27,11 @@ class Campaign extends Model
         'deleted_at'
     ];
 
+    public function getReleaseDateAttribute($value)
+    {   
+        return \Carbon\Carbon::parse($value)->toFormattedDateString();
+    }
+
     public function artist()
     {
         return $this->belongsTo('App\Artist');

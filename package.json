@@ -7,6 +7,7 @@
     "production": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "form_to_object": "^1.0.8",
     "laravel-mix": "^0.7.2",
     "lodash": "^4.17.4",
@@ -16,6 +17,7 @@
     "vue-upload-component": "^2.1.0-beta.2",
     "vuejs-datepicker": "^0.6.2",
     "vuex": "^2.1.2",
+    "vue-template-compiler": "^2.2.1",
     "vuex-router-sync": "^4.1.2"
   },
   "dependencies": {

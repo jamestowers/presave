@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CampaignController extends Controller
 {
 
-    protected $camnpaigns;
+    protected $campaigns;
 
     public function __construct(Campaign $campaign)
     {
@@ -27,7 +27,11 @@ class CampaignController extends Controller
      */
     public function index()
     {
-        //
+        $campaigns = $this->campaigns
+            ->whereCreatedBy(\Auth::user()->id)
+            ->get();
+
+        return response()->json(['campaigns' => $campaigns]);
     }
 
     /**
@@ -88,9 +92,15 @@ class CampaignController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(Request $request, $id)
+    {   
+        $campaign = $this->campaigns->with('artist')->findOrFail($id);
+
+        if ($request->wantsJson()){
+            return response()->json(['campaign' => $campaign]);
+        }
+        
+        return view('campaigns.show', compact('campaign'));
     }
 
     /**

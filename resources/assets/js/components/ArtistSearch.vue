@@ -8,12 +8,12 @@
             class="artist-search-input" 
             placeholder="Artist name" />
 
-        <input v-if="artist" name="artist_id" type="hidden" :value="artist.id" />
+        <input v-if="artist" name="artist_id" type="hidden" :value="artistId" />
         
-        <div v-if="artists.length" class="artist-search-results" :class="{ open: this.isOpen }">
+        <div v-if="results.length" class="artist-search-results" :class="{ open: this.isOpen }">
             <ul>
                 <li 
-                    v-for="artist in artists" 
+                    v-for="artist in results" 
                     @click="onClick(artist)"
                     class="group row">
                     <div class="thumbnail">
@@ -32,35 +32,73 @@
     
     export default {
 
-        props: ['value'],
+        props: {
+            artist: {
+                type: Object,
+                default(){
+                    return {}
+                }
+            }
+        },
 
         data() {
             return {
+                initialSearchTerm: this.artist.name ? this.artist.name : '',
                 searchTerm: '',
-                artist: {
-                    id: this.value,
-                    name: ''
-                },
-                artists: [],
+                spotifyArtist: {},
+                results: [],
                 isOpen: false
+            }
+        },
+
+        computed: {
+            selectedArtist(){
+                if(this.artist){
+                    return this.artist
+                }else{
+                    return this.spotifyArtist
+                }
+            },
+            artistId(){
+                if(this.spotifyArtist.id){ // if artist has come from Spotify API call
+                    return this.spotifyArtist.id
+                }else{
+                    // artist has come from the database
+                    return this.artist.spotify_id
+                }
+            }
+            /*searchTerm(){
+                if(this.searchTerm !== this.initialSearchTerm && )
+                if(this.artist.name){
+                    return this.artist.name
+                } else{
+                    return ''
+                }
+            }*/
+        },
+
+        watch: {
+            artist: function(){
+                this.searchTerm = this.artist.name
             }
         },
 
         methods: {
             onClick(artist){
-                this.artist = artist
+                this.spotifyArtist = artist
                 this.isOpen = false
-                this.searchTerm = this.artist.name
-                this.$emit('artistSelected', this.artist);
+                this.searchTerm = this.spotifyArtist.name
+                this.$emit('artistSelected', this.selectedArtist);
             },
             artistSearch(e){
+                console.log(this.searchTerm);
                 if(this.searchTerm.length > 1){
                     this.$http.get('search?term=' + this.searchTerm + '&type=artist')
                         .then(this.onSuccess, this.onError)
                 }
             },
             onSuccess(response){
-                this.artists = response.data.artists.items
+                this.results = response.data.artists.items
                 this.isOpen = true
             },
             onError(error){

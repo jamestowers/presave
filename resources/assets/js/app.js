@@ -4,20 +4,23 @@ import VueCookie from 'vue-cookie';
 
 import store from './vuex/store';
 import { sync } from 'vuex-router-sync'
-import { mapActions } from 'vuex';
+//import { mapActions } from 'vuex';
 import auth from './auth.js'
 //import { getErrors } from './vuex/actions';
 //require('./bootstrap');
 //import { checkUserIsLogin } from './vuex/actions';
 
 import Errors from './components/Errors.vue';
+/*
 import Home from './components/Home.vue'
+import Campaigns from './components/Campaigns.vue'
 import Campaign from './components/Campaign.vue'
 import Dashboard from './components/Dashboard.vue'
 import LoginBtn from './components/LoginBtn.vue'
 import Register from './components/Auth/Register.vue'
 import Login from './components/Auth/Login.vue'
 import CampaignEdit from './components/CampaignEdit.vue'
+*/
 
 window._ = require('lodash');
 window.Vue = require('vue');
@@ -46,39 +49,55 @@ Vue.http.headers.common = {
 
 let reg = new RegExp('www|presaver|presave')
 let parts = window.location.host.split('.')
-let homeComponent = reg.test(parts[0]) ? Dashboard : Campaign
+let homeComponent = reg.test(parts[0]) ? 'Dashboard' : 'Campaign'
 
 
 const routes = [
     {
         path: '/', 
-        name: 'campaign',
-        component: homeComponent
+        name: 'home',
+        component: resolve => require(['./components/'+ homeComponent +'.vue'], resolve)
     },
     {
         path: '/login', 
         name: 'login',
-        component: Login
+        component: resolve => require(['./components/Auth/Login.vue'], resolve)
     },
     {
         path: '/register',
         name: 'register',
-        component: Register
+        component: resolve => require(['./components/Auth/Register.vue'], resolve)
+        
+    },
+    {
+        path: '/campaigns/:id', 
+        name: 'campaign',
+        component: resolve => require(['./components/Campaign.vue'], resolve)
+        
     },
     {
         path: '/dashboard', 
-        component: Dashboard,
+        component: resolve => require(['./components/Dashboard.vue'], resolve)
+        ,
         meta: { requiresAuth: true },
         children: [
             { 
                 path: '', 
                 name: 'campaigns',
-                component: CampaignEdit 
+                component: resolve => require(['./components/Campaigns.vue'], resolve)
+                
             },
             { 
-                path: 'create', 
+                path: 'campaigns/create', 
                 name: 'campaigns-create',
-                component: CampaignEdit 
+                component: resolve => require(['./components/CampaignEdit.vue'], resolve)
+                
+            },
+            { 
+                path: 'campaigns/edit/:campaignId', 
+                name: 'campaigns-edit',
+                component: resolve => require(['./components/CampaignEdit.vue'], resolve)
+                
             }
         ]
     }
@@ -127,6 +146,7 @@ const app = new Vue({
     mounted: function () {
         this.$nextTick(function () {
             if(this.$cookie.get('session_token')){
+                //console.log(this.$cookie.get('session_token'));
                 Vue.http.headers.common['Authorization'] = 'Bearer ' + this.$cookie.get('session_token')
                 auth.check()
             }

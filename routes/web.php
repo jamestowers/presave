@@ -12,9 +12,13 @@ Route::get('/callback', 'SpotifyController@callback');
 
 Route::get('/user', 'UserController@getUser');
 
+Route::get('/campaigns/{id}', 'CampaignController@show');
+
 Route::group(['middleware' => 'jwt.auth'], function()
 {
-    Route::resource('/campaigns', 'CampaignController');
+    Route::resource('/campaigns', 'CampaignController',['except' => [
+        'show', 'showBySlug'
+    ]]);
 });
 
 Route::get('/{vue_capture?}', function () {

@@ -14,7 +14,7 @@
                 <label>Artist name</label>
                 <artist-search 
                     @artistSelected="onArtistSelected" 
-                    :value="campaign.artist.spotify_id"
+                    :artist="campaign.artist"
                     ></artist-search>
             </div>
             <div class="form-row">
@@ -27,10 +27,8 @@
             </div>
             <div class="form-row">
                 <div class="group row">
-                    <div class="col4">
-                        <input type="text" v-model="campaign.slug" placeholder="URL prefix" />
-                    </div>
-                    <div class="col8">.presave.tracks2.com</div>
+                    <div class="pull-left">https://presave.tracks2.com/</div>
+                    <div class="col4"><input type="text" v-model="campaign.slug" placeholder="URL prefix" /></div>
                 </div>
             </div>
             <div class="form-row">
@@ -113,14 +111,15 @@
         mixins: [showErrors],
 
         props: {
-            campaign_id: {
+            /*campaignId: {
                 type: Number,
                 default: null
-            }
+            }*/
         },
 
         data() {
             return{
+                editing: this.$route.name === 'campaigns-edit',
                 campaign: {
                     release_title: null,
                     slug: this.UrlSlug,
@@ -160,15 +159,14 @@
 
         methods: {
             fetchCampaign(){
-                if(this.campaign_id === null){
-                    return false;
+                if(this.$route.name === 'campaigns-edit'){
+                    this.$http.get('campaigns/' + this.$route.params.campaignId)
+                        .then(function(response){
+                            this.campaign = response.data.campaign
+                        }, function(error){
+                            console.error(error)
+                        })
                 }
-                this.$http.get('campaigns/' + this.campaign_id)
-                    .then(function(reponse){
-                        this.campaign = response.data
-                    }, function(error){
-                        console.error(error)
-                    })
             },
             onArtistSelected(artist) {
                 //console.log(artist)
