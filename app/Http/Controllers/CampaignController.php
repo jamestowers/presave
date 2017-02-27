@@ -137,7 +137,30 @@ class CampaignController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $campaign = $this->campaigns->findOrFail($id);
+
+        $campaign->release_title = $request->release_title;
+        $campaign->slug = $request->slug;
+        $campaign->release_spotify_id = $request->release_spotify_id;
+        $campaign->description = $request->description;
+        $campaign->release_artwork = $request->release_artwork;
+        $campaign->background_image = $request->background_image;
+        $campaign->release_date = \Carbon\Carbon::parse($request->release_date);
+        //$campaign->created_by = \Auth::user()->id;
+        
+        if($request->artist['spotify_id'] !== $campaign->artist->spotify_id){
+            $artist = \App\Artist::firstOrCreate([
+                'spotify_id' => $request->artist['id'],
+                'name' => $request->artist['name'],
+                'image' => $request->artist['images'][0]['url']
+                ]);
+
+            $campaign->artist()->associate($artist);
+        }
+        
+        $campaign->save();
+
+        return $campaign;
     }
 
     /**

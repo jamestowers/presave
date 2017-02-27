@@ -35,7 +35,7 @@
                 <label>Release artwork</label>
 
                 <div v-if="campaign.release_artwork" class="thumbnail col4">
-                    <img :src="`uploads/${campaign.release_artwork}`" alt="" />
+                    <img :src="`/uploads/${campaign.release_artwork}`" alt="" />
                 </div>
                 
                 <div class="col8">
@@ -72,7 +72,7 @@
                 <label>Background image</label>
 
                 <div v-if="campaign.background_image" class="thumbnail col4">
-                    <img :src="`uploads/${campaign.background_image}`" alt="" />
+                    <img :src="`/uploads/${campaign.background_image}`" alt="" />
                 </div>
                 
                 <div class="col8">
@@ -177,8 +177,16 @@
                 this.campaign.release_date = e
             },
             onSubmit(){
-                //console.log(this.campaign);
-                this.$http.post('campaigns', this.campaign)
+                let requestType, url
+                if(this.editing){
+                    requestType =  'put'
+                    url = 'campaigns/'+this.campaign.id
+                }else{
+                    requestType = 'post'
+                    url = 'campaigns'
+                }
+                
+                this.$http[requestType](url, this.campaign)
                     .then(this.onSuccess, this.onError);
             },
             onSuccess(response) {
@@ -216,7 +224,7 @@
 
     #campaign-edit{
         .thumbnail{
-
+            max-width: 200px;
         }
     }
 

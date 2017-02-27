@@ -10,6 +10,8 @@
             <router-link 
                 v-if="campaign.id" 
                 :to="{ name: 'campaigns-edit', params: { campaignId: campaign.id }}"
+                role="button"
+                class="btn-sm"
                 >Edit</router-link>
 
             <p class="small"><em>Released: {{ campaign.release_date }}</em></p>

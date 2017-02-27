@@ -100,6 +100,11 @@ const routes = [
                 
             }
         ]
+    },
+    {
+        path: '*',
+        name: '404',
+        component: resolve => require(['./components/404.vue'], resolve)
     }
 ]
 
