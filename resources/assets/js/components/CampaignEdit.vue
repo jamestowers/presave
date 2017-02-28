@@ -2,7 +2,16 @@
     
     <div id="campaign-edit">
 
-        <h1 class="page-title">Edit campaign</h1>
+        <h1 class="page-title">Edit campaign 
+            <router-link 
+                v-if="editing"
+                :to="{ name: 'campaign', params: { id: campaign.id }}" 
+                role="button" 
+                class="btn-sm pull-right"
+                >Preview campaign</router-link>
+        </h1>
+
+        
         
         <form
             @submit.prevent="onSubmit" 
@@ -47,7 +56,7 @@
                         name="release_artwork" 
                         action="/api/upload"
                         :multiple="true"
-                        maxSize=12
+                        :maxSize=12
                         :auto="true"
                         accept='image/*'
                         >
@@ -164,6 +173,7 @@
                 if(this.$route.name === 'campaigns-edit'){
                     this.$http.get('campaigns/' + this.$route.params.campaignId)
                         .then(function(response){
+                            //console.log(response.data.campaign);
                             this.campaign = response.data.campaign
                         }, function(error){
                             console.error(error)

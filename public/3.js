@@ -364,6 +364,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -426,6 +435,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchCampaign: function fetchCampaign() {
             if (this.$route.name === 'campaigns-edit') {
                 this.$http.get('campaigns/' + this.$route.params.campaignId).then(function (response) {
+                    //console.log(response.data.campaign);
                     this.campaign = response.data.campaign;
                 }, function (error) {
                     console.error(error);
@@ -753,7 +763,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('h1', {
     staticClass: "page-title"
-  }, [_vm._v("Edit campaign")]), _vm._v(" "), _c('form', {
+  }, [_vm._v("Edit campaign \n        "), (_vm.editing) ? _c('router-link', {
+    staticClass: "btn-sm pull-right",
+    attrs: {
+      "to": {
+        name: 'campaign',
+        params: {
+          id: _vm.campaign.id
+        }
+      },
+      "role": "button"
+    }
+  }, [_vm._v("Preview campaign")]) : _vm._e()], 1), _vm._v(" "), _c('form', {
     attrs: {
       "action": "campaigns",
       "method": "POST",
@@ -863,7 +884,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "release_artwork",
       "action": "/api/upload",
       "multiple": true,
-      "maxSize": "12",
+      "maxSize": 12,
       "auto": true,
       "accept": "image/*"
     },
