@@ -30,8 +30,7 @@
 <body class="">
 
   <div id="app">
-    
-    {{ ini_get('post_max_size') }}
+
     <header class="header group">
 
         <a href="#" id="menu-toggle"><span></span></a>
