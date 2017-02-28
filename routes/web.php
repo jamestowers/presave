@@ -19,10 +19,6 @@ Route::group(['middleware' => 'jwt.auth'], function()
     ]]);
 });
 
-Route::get('/campaigns/{slug}', 'CampaignController@showBySlug')
-    ->where('slug', '[A-Za-z]+')
-    ->name('campaign');
-
 Route::get('/images/{size}/{name}', function($size = NULL, $name = NULL)
 {
     // http://blog.nedex.io/dynamic-thumbnail-image-compression-on-laravel-5/
@@ -58,6 +54,10 @@ Route::get('/images/{size}/{name}', function($size = NULL, $name = NULL)
         \App::abort('404', 'The requested image cannot be found');
     }
 });
+
+Route::get('/{slug}', 'CampaignController@showBySlug')
+    ->where('slug', '[^0-9]+')
+    ->name('campaign');
 
 Route::get('/{vue_capture?}', function () {
    return view('vue-template');
