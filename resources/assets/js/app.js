@@ -42,6 +42,7 @@ const routes = [
     {
         path: '/', 
         name: 'home',
+        meta: { requiresAuth: true },
         component: resolve => require(['./components/'+ homeComponent +'.vue'], resolve)
     },
     {

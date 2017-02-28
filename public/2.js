@@ -2844,7 +2844,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v(_vm._s(_vm.response.password))]) : _vm._e()]), _vm._v(" "), _c('router-link', {
     staticClass: "pull-left",
     attrs: {
-      "to": "/login"
+      "to": {
+        name: 'login'
+      }
     }
   }, [_vm._v("Login")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-default",
@@ -3572,7 +3574,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('router-link', {
     staticClass: "pull-left",
     attrs: {
-      "to": "/register"
+      "to": {
+        name: 'register'
+      }
     }
   }, [_vm._v("register")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-default",

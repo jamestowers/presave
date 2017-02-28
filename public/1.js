@@ -160,7 +160,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('router-link', {
     staticClass: "pull-left",
     attrs: {
-      "to": "/register"
+      "to": {
+        name: 'register'
+      }
     }
   }, [_vm._v("register")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-default",

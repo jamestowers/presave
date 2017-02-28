@@ -9590,6 +9590,7 @@ var homeComponent = reg.test(parts[0]) ? 'Dashboard' : 'Campaign';
 var routes = [{
     path: '/',
     name: 'home',
+    meta: { requiresAuth: true },
     component: function component(resolve) {
         return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(36)("./" + homeComponent + '.vue')]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     }
@@ -9638,7 +9639,7 @@ var routes = [{
     path: '/dashboard/register',
     name: 'register',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(33)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(33)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     }
 
 }, {

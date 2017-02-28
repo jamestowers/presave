@@ -25,7 +25,7 @@
                 <input type="password" id="password" v-model="password" required>
                 <span class="help-block" v-if="error && response.password">{{ response.password }}</span>
             </div>
-            <router-link to="/login" class="pull-left">Login</router-link>
+            <router-link :to="{ name: 'login' }" class="pull-left">Login</router-link>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div>

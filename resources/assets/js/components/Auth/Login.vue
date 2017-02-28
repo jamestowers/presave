@@ -14,7 +14,7 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" v-model="password" required>
             </div>
-            <router-link to="/register" class="pull-left">register</router-link>
+            <router-link :to="{ name: 'register' }" class="pull-left">register</router-link>
             <button type="submit" class="btn btn-default">Sign in</button>
         </form>
 
