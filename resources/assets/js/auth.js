@@ -14,20 +14,28 @@ export default {
             token: Vue.cookie.get('session_token')
         })
         this.user.authenticated = true
-        console.log('Logged in: ' + store.getters.user.name);
+        //console.log('Logged in: ' + store.getters.user.name);
     },
 
     check() {
-        if (Vue.cookie.get('session_token') !== null) {
-            Vue.http.get('user').then(response => {
-                if(response.data){
-                    this.setUser(response.data)
-                }else{
-                    return false
-                }
-            })
-        }
-        return false;
+        let self = this
+        return new Promise(function(resolve, reject) {
+            if (Vue.cookie.get('session_token') !== null) {
+                Vue.http.get('user').then(response => {
+                    if(response.data){
+                        self.setUser(response.data)
+                        resolve(response.data)
+                    }else{
+                        reject('Found a user but something was wrong...');
+                    }
+                }, function(error){
+                    // Cookie has probabaly expired or user no longer exists
+                    reject(error.data.error);
+                })
+            }else{
+                reject('No cookie set');
+            }
+        })
     },
 
     register(context, name, email, password) {

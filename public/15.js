@@ -1,4 +1,4 @@
-webpackJsonp([6],{
+webpackJsonp([15],{
 
 /***/ 11:
 /***/ (function(module, exports, __webpack_require__) {
@@ -315,14 +315,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PlaylistSelector_vue__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PlaylistSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__PlaylistSelector_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1384,7 +1376,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('i', {
     staticClass: "icon-check"
   }), _vm._v(" Saved")]) : _c('button', {
-    staticClass: "btn-primary btn-lg",
+    staticClass: "btn-primary",
     attrs: {
       "type": "submit"
     }
@@ -1444,27 +1436,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   }), _vm._v(" "), _c('div', {
     staticClass: "inner"
-  }, [_c('transition', {
-    attrs: {
-      "name": "fade"
-    }
   }, [(!_vm.saved) ? _c('h1', {
     staticClass: "huge"
-  }, [_vm._v(_vm._s(_vm.campaign.artist.name))]) : _vm._e()]), _vm._v(" "), _c('transition', {
-    attrs: {
-      "name": "fade"
-    }
-  }, [(!_vm.isLoggedIn) ? _c('section', [_c('h1', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.campaign.artist.name))]) : _vm._e(), _vm._v(" "), (!_vm.isLoggedIn) ? _c('section', [_c('h1', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), _c('div', {
     staticClass: "campaign-description"
-  }, [_vm._v(_vm._s(_vm.campaign.description))])]) : _vm._e()]), _vm._v(" "), _c('transition', {
-    attrs: {
-      "name": "fade"
-    }
-  }, [(_vm.isLoggedIn) ? _c('div', [_c('transition', {
-    attrs: {
-      "name": "fade"
-    }
-  }, [(!_vm.saved) ? _c('div', [_c('h1', [_vm._v("\"" + _vm._s(_vm.campaign.release_title) + "\" will be saved to your albums when it's released")]), _vm._v(" "), _c('h2', [_vm._v("Alternatively, save it to this playlist:")]), _vm._v(" "), _c('ajax-form', {
+  }, [_vm._v(_vm._s(_vm.campaign.description))])]) : _vm._e(), _vm._v(" "), (_vm.isLoggedIn) ? _c('div', [(!_vm.saved) ? _c('div', [_c('h1', [_vm._v("\"" + _vm._s(_vm.campaign.release_title) + "\" will be saved to your albums when it's released")]), _vm._v(" "), _c('h2', [_vm._v("Alternatively, save it to this playlist:")]), _vm._v(" "), _c('ajax-form', {
     attrs: {
       "action": "follow"
     },
@@ -1506,11 +1482,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "d": "M240 464c-4.1 0-8.2-1.6-11.3-4.7l-96-96c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l84.7 84.7 212.7-212.7c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6l-224 224c-3.1 3.1-7.2 4.7-11.3 4.7z"
     }
-  })])])])], 1) : _c('login-btn', {
+  })])])]) : _c('login-btn', {
     attrs: {
       "redirect": _vm.campaign.slug
     }
-  })], 1)], 1)]) : _vm._e()
+  })], 1)]) : _vm._e()
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

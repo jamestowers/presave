@@ -17,7 +17,7 @@
             </div>
             <div class="form-group" v-bind:class="{ 'has-error': error && response.email }">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="gavin.belson@hooli.com" v-model="email" required>
+                <input type="email" id="email" placeholder="Email address" v-model="email" required>
                 <span class="help-block" v-if="error && response.email">{{ response.email }}</span>
             </div>
             <div class="form-group" v-bind:class="{ 'has-error': error && response.password }">

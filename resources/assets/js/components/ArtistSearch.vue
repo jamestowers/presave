@@ -88,10 +88,10 @@
                 this.spotifyArtist = artist
                 this.isOpen = false
                 this.searchTerm = this.spotifyArtist.name
-                this.$emit('artistSelected', this.selectedArtist);
+                this.$emit('artistSelected', this.spotifyArtist);
             },
             artistSearch(e){
-                console.log(this.searchTerm);
+                //console.log(this.searchTerm);
                 if(this.searchTerm.length > 1){
                     this.$http.get('search?term=' + this.searchTerm + '&type=artist')
                         .then(this.onSuccess, this.onError)

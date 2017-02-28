@@ -46,6 +46,7 @@ class SpotifyController extends Controller
         // Cant use $request->cookie() as Laravel encrypts cookies so 
         // we wont be able to access from JS
         if(isset($_COOKIE['campaign_slug'])){ 
+            //$redirectTo = route('campaign', $_COOKIE['campaign_slug']);
             $redirectTo = route('campaign', $_COOKIE['campaign_slug']);
         }else{
             $redirectTo = '/campaign';

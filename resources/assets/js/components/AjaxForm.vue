@@ -15,7 +15,7 @@
         <button v-else-if="success" class="is-success" type="submit">
             <i class="icon-check"></i> Saved</button>
         
-        <button v-else class="btn-primary" type="submit">Save</button>
+        <button v-else class="btn-primary btn-lg" type="submit">Save</button>
     </form>
 </template>
 

@@ -23,7 +23,7 @@
         },
 
         created(){
-            console.log('[Dashboard]');
+            //console.log('[Dashboard]');
         }
     }
 </script>

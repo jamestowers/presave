@@ -24,7 +24,7 @@ button{
   display: flex;
   align-items: center;
   flex-grow: 0;
-  margin-bottom: $padding;
+  margin: $padding-half auto $padding;
   font-weight: $font-weight-bold;
   text-align: center;
   text-transform: uppercase;
@@ -148,7 +148,7 @@ form{
 input[type="submit"],
 input[type="button"],
 button{
-  float:right;
+  //float:right;
   &.btn-cancel{
     margin-right:40px;
   }
@@ -166,6 +166,7 @@ a[role="button"]{
   }
 }
 [role="button"],
+button,
 .btn{
   &.btn-primary{
     background:lighten($color-primary, 7);
@@ -218,8 +219,7 @@ a[role="button"]{
   &.btn-lg{
     padding: 10px 40px;
     margin-bottom: $padding;
-    margin-right: $padding;
-    @include font-size(2);
+    @include font-size(1.8);
     transition: all 0.2s $ease-out-quint;
     &.btn-clear{
       padding: 7px 40px;

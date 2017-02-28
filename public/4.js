@@ -1,25 +1,21 @@
 webpackJsonp([4],{
 
-/***/ 35:
+/***/ 33:
 /***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(92)
 
 var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(55),
+  __webpack_require__(49),
   /* template */
-  __webpack_require__(80),
+  __webpack_require__(72),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/james/projects/presaver/resources/assets/js/components/Campaigns.vue"
+Component.options.__file = "/Users/james/projects/presaver/resources/assets/js/components/Auth/Register.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Campaigns.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] Register.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -28,9 +24,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7229c0a6", Component.options)
+    hotAPI.createRecord("data-v-0e4cbd14", Component.options)
   } else {
-    hotAPI.reload("data-v-7229c0a6", Component.options)
+    hotAPI.reload("data-v-0e4cbd14", Component.options)
   }
 })()}
 
@@ -39,50 +35,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 41:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(89)
-
-var Component = __webpack_require__(7)(
-  /* script */
-  __webpack_require__(54),
-  /* template */
-  __webpack_require__(75),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Users/james/projects/presaver/resources/assets/js/components/CampaignTile.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] CampaignTile.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-33458df8", Component.options)
-  } else {
-    hotAPI.reload("data-v-33458df8", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 54:
+/***/ 49:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__auth_js__ = __webpack_require__(10);
 //
 //
 //
@@ -107,37 +65,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-/* harmony default export */ __webpack_exports__["default"] = {
-
-    props: {
-        campaign: {
-            type: Object,
-            required: true
-        }
-    },
-
-    data: function data() {
-        return {
-            //
-        };
-    },
-
-
-    methods: {
-        //
-    }
-};
-
-/***/ }),
-
-/***/ 55:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CampaignTile_vue__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CampaignTile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__CampaignTile_vue__);
 //
 //
 //
@@ -147,190 +74,166 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
     data: function data() {
         return {
-            campaigns: []
+            name: null,
+            email: null,
+            password: null,
+            success: false,
+            error: false,
+            response: null
         };
-    },
-    created: function created() {
-        this.fetchCampaigns();
-    },
-
-
-    components: {
-        CampaignTile: __WEBPACK_IMPORTED_MODULE_0__CampaignTile_vue___default.a
     },
 
     methods: {
-        fetchCampaigns: function fetchCampaigns() {
-            this.$http.get('campaigns').then(this.onSuccess, this.onError);
-        },
-        onSuccess: function onSuccess(response) {
-            console.log(response.data);
-            this.campaigns = response.data.campaigns;
-        },
-        onError: function onError(error) {
-            console.error(error.data);
+        register: function register() {
+            //event.preventDefault()
+            __WEBPACK_IMPORTED_MODULE_0__auth_js__["a" /* default */].register(this, this.name, this.email, this.password);
         }
     }
 };
 
 /***/ }),
 
-/***/ 63:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(8)();
-// imports
-
-
-// module
-exports.push([module.i, "\n.campaign-tile {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.campaign-tile .thumbnail {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 160px;\n            flex: 0 0 160px;\n    margin: 0 30px 30px 0;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 66:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(8)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 75:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "campaign-tile"
-  }, [(_vm.campaign.release_artwork) ? _c('div', {
-    staticClass: "thumbnail"
-  }, [_c('img', {
+    staticClass: "flex-center full-height flex-column full-width bg-dark"
+  }, [(_vm.error && !_vm.success) ? _c('div', {
+    staticClass: "alert alert-danger"
+  }, [_c('p', [_vm._v("There was an error, unable to complete registration.")])]) : _vm._e(), _vm._v(" "), (_vm.success) ? _c('div', {
+    staticClass: "alert alert-success"
+  }, [_c('p', [_vm._v("Registration completed. You can now sign in.")])]) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v("Register")]), _vm._v(" "), (!_vm.success) ? _c('form', {
     attrs: {
-      "src": ("/uploads/" + (_vm.campaign.release_artwork))
-    }
-  })]) : _vm._e(), _vm._v(" "), _c('div', {}, [_c('h2', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), (_vm.campaign.id) ? _c('router-link', {
-    staticClass: "btn-sm",
-    attrs: {
-      "to": {
-        name: 'campaigns-edit',
-        params: {
-          campaignId: _vm.campaign.id
-        }
-      },
-      "role": "button"
-    }
-  }, [_vm._v("Edit")]) : _vm._e(), _vm._v(" "), _c('p', {
-    staticClass: "small"
-  }, [_c('em', [_vm._v("Released: " + _vm._s(_vm.campaign.release_date))])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.campaign.description))])], 1)])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-33458df8", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 80:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "campaigns"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Campaigns")]), _vm._v(" "), _vm._l((_vm.campaigns), function(campaign) {
-    return _c('campaign-tile', {
-      attrs: {
-        "campaign": campaign
+      "autocomplete": "off"
+    },
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.register($event)
       }
-    })
-  })], 2)
+    }
+  }, [_c('div', {
+    staticClass: "form-group",
+    class: {
+      'has-error': _vm.error && _vm.response.username
+    }
+  }, [_c('label', {
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Name")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.name),
+      expression: "name"
+    }],
+    attrs: {
+      "type": "text",
+      "id": "name",
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.name = $event.target.value
+      }
+    }
+  }), _vm._v(" "), (_vm.error && _vm.response.name) ? _c('span', {
+    staticClass: "help-block"
+  }, [_vm._v(_vm._s(_vm.response.name))]) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "form-group",
+    class: {
+      'has-error': _vm.error && _vm.response.email
+    }
+  }, [_c('label', {
+    attrs: {
+      "for": "email"
+    }
+  }, [_vm._v("E-mail")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.email),
+      expression: "email"
+    }],
+    attrs: {
+      "type": "email",
+      "id": "email",
+      "placeholder": "Email address",
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.email)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.email = $event.target.value
+      }
+    }
+  }), _vm._v(" "), (_vm.error && _vm.response.email) ? _c('span', {
+    staticClass: "help-block"
+  }, [_vm._v(_vm._s(_vm.response.email))]) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "form-group",
+    class: {
+      'has-error': _vm.error && _vm.response.password
+    }
+  }, [_c('label', {
+    attrs: {
+      "for": "password"
+    }
+  }, [_vm._v("Password")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.password),
+      expression: "password"
+    }],
+    attrs: {
+      "type": "password",
+      "id": "password",
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.password)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.password = $event.target.value
+      }
+    }
+  }), _vm._v(" "), (_vm.error && _vm.response.password) ? _c('span', {
+    staticClass: "help-block"
+  }, [_vm._v(_vm._s(_vm.response.password))]) : _vm._e()]), _vm._v(" "), _c('router-link', {
+    staticClass: "pull-left",
+    attrs: {
+      "to": "/login"
+    }
+  }, [_vm._v("Login")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-default",
+    attrs: {
+      "type": "submit"
+    }
+  }, [_vm._v("Submit")])], 1) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7229c0a6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0e4cbd14", module.exports)
   }
-}
-
-/***/ }),
-
-/***/ 89:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(63);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(9)("7a8a5fa4", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-33458df8!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CampaignTile.vue", function() {
-     var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-33458df8!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CampaignTile.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(66);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(9)("12e36140", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7229c0a6!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Campaigns.vue", function() {
-     var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7229c0a6!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Campaigns.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
 }
 
 /***/ })

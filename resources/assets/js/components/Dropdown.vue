@@ -148,8 +148,8 @@
     .select-dropdown{
         margin-bottom: $padding;
         min-height:43px;
-        min-width:400px;
-        max-width:100%;
+        max-width:400px;
+        margin: 0 auto;
         position: relative;
     }
 

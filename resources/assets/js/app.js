@@ -4,23 +4,9 @@ import VueCookie from 'vue-cookie';
 
 import store from './vuex/store';
 import { sync } from 'vuex-router-sync'
-//import { mapActions } from 'vuex';
 import auth from './auth.js'
-//import { getErrors } from './vuex/actions';
-//require('./bootstrap');
-//import { checkUserIsLogin } from './vuex/actions';
 
 import Errors from './components/Errors.vue';
-/*
-import Home from './components/Home.vue'
-import Campaigns from './components/Campaigns.vue'
-import Campaign from './components/Campaign.vue'
-import Dashboard from './components/Dashboard.vue'
-import LoginBtn from './components/LoginBtn.vue'
-import Register from './components/Auth/Register.vue'
-import Login from './components/Auth/Login.vue'
-import CampaignEdit from './components/CampaignEdit.vue'
-*/
 
 window._ = require('lodash');
 window.Vue = require('vue');
@@ -59,17 +45,6 @@ const routes = [
         component: resolve => require(['./components/'+ homeComponent +'.vue'], resolve)
     },
     {
-        path: '/login', 
-        name: 'login',
-        component: resolve => require(['./components/Auth/Login.vue'], resolve)
-    },
-    {
-        path: '/register',
-        name: 'register',
-        component: resolve => require(['./components/Auth/Register.vue'], resolve)
-        
-    },
-    {
         path: '/campaigns/:id', 
         name: 'campaign',
         component: resolve => require(['./components/Campaign.vue'], resolve)
@@ -77,8 +52,7 @@ const routes = [
     },
     {
         path: '/dashboard', 
-        component: resolve => require(['./components/Dashboard.vue'], resolve)
-        ,
+        component: resolve => require(['./components/Dashboard.vue'], resolve),
         meta: { requiresAuth: true },
         children: [
             { 
@@ -102,9 +76,20 @@ const routes = [
         ]
     },
     {
+        path: '/dashboard/login', 
+        name: 'login',
+        component: resolve => require(['./components/Auth/Login.vue'], resolve)
+    },
+    {
+        path: '/dashboard/register',
+        name: 'register',
+        component: resolve => require(['./components/Auth/Register.vue'], resolve)
+        
+    },
+    {
         path: '*',
-        name: '404',
-        component: resolve => require(['./components/404.vue'], resolve)
+        name: 'campaign-by-slug',
+        component: resolve => require(['./components/Campaign.vue'], resolve)
     }
 ]
 
@@ -121,7 +106,7 @@ router.beforeEach((to, from, next) => {
         //console.log('Logged in: ' + authed);
         if (!authed) {
             next({
-                path: '/login',
+                name: 'login',
                 query: { redirect: to.fullPath }
             })
         } else {
@@ -149,11 +134,19 @@ const app = new Vue({
     },
 
     mounted: function () {
+        let self = this
         this.$nextTick(function () {
             if(this.$cookie.get('session_token')){
                 //console.log(this.$cookie.get('session_token'));
                 Vue.http.headers.common['Authorization'] = 'Bearer ' + this.$cookie.get('session_token')
-                auth.check()
+                
+                auth.check().then(function(response) {
+                  console.log("Logged in: ", response.data.name);
+                }, function(error) {
+                  console.error("Not logged in: ", error);
+                  self.$router.push('login')
+                });
+
             }
 
             if(this.$cookie.get('spotify_token')){

@@ -112,7 +112,7 @@ class CampaignController extends Controller
     public function showBySlug($slug)
     {
         $campaign = $this->campaigns->whereSlug($slug)->firstOrFail();
-        
+ 
         return view('campaigns.show', compact('campaign'));
 
     }

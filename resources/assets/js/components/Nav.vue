@@ -42,7 +42,7 @@
         },
 
         created(){
-            console.log('[Nav]');
+            //console.log('[Nav]');
         },
 
         computed: {

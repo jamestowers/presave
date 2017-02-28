@@ -64,6 +64,7 @@
                     @selected="setDate" 
                     placeholder="Release date" 
                     format="dd MMM yyyy"
+                    :inline="true"
                     :value="campaign.release_date"
                     ></datepicker>
             </div>
@@ -169,7 +170,7 @@
                 }
             },
             onArtistSelected(artist) {
-                //console.log(artist)
+                console.log(artist)
                 this.campaign.artist = artist
             },
             setDate(e){
