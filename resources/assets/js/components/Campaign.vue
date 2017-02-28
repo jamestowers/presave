@@ -1,7 +1,7 @@
 <template>
     <div v-if="campaign" id="campaign" class="text-center pad"> 
 
-        <div class="background" :style="{ backgroundImage: 'url(/uploads/' + campaign.background_image + ')' }"></div>
+        <div class="background" :style="{ backgroundImage: 'url(' + backgroundImage + ')' }"></div>
         <div class="inner">
 
             <transition name="fade">
@@ -85,6 +85,9 @@
         computed: {
             isLoggedIn(){
                 return this.$store.getters.spotifyToken !== null
+            },
+            backgroundImage(){
+                return '/images/' + this.$store.getters.screenSize + '/' + this.campaign.background_image
             }
         },
 
@@ -105,7 +108,7 @@
             onError(error){
                 if(error.status === 404){
                     console.error(error.statusText)
-                    this.$router.push({ name: '404'})
+                    //this.$router.push({ name: '404'})
                 }
             },
             onCampaignFollowed(response){

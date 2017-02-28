@@ -1028,6 +1028,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         isLoggedIn: function isLoggedIn() {
             return this.$store.getters.spotifyToken !== null;
+        },
+        backgroundImage: function backgroundImage() {
+            return '/images/' + this.$store.getters.screenSize + '/' + this.campaign.background_image;
         }
     },
 
@@ -1047,7 +1050,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onError: function onError(error) {
             if (error.status === 404) {
                 console.error(error.statusText);
-                this.$router.push({ name: '404' });
+                //this.$router.push({ name: '404'})
             }
         },
         onCampaignFollowed: function onCampaignFollowed(response) {
@@ -3699,7 +3702,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "background",
     style: ({
-      backgroundImage: 'url(/uploads/' + _vm.campaign.background_image + ')'
+      backgroundImage: 'url(' + _vm.backgroundImage + ')'
     })
   }), _vm._v(" "), _c('div', {
     staticClass: "inner"

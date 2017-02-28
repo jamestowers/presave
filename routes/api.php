@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/register', 'Auth\RegisterController@register');
 
-Route::get('/campaigns/{slug}', 'CampaignController@showBySlug')->where('slug', '[A-Za-z]+');
+Route::get('/campaigns/{slug}', 'CampaignController@showBySlug')->where('slug', '[^0-9]+');
 
 Route::group(['middleware' => 'jwt.auth'], function () {
     

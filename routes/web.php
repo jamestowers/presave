@@ -33,10 +33,6 @@ Route::get('/images/{size}/{name}', function($size = NULL, $name = NULL)
         $cache_image = Image::cache(function($image) use($sizes, $name){
 
             $url = url('/uploads/'.$name);
-            /*if (App::environment('local')) {
-                // make http as local dev doesn't like it for some reason
-                $url = str_replace( 'https://', 'http://', $url );
-            }*/
 
             if(isset($sizes['fit']) && $sizes['fit']){
               $resized = $image->make($url)

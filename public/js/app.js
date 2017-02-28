@@ -9521,15 +9521,30 @@ module.exports = Vue$3;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SET_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CLEAR_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return SET_SPOTIFY_TOKEN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return SET_APP_DIMENSIONS; });
+/************************************
+ERRORS
+*************************************/
 var SET_ERRORS = 'SET_ERRORS';
 
 var CLEAR_ERRORS = 'CLEAR_ERRORS';
 
+/************************************
+USER
+*************************************/
 var SET_USER = 'SET_USER';
 
 var CLEAR_USER = 'CLEAR_USER';
 
+/************************************
+SPOTIFY
+*************************************/
 var SET_SPOTIFY_TOKEN = 'SET_SPOTIFY_TOKEN';
+
+/************************************
+APP_DIMENSIONS
+*************************************/
+var SET_APP_DIMENSIONS = 'SET_APP_DIMENSIONS';
 
 /***/ }),
 /* 3 */
@@ -9693,8 +9708,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         };
     },
     created: function created() {
-        //console.log('[App] App is ready');
-        //store.dispatch('getUser');
+        __WEBPACK_IMPORTED_MODULE_3__vuex_store__["a" /* default */].dispatch('setDimensions');
+        window.addEventListener('resize', _.debounce(function () {
+            __WEBPACK_IMPORTED_MODULE_3__vuex_store__["a" /* default */].dispatch('setDimensions');
+        }, 400));
     },
 
 
@@ -9744,6 +9761,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_errors__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_user__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_app__ = __webpack_require__(107);
+
 
 
 
@@ -9757,6 +9776,7 @@ var debug = process.env.NODE_ENV !== 'production';
 var store = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */].Store({
     actions: __WEBPACK_IMPORTED_MODULE_2__actions__,
     modules: {
+        app: __WEBPACK_IMPORTED_MODULE_5__modules_app__["a" /* default */],
         errors: __WEBPACK_IMPORTED_MODULE_3__modules_errors__["a" /* default */],
         user: __WEBPACK_IMPORTED_MODULE_4__modules_user__["a" /* default */]
     },
@@ -11145,9 +11165,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setUser", function() { return setUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearUser", function() { return clearUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setSpotifyToken", function() { return setSpotifyToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setDimensions", function() { return setDimensions; });
 
 
-/* ERRORS */
+/************************************
+ERRORS 
+*************************************/
 var setErrors = function setErrors(_ref, errors) {
     var commit = _ref.commit;
 
@@ -11162,7 +11185,9 @@ var clearErrors = function clearErrors(_ref2) {
     commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["e" /* CLEAR_ERRORS */]);
 };
 
-/* USER */
+/************************************
+USER 
+*************************************/
 var setUser = function setUser(_ref3, user) {
     var commit = _ref3.commit;
 
@@ -11180,6 +11205,29 @@ var setSpotifyToken = function setSpotifyToken(_ref5, data) {
 
     //console.log('[actions.js] ' + data.token);
     commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["c" /* SET_SPOTIFY_TOKEN */], { token: data.token });
+};
+
+/************************************
+DIMENSIONS 
+*************************************/
+
+var setDimensions = function setDimensions(_ref6) {
+    var commit = _ref6.commit;
+
+
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+    var dimensions = {
+        height: y,
+        width: x,
+        isMobile: x < 768
+    };
+    commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["f" /* SET_APP_DIMENSIONS */], { dimensions: dimensions });
 };
 
 /***/ }),
@@ -32588,6 +32636,127 @@ module.exports = function(module) {
 __webpack_require__(3);
 module.exports = __webpack_require__(6);
 
+
+/***/ }),
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types__ = __webpack_require__(2);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var state = {
+  dimensions: []
+};
+
+var getters = {
+  dimensions: function dimensions(state) {
+    return state.dimensions;
+  },
+  isMobile: function isMobile(state) {
+    return state.dimensions.isMobile;
+  },
+  screenSize: function screenSize(state) {
+    if (state.dimensions.width <= 800) {
+      return 'small';
+    } else if (state.dimensions.width <= 1400) {
+      return 'medium';
+    } else if (state.dimensions.width <= 1400) {
+      return 'large';
+    } else {
+      return 'xlarge';
+    }
+  }
+};
+
+var mutations = _defineProperty({}, __WEBPACK_IMPORTED_MODULE_0__mutation_types__["f" /* SET_APP_DIMENSIONS */], function (state, payload) {
+  //console.log(payload.dimensions)
+  state.dimensions = payload.dimensions;
+});
+
+/* harmony default export */ __webpack_exports__["a"] = {
+  state: state,
+  getters: getters,
+  mutations: mutations
+};
 
 /***/ })
 /******/ ]);

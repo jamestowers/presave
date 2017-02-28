@@ -135,8 +135,10 @@ const app = new Vue({
         }
     },
     created(){
-        //console.log('[App] App is ready');
-        //store.dispatch('getUser');
+        store.dispatch('setDimensions')
+        window.addEventListener('resize', _.debounce(function() {
+          store.dispatch('setDimensions')
+        }, 400));
     },
 
     mounted: function () {
