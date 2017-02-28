@@ -88,6 +88,11 @@ const routes = [
         
     },
     {
+        path: '404',
+        name: '404',
+        component: resolve => require(['./components/404.vue'], resolve)
+    },
+    {
         path: '*',
         name: 'campaign-by-slug',
         component: resolve => require(['./components/Campaign.vue'], resolve)
@@ -145,7 +150,7 @@ const app = new Vue({
                   console.log("Logged in: ", response.data.name);
                 }, function(error) {
                   console.error("Not logged in: ", error);
-                  self.$router.push('login')
+                  self.$router.push({ name: 'login'})
                 });
 
             }

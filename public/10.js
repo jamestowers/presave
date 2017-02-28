@@ -1,4 +1,4 @@
-webpackJsonp([10,12,15,14,11,0,9],[
+webpackJsonp([10,8,9,11,12,13,14],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -11,44 +11,6 @@ webpackJsonp([10,12,15,14,11,0,9],[
 /* 9 */,
 /* 10 */,
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(93)
-
-var Component = __webpack_require__(7)(
-  /* script */
-  __webpack_require__(50),
-  /* template */
-  __webpack_require__(83),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Users/james/projects/presaver/resources/assets/js/components/Campaign.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Campaign.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ca1cef94", Component.options)
-  } else {
-    hotAPI.reload("data-v-ca1cef94", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -86,6 +48,7 @@ module.exports = Component.exports
 
 
 /***/ }),
+/* 12 */,
 /* 13 */,
 /* 14 */,
 /* 15 */,
@@ -104,8 +67,7 @@ module.exports = Component.exports
 /* 28 */,
 /* 29 */,
 /* 30 */,
-/* 31 */,
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(7)(
@@ -139,7 +101,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(7)(
@@ -166,6 +128,44 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-0e4cbd14", Component.options)
   } else {
     hotAPI.reload("data-v-0e4cbd14", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(93)
+
+var Component = __webpack_require__(7)(
+  /* script */
+  __webpack_require__(50),
+  /* template */
+  __webpack_require__(83),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/james/projects/presaver/resources/assets/js/components/Campaign.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Campaign.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ca1cef94", Component.options)
+  } else {
+    hotAPI.reload("data-v-ca1cef94", Component.options)
   }
 })()}
 
@@ -257,15 +257,15 @@ var map = {
 	"./AjaxForm.vue": 38,
 	"./AlbumSelector.vue": 100,
 	"./ArtistSearch.vue": 39,
-	"./Auth/Login.vue": 32,
-	"./Auth/Register.vue": 33,
-	"./Campaign.vue": 11,
-	"./CampaignEdit.vue": 12,
+	"./Auth/Login.vue": 31,
+	"./Auth/Register.vue": 32,
+	"./Campaign.vue": 33,
+	"./CampaignEdit.vue": 11,
 	"./CampaignTile.vue": 40,
 	"./Campaigns.vue": 34,
 	"./Dashboard.vue": 35,
 	"./Dropdown.vue": 41,
-	"./Errors.vue": 14,
+	"./Errors.vue": 13,
 	"./FileUpload.vue": 42,
 	"./Home.vue": 101,
 	"./LoginBtn.vue": 43,
@@ -664,7 +664,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         beforeSubmit: function beforeSubmit() {
-            //console.log('[AjaxFrom] Submitting...')
+            console.log('[AjaxFrom] Submitting...');
             this.loading = true;
         },
         onSubmit: function onSubmit() {
@@ -675,9 +675,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$http[requestType](this.action, data).then(this.onSuccess, this.onError);
         },
         onSuccess: function onSuccess(response) {
-            //console.log('[AjaxFrom] Success')
+            console.log('[AjaxFrom] Success');
             this.loading = false;
             this.success = true;
+            console.log(this.success);
             this.$emit('ajaxFormSuccess', response.data);
             this.onComplete();
             var vm = this;
@@ -989,6 +990,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -997,15 +1011,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = {
 
-    props: ['campaign'],
+    //props: ['campaign'],
 
     data: function data() {
         return {
+            campaign: null,
             saved: false
         };
     },
     created: function created() {
         //console.log('[Campaign]');
+        this.fetchCampaign();
     },
 
 
@@ -1022,9 +1038,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        fetchCampaign: function fetchCampaign() {
+            this.$http.get('campaigns' + this.$route.params[0]).then(this.onSuccess, this.onError);
+        },
+        onSuccess: function onSuccess(response) {
+            console.log(response.data.campaign);
+            this.campaign = response.data.campaign;
+        },
+        onError: function onError(error) {
+            console.error(error);
+        },
         onCampaignFollowed: function onCampaignFollowed(response) {
-            console.log(response);
+            //console.log(response);
             this.saved = true;
+        },
+        onPlaylistSelected: function onPlaylistSelected(playlist) {
+            console.log(playlist);
         }
     }
 };
@@ -1143,12 +1172,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 
-//import FileUpload from 'vue-upload-component'
+//import AjaxForm from './AjaxForm.vue'
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
@@ -1165,6 +1204,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             editing: this.$route.name === 'campaigns-edit',
+            success: false,
             campaign: {
                 release_title: null,
                 slug: this.UrlSlug,
@@ -1205,6 +1245,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchCampaign: function fetchCampaign() {
             if (this.$route.name === 'campaigns-edit') {
                 this.$http.get('campaigns/' + this.$route.params.campaignId).then(function (response) {
+                    //console.log(response.data.campaign);
                     this.campaign = response.data.campaign;
                 }, function (error) {
                     console.error(error);
@@ -1839,7 +1880,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__auth_js__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(12);
 //
 //
 //
@@ -1959,7 +2000,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.showErrors(error);
         },
         onPlaylistSelect: function onPlaylistSelect(playlist) {
-            console.log(playlist);
+            this.$emit('playlistSelected', playlist);
         }
     }
 
@@ -2836,7 +2877,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v(_vm._s(_vm.response.password))]) : _vm._e()]), _vm._v(" "), _c('router-link', {
     staticClass: "pull-left",
     attrs: {
-      "to": "/login"
+      "to": {
+        name: 'login'
+      }
     }
   }, [_vm._v("Login")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-default",
@@ -3041,7 +3084,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('i', {
     staticClass: "icon-check"
   }), _vm._v(" Saved")]) : _c('button', {
-    staticClass: "btn-primary",
+    staticClass: "btn-primary btn-lg",
     attrs: {
       "type": "submit"
     }
@@ -3147,7 +3190,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('h1', {
     staticClass: "page-title"
-  }, [_vm._v("Edit campaign")]), _vm._v(" "), _c('form', {
+  }, [_vm._v("Edit campaign \n        "), (_vm.editing) ? _c('router-link', {
+    staticClass: "btn-sm pull-right",
+    attrs: {
+      "to": {
+        name: 'campaign',
+        params: {
+          id: _vm.campaign.id
+        }
+      },
+      "role": "button"
+    }
+  }, [_vm._v("Preview campaign")]) : _vm._e()], 1), _vm._v(" "), _c('form', {
     attrs: {
       "action": "campaigns",
       "method": "POST",
@@ -3257,6 +3311,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "release_artwork",
       "action": "/api/upload",
       "multiple": true,
+      "maxSize": 12,
       "auto": true,
       "accept": "image/*"
     },
@@ -3320,15 +3375,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "uploadSuccess": _vm.onBackgroundImageUploadSuccess,
       "uploadError": _vm.onFileUploadError
     }
-  })], 1)]), _vm._v(" "), _c('input', {
+  })], 1)]), _vm._v(" "), _c('button', {
+    staticClass: "pull-right",
     attrs: {
-      "type": "submit",
-      "name": "submit"
-    },
-    domProps: {
-      "value": _vm.submitButtonText
+      "type": "submit"
     }
-  })])])
+  }, [_vm._v(_vm._s(_vm.submitButtonText))])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -3564,7 +3616,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('router-link', {
     staticClass: "pull-left",
     attrs: {
-      "to": "/register"
+      "to": {
+        name: 'register'
+      }
     }
   }, [_vm._v("register")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-default",
@@ -3598,18 +3652,38 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   }), _vm._v(" "), _c('div', {
     staticClass: "inner"
+  }, [_c('transition', {
+    attrs: {
+      "name": "fade"
+    }
   }, [(!_vm.saved) ? _c('h1', {
     staticClass: "huge"
-  }, [_vm._v(_vm._s(_vm.campaign.artist.name))]) : _vm._e(), _vm._v(" "), (!_vm.isLoggedIn) ? _c('section', [_c('h1', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.campaign.artist.name))]) : _vm._e()]), _vm._v(" "), _c('transition', {
+    attrs: {
+      "name": "fade"
+    }
+  }, [(!_vm.isLoggedIn) ? _c('section', [_c('h1', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), _c('div', {
     staticClass: "campaign-description"
-  }, [_vm._v(_vm._s(_vm.campaign.description))])]) : _vm._e(), _vm._v(" "), (_vm.isLoggedIn) ? _c('div', [(!_vm.saved) ? _c('div', [_c('h1', [_vm._v("\"" + _vm._s(_vm.campaign.release_title) + "\" will be saved to your albums when it's released")]), _vm._v(" "), _c('h2', [_vm._v("Alternatively, save it to this playlist:")]), _vm._v(" "), _c('ajax-form', {
+  }, [_vm._v(_vm._s(_vm.campaign.description))])]) : _vm._e()]), _vm._v(" "), _c('transition', {
+    attrs: {
+      "name": "fade"
+    }
+  }, [(_vm.isLoggedIn) ? _c('div', [_c('transition', {
+    attrs: {
+      "name": "fade"
+    }
+  }, [(!_vm.saved) ? _c('div', [_c('h1', [_vm._v("\"" + _vm._s(_vm.campaign.release_title) + "\" will be saved to your albums when it's released")]), _vm._v(" "), _c('h2', [_vm._v("Alternatively, save it to this playlist:")]), _vm._v(" "), _c('ajax-form', {
     attrs: {
       "action": "follow"
     },
     on: {
       "ajaxFormSuccess": _vm.onCampaignFollowed
     }
-  }, [(_vm.isLoggedIn) ? _c('playlist-selector') : _vm._e(), _vm._v(" "), _c('input', {
+  }, [(_vm.isLoggedIn) ? _c('playlist-selector', {
+    on: {
+      "playlistSelected": _vm.onPlaylistSelected
+    }
+  }) : _vm._e(), _vm._v(" "), _c('input', {
     attrs: {
       "type": "checkbox",
       "name": "mailing-list",
@@ -3644,11 +3718,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "d": "M240 464c-4.1 0-8.2-1.6-11.3-4.7l-96-96c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l84.7 84.7 212.7-212.7c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6l-224 224c-3.1 3.1-7.2 4.7-11.3 4.7z"
     }
-  })])])]) : _c('login-btn', {
+  })])])])], 1) : _c('login-btn', {
     attrs: {
       "redirect": _vm.campaign.slug
     }
-  })], 1)]) : _vm._e()
+  })], 1)], 1)]) : _vm._e()
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

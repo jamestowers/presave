@@ -182,6 +182,7 @@ return [
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         App\Providers\SpotifyAdminServiceProvider::class,
         App\Providers\SpotifyUserServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -236,6 +237,7 @@ return [
 
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'SpotifyAdmin' => App\Facades\SpotifyAdminWebAPIFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

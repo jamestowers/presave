@@ -30,9 +30,14 @@
 
                             <h2>Alternatively, save it to this playlist:</h2>
 
-                            <ajax-form @ajaxFormSuccess="onCampaignFollowed" action="follow">
+                            <ajax-form 
+                                @ajaxFormSuccess="onCampaignFollowed" 
+                                action="follow">
                                 
-                                <playlist-selector v-if="isLoggedIn"></playlist-selector>
+                                <playlist-selector 
+                                    v-if="isLoggedIn"
+                                    @playlistSelected="onPlaylistSelected"
+                                    ></playlist-selector>
                                 
                                 <input type="checkbox" name="mailing-list" id="mailing-list" checked="checked" value="1" />
                                 <label for="mailing-list">Sign up to the official mailing list</label>
@@ -63,16 +68,18 @@
 
     export default {
 
-        props: ['campaign'],
+        //props: ['campaign'],
 
         data(){
             return {
+                campaign: null,
                 saved: false
             }
         },
 
         created(){
             //console.log('[Campaign]');
+            this.fetchCampaign()
         },
 
         computed: {
@@ -88,9 +95,25 @@
         },
 
         methods:{
+            fetchCampaign(){
+                this.$http.get('campaigns' + this.$route.params[0])
+                    .then(this.onSuccess, this.onError)
+            },
+            onSuccess(response){
+                this.campaign = response.data.campaign
+            },
+            onError(error){
+                if(error.status === 404){
+                    console.error(error.statusText)
+                    this.$router.push({ name: '404'})
+                }
+            },
             onCampaignFollowed(response){
-                console.log(response);
+                //console.log(response);
                 this.saved = true
+            },
+            onPlaylistSelected(playlist) {
+                console.log(playlist);
             }
         }
     }

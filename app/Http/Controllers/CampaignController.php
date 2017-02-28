@@ -54,7 +54,7 @@ class CampaignController extends Controller
     {
         //\Log::info($request->all());
 
-        if($this->exists($request->release_spotify_id)){
+        if($request->release_spotify_id !== null && $this->exists($request->release_spotify_id)){
             abort(501, 'There is already a campaign for this album');
         }
 
@@ -69,6 +69,7 @@ class CampaignController extends Controller
         $campaign->slug = $request->slug;
         $campaign->release_spotify_id = $request->release_spotify_id;
         $campaign->description = $request->description;
+        $campaign->text_color = $request->text_color;
         $campaign->release_artwork = $request->release_artwork;
         $campaign->background_image = $request->background_image;
         $campaign->release_date = \Carbon\Carbon::parse($request->release_date);
@@ -94,7 +95,9 @@ class CampaignController extends Controller
      */
     public function show(Request $request, $id)
     {   
-        $campaign = $this->campaigns->with('artist')->findOrFail($id);
+        $campaign = $this->campaigns
+            ->with('artist')
+            ->findOrFail($id);
 
         if ($request->wantsJson()){
             return response()->json(['campaign' => $campaign]);
@@ -109,9 +112,13 @@ class CampaignController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showBySlug($slug)
+    public function showBySlug(Request $request, $slug)
     {
         $campaign = $this->campaigns->whereSlug($slug)->firstOrFail();
+
+        if ($request->wantsJson()){
+            return response()->json(['campaign' => $campaign]);
+        }
  
         return view('campaigns.show', compact('campaign'));
 
@@ -144,6 +151,7 @@ class CampaignController extends Controller
         $campaign->release_spotify_id = $request->release_spotify_id;
         $campaign->description = $request->description;
         $campaign->release_artwork = $request->release_artwork;
+        $campaign->text_color = $request->text_color;
         $campaign->background_image = $request->background_image;
         $campaign->release_date = \Carbon\Carbon::parse($request->release_date);
         //$campaign->created_by = \Auth::user()->id;

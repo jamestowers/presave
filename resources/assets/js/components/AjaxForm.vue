@@ -53,7 +53,7 @@
 
         methods: {
             beforeSubmit() {
-                //console.log('[AjaxFrom] Submitting...')
+                console.log('[AjaxFrom] Submitting...')
                 this.loading = true
             },
             onSubmit() {
@@ -65,9 +65,10 @@
                     .then(this.onSuccess, this.onError);
             },
             onSuccess(response) {
-                //console.log('[AjaxFrom] Success')
+                console.log('[AjaxFrom] Success')
                 this.loading = false
                 this.success = true
+                console.log(this.success);
                 this.$emit('ajaxFormSuccess', response.data)
                 this.onComplete()
                 let vm = this

@@ -81,7 +81,7 @@ class APIRequest
 
         if ($status >= 200 && $status <= 299) {
             $this->lastResponse['body'] = $body;
-
+            
             return $this->lastResponse['body'];
         }
         

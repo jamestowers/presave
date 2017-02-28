@@ -71,6 +71,10 @@ class Handler extends ExceptionHandler
                 $status = $exception->getStatusCode();
             }
 
+            if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
+               $status = 404;
+            }  
+
             // Return a JSON response with the response array and status code
             return response()->json($response, $status);
         }

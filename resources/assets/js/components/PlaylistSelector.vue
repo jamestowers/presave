@@ -48,7 +48,7 @@
                 this.showErrors(error)
             },
             onPlaylistSelect(playlist){
-                console.log(playlist);
+                this.$emit('playlistSelected', playlist)
             }
         }
 

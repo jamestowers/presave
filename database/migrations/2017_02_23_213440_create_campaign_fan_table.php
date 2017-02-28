@@ -18,6 +18,7 @@ class CreateCampaignFanTable extends Migration
             $table->foreign('campaign_id')->references('id')->on('campaigns');
             $table->integer('fan_id')->unsigned();
             $table->foreign('fan_id')->references('id')->on('fans');
+            $table->string('spotify_playlist_id')->nullable();
         });
     }
 

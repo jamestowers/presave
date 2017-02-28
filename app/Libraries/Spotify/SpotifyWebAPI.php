@@ -30,7 +30,7 @@ class SpotifyWebAPI
      *
      * @param Request $request Optional. The Request object to use.
      */
-    public function __construct($token)
+    public function __construct($token = null)
     {
         $this->accessToken = $token;
         $provider = new SpotifyRequestInterface($token);
@@ -74,10 +74,6 @@ class SpotifyWebAPI
     {
         $tokens = $this->session->requestNewAccessToken($user->refresh_token);
         
-        /*$this->accessToken = $tokens->access_token;
-        $this->refreshToken = $tokens->refresh_token;
-        $this->expiresIn = $tokens->expires_in;*/
-
         return $tokens;
     }
 
@@ -90,7 +86,6 @@ class SpotifyWebAPI
 
         return $this->request->api('GET', $uri, [], $headers);
 
-        //return $this->lastResponse['body'];
     }
 
 
@@ -133,6 +128,28 @@ class SpotifyWebAPI
         $uri = '/users/' . $userId . '/playlists/' . $playlistId;
 
         return $this->request->api('GET', $uri, $options);
+    }
+
+    /**
+     * Add albums to the current user's Spotify library.
+     * Requires a valid access token.
+     * https://developer.spotify.com/web-api/save-albums-user/
+     *
+     * @param string|array $albums ID(s) of the album(s) to add.
+     *
+     * @return bool Whether the albums was successfully added.
+     */
+    public function addMyAlbums($albums)
+    {
+        // $albums = $this->uriToId($albums, 'album');
+        $albums = json_encode((array) $albums);
+
+        //$headers = $this->authHeaders();
+        //$headers['Content-Type'] = 'application/json';
+
+        $uri = '/me/albums';
+
+        return $this->request->api('PUT', '/me/albums', $albums);
     }
 
 

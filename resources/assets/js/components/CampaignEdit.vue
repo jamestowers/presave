@@ -3,12 +3,13 @@
     <div id="campaign-edit">
 
         <h1 class="page-title">Edit campaign 
-            <router-link 
+
+            <a :href="`/${campaign.slug}`"
                 v-if="editing"
-                :to="{ name: 'campaign', params: { id: campaign.id }}" 
                 role="button" 
+                target="_blank"
                 class="btn-sm pull-right"
-                >Preview campaign</router-link>
+                >Preview campaign</a> 
         </h1>
 
         
@@ -19,90 +20,114 @@
             method="POST"
             enctype="multipart/form-data">
             
-            <div class="form-row">
-                <label>Artist name</label>
-                <artist-search 
-                    @artistSelected="onArtistSelected" 
-                    :artist="campaign.artist"
-                    ></artist-search>
-            </div>
-            <div class="form-row">
-                <label>Release title</label>
-                <input type="text" v-model="campaign.release_title" placeholder="Album title" />
-            </div>
-            <div class="form-row">
-                <label>Release spotify ID</label>
-                <input type="text" v-model="campaign.release_spotify_id" placeholder="Spotify album id" />
-            </div>
-            <div class="form-row">
-                <div class="group row">
-                    <div class="pull-left">https://presave.tracks2.com/</div>
-                    <div class="col4"><input type="text" v-model="campaign.slug" placeholder="URL prefix" /></div>
+            <fieldset>
+                <div class="form-row">
+                    <label>Artist name</label>
+                    <artist-search 
+                        @artistSelected="onArtistSelected" 
+                        :artist="campaign.artist"
+                        ></artist-search>
                 </div>
-            </div>
-            <div class="form-row">
-                <label>Release artwork</label>
+                <div class="form-row">
+                    <label>Release title</label>
+                    <input type="text" v-model="campaign.release_title" placeholder="Album title" />
+                </div>
+                <div class="form-row">
+                    <label>Release spotify ID</label>
+                    <input type="text" v-model="campaign.release_spotify_id" placeholder="Spotify album id" />
+                </div>
+                <div class="form-row">
+                    <div class="group row">
+                        <label class="pull-left">presave.tracks2.com/</label>
+                        <div class="col4"><input type="text" v-model="campaign.slug" placeholder="URL prefix" /></div>
+                    </div>
+                </div>
+            </fieldset>
 
-                <div v-if="campaign.release_artwork" class="thumbnail col4">
-                    <img :src="`/uploads/${campaign.release_artwork}`" alt="" />
+            <fieldset>
+            
+                <div class="form-row">
+                    <label>Description</label>
+                    <textarea v-model="campaign.description"></textarea>
+                </div>
+                <div class="form-row">
+                    <label>Release date</label>
+                    <datepicker 
+                        @selected="setDate" 
+                        placeholder="Release date" 
+                        format="dd MMM yyyy"
+                        :inline="true"
+                        :value="campaign.release_date"
+                        ></datepicker>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="form-row">
+                    <label>Release artwork</label>
+
+                    <div v-if="campaign.release_artwork" class="thumbnail col4">
+                        <img :src="`/uploads/${campaign.release_artwork}`" alt="" />
+                    </div>
+                    
+                    <div class="col8">
+                        <file-upload 
+                            @uploadComplete="onFileUploadComplete"
+                            @uploadSuccess="onReleaseArtworkUploadSuccess"
+                            @uploadError="onFileUploadError"
+                            label="Choose image"
+                            name="release_artwork" 
+                            action="/api/upload"
+                            :multiple="true"
+                            :maxSize=12
+                            :auto="true"
+                            accept='image/*'
+                            >
+                            </file-upload>
+                    </div>
+
                 </div>
                 
-                <div class="col8">
-                    <file-upload 
-                        @uploadComplete="onFileUploadComplete"
-                        @uploadSuccess="onReleaseArtworkUploadSuccess"
-                        @uploadError="onFileUploadError"
-                        label="Choose image"
-                        name="release_artwork" 
-                        action="/api/upload"
-                        :multiple="true"
-                        :maxSize=12
-                        :auto="true"
-                        accept='image/*'
-                        >
-                        </file-upload>
+                <div class="form-row">
+                    <label>Background image</label>
+
+                    <div v-if="campaign.background_image" class="thumbnail col4">
+                        <img :src="`/uploads/${campaign.background_image}`" alt="" />
+                    </div>
+                    
+                    <div class="col8">
+                        <file-upload 
+                            @uploadComplete="onFileUploadComplete"
+                            @uploadSuccess="onBackgroundImageUploadSuccess"
+                            @uploadError="onFileUploadError"
+                            label="Choose background image"
+                            name="background_image" 
+                            action="/api/upload"
+                            :multiple="true"
+                            :auto="true"
+                            accept='image/*'
+                            >
+                            </file-upload>
+                    </div>
                 </div>
 
-            </div>
-            <div class="form-row">
-                <label>Description</label>
-                <textarea v-model="campaign.description"></textarea>
-            </div>
-            <div class="form-row">
-                <label>Release date</label>
-                <datepicker 
-                    @selected="setDate" 
-                    placeholder="Release date" 
-                    format="dd MMM yyyy"
-                    :inline="true"
-                    :value="campaign.release_date"
-                    ></datepicker>
-            </div>
-            
-            <div class="form-row">
-                <label>Background image</label>
+                 <div class="form-row">
+                    <label>Text colour</label>
+                    <p class="description">Set text colour to improve visibility over background image</p>
+                    <div class="text-colors">
+                        <div 
+                            v-for="(color, index) in colors"
+                            @click="selectColor(index)"
+                            class="swatch"
+                            :class="{ active: selectedColorIndex === index }"
+                            :style="{backgroundColor: `#${color}`}"
+                            >
+                            </div>
+                    </div>
+                </div>
+            </fieldset>
 
-                <div v-if="campaign.background_image" class="thumbnail col4">
-                    <img :src="`/uploads/${campaign.background_image}`" alt="" />
-                </div>
-                
-                <div class="col8">
-                    <file-upload 
-                        @uploadComplete="onFileUploadComplete"
-                        @uploadSuccess="onBackgroundImageUploadSuccess"
-                        @uploadError="onFileUploadError"
-                        label="Choose background image"
-                        name="background_image" 
-                        action="/api/upload"
-                        :multiple="true"
-                        :auto="true"
-                        accept='image/*'
-                        >
-                        </file-upload>
-                </div>
-            </div>
-            
-            <input type="submit" name="submit" :value="submitButtonText" />
+            <button type="submit" class="pull-right">{{ submitButtonText }}</button>
 
         </form>
     </div>
@@ -114,7 +139,7 @@
     import {showErrors} from '../mixins';
     import Datepicker from 'vuejs-datepicker'
     import ArtistSearch from './ArtistSearch.vue';
-    //import FileUpload from 'vue-upload-component'
+    //import AjaxForm from './AjaxForm.vue'
     import FileUpload from './FileUpload.vue'
 
     export default {
@@ -131,6 +156,7 @@
         data() {
             return{
                 editing: this.$route.name === 'campaigns-edit',
+                success: false,
                 campaign: {
                     release_title: null,
                     slug: this.UrlSlug,
@@ -139,8 +165,13 @@
                     release_artwork: null,
                     background_image: null,
                     release_date: null,
+                    text_color: null,
                     artist: {}
-                }
+                },
+                colors: [
+                    '222222', 'FFFFFF'
+                ],
+                selectedColorIndex: 0
             }
         },
 
@@ -225,6 +256,10 @@
             },
             onFileUploadComplete(){
                 //
+            },
+            selectColor(index){
+                this.selectedColorIndex = index
+                this.campaign.text_color = this.colors[index]
             }
         }
     }
@@ -237,6 +272,21 @@
     #campaign-edit{
         .thumbnail{
             max-width: 200px;
+        }
+    }
+
+    .text-colors{
+        .swatch{
+            border-radius: 4px;
+            border: 1px solid $grey7;
+            cursor: pointer;
+            float: left;
+            height:100px;
+            width: 100px;
+            margin: 0 $padding-half $padding-half 0;
+            &.active{
+                border: 4px solid $color-primary;
+            }
         }
     }
 

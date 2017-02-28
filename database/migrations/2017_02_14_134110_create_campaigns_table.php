@@ -15,17 +15,19 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->increments('id');
-            //$table->string('title');
+            $table->string('status')->default('pending');
             $table->string('release_spotify_id')->unique()->nullable();
             $table->string('release_title');
             $table->string('release_artwork')->nullable();
             $table->string('slug')->unique();
             $table->integer('artist_id')->unsigned()->nullable();
             $table->foreign('artist_id')->references('id')->on('artists');
+            $table->string('artist_logo')->nullable();
             $table->string('release_date')->nullable();
             $table->string('preview_track_id')->nullable();
             $table->mediumText('description')->nullable();
             $table->string('background_image')->nullable();
+            $table->string('text_color')->nullable();
             $table->integer('created_by')->unsigned();
             $table->foreign('created_by')->references('id')->on('users');
             $table->timestamps();

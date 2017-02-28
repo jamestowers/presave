@@ -17,15 +17,8 @@ fieldset{
   border: none;
   border-bottom: 1px solid $grey6;
   clear: both;
-  margin: $padding*2 0 10px;
-  padding: 0;
-  min-height: 300px;
-  &.flex{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  padding-bottom: $padding;
+  margin-bottom: $padding;
 }
 .form-group,
 .form-row{
@@ -72,7 +65,6 @@ label{
   @include font-size(1.4);
   font-family: $font-header;
   text-transform: uppercase;
-  padding-right:40px;
   margin-bottom: 6px;
   &.display-inline{
     clear:none;

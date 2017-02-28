@@ -14,6 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\SpotifyRefreshToken::class,
+        \App\Console\Commands\RefreshFanAccessToken::class,
+        \App\Console\Commands\AddReleasesToUserAccounts::class,
     ];
 
     /**
