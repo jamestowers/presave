@@ -378,6 +378,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -1460,6 +1465,9 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return (_vm.campaign) ? _c('div', {
     staticClass: "text-center pad",
+    style: ({
+      color: _vm.campaign.text_color
+    }),
     attrs: {
       "id": "campaign"
     }

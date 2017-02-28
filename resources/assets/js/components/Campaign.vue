@@ -1,5 +1,10 @@
 <template>
-    <div v-if="campaign" id="campaign" class="text-center pad"> 
+    <div 
+        v-if="campaign" 
+        id="campaign" 
+        class="text-center pad"
+        :style="{ color: campaign.text_color }"
+        > 
 
         <div class="background" :style="{ backgroundImage: 'url(' + backgroundImage + ')' }"></div>
         <div class="inner">
