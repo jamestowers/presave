@@ -47,6 +47,7 @@
                         name="release_artwork" 
                         action="/api/upload"
                         :multiple="true"
+                        :maxSize=12
                         :auto="true"
                         accept='image/*'
                         >

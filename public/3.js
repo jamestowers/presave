@@ -363,6 +363,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -862,6 +863,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "release_artwork",
       "action": "/api/upload",
       "multiple": true,
+      "maxSize": 12,
       "auto": true,
       "accept": "image/*"
     },
