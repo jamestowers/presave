@@ -398,24 +398,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 
-//import AjaxForm from './AjaxForm.vue'
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
 
     mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins__["a" /* showErrors */]],
-
-    props: {
-        /*campaignId: {
-            type: Number,
-            default: null
-        }*/
-    },
 
     data: function data() {
         return {
@@ -432,8 +431,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 text_color: null,
                 artist: {}
             },
-            colors: ['222222', 'FFFFFF'],
-            selectedColorIndex: 0
+            colors: ['222222', 'FFFFFF']
         };
     },
 
@@ -445,6 +443,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         urlSlug: function urlSlug() {
             if (this.campaign.release_title) {
                 return this.campaign.release_title.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
+            }
+        },
+        selectedColorIndex: function selectedColorIndex() {
+            if (this.campaign.text_color) {
+                return this.colors.indexOf(this.campaign.text_color);
+            } else {
+                return 0;
             }
         }
     },
@@ -464,7 +469,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchCampaign: function fetchCampaign() {
             if (this.$route.name === 'campaigns-edit') {
                 this.$http.get('campaigns/' + this.$route.params.campaignId).then(function (response) {
-                    //console.log(response.data.campaign);
                     this.campaign = response.data.campaign;
                 }, function (error) {
                     console.error(error);
@@ -472,11 +476,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         onArtistSelected: function onArtistSelected(artist) {
-            console.log(artist);
             this.campaign.artist = artist;
         },
         setDate: function setDate(e) {
-            //console.log(e); 
             this.campaign.release_date = e;
         },
         onSubmit: function onSubmit() {
@@ -499,7 +501,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var vm = this;
             setTimeout(function () {
                 vm.success = false;
-            }, 5000);
+            }, 10000);
         },
         onError: function onError(errors) {
             this.showErrors(errors);
@@ -885,7 +887,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     attrs: {
       "type": "text",
-      "placeholder": "URL prefix"
+      "placeholder": "URL"
     },
     domProps: {
       "value": (_vm.campaign.slug)
@@ -1003,7 +1005,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "submit"
     }
-  }, [_vm._v(_vm._s(_vm.submitButtonText))])])])
+  }, [_vm._v(_vm._s(_vm.submitButtonText))]), _vm._v(" "), (_vm.success || _vm.editing) ? _c('a', {
+    staticClass: "btn-tertiary pull-right",
+    attrs: {
+      "href": ("/" + (_vm.campaign.slug)),
+      "role": "button",
+      "target": "_blank"
+    }
+  }, [_vm._v("Preview campaign")]) : _vm._e()])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

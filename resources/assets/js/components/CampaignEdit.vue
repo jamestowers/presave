@@ -39,7 +39,7 @@
                 <div class="form-row">
                     <div class="group row">
                         <label class="pull-left">presave.tracks2.com/</label>
-                        <div class="col4"><input type="text" v-model="campaign.slug" placeholder="URL prefix" /></div>
+                        <div class="col4"><input type="text" v-model="campaign.slug" placeholder="URL" /></div>
                     </div>
                 </div>
             </fieldset>
@@ -128,6 +128,13 @@
             </fieldset>
 
             <button type="submit" class="pull-right">{{ submitButtonText }}</button>
+            
+            <a :href="`/${campaign.slug}`"
+                v-if="success || editing"
+                role="button" 
+                target="_blank"
+                class="btn-tertiary pull-right"
+                >Preview campaign</a> 
 
         </form>
     </div>
@@ -139,19 +146,11 @@
     import {showErrors} from '../mixins';
     import Datepicker from 'vuejs-datepicker'
     import ArtistSearch from './ArtistSearch.vue';
-    //import AjaxForm from './AjaxForm.vue'
     import FileUpload from './FileUpload.vue'
 
     export default {
 
         mixins: [showErrors],
-
-        props: {
-            /*campaignId: {
-                type: Number,
-                default: null
-            }*/
-        },
 
         data() {
             return{
@@ -170,8 +169,7 @@
                 },
                 colors: [
                     '222222', 'FFFFFF'
-                ],
-                selectedColorIndex: 0
+                ]
             }
         },
 
@@ -187,6 +185,13 @@
                         .replace(/ +/g,'-');
                 }
             },
+            selectedColorIndex(){
+                if(this.campaign.text_color){
+                    return this.colors.indexOf(this.campaign.text_color)
+                }else{
+                    return 0
+                }
+            }
         },
 
         created(){
@@ -204,7 +209,6 @@
                 if(this.$route.name === 'campaigns-edit'){
                     this.$http.get('campaigns/' + this.$route.params.campaignId)
                         .then(function(response){
-                            //console.log(response.data.campaign);
                             this.campaign = response.data.campaign
                         }, function(error){
                             console.error(error)
@@ -212,11 +216,9 @@
                 }
             },
             onArtistSelected(artist) {
-                console.log(artist)
                 this.campaign.artist = artist
             },
             setDate(e){
-                //console.log(e); 
                 this.campaign.release_date = e
             },
             onSubmit(){
@@ -239,7 +241,7 @@
                 let vm = this
                 setTimeout(function(){
                     vm.success = false
-                }, 5000)
+                }, 10000)
             },
             onError(errors) {
                 this.showErrors(errors)
