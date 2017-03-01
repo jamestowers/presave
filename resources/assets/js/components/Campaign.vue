@@ -45,8 +45,22 @@
                                     @playlistSelected="onPlaylistSelected"
                                     ></playlist-selector>
                                 
-                                <input type="checkbox" name="mailing-list" id="mailing-list" checked="checked" value="1" />
-                                <label for="mailing-list">Sign up to the official mailing list</label>
+                                <checkbox 
+                                    name="follow" 
+                                    value="1" 
+                                    :label="`Follow ${campaign.artist.name} on Spotify`"
+                                    :isChecked="true"
+                                    :small="true"
+                                    ></checkbox>
+                                
+                                <checkbox 
+                                    name="mailing-list" 
+                                    value="1" 
+                                    label="Sign up to the official mailing list"
+                                    :isChecked="true"
+                                    :small="true"
+                                    ></checkbox>
+
 
                                 <input type="hidden" name="campaignId" :value="campaign.id" />
 
@@ -70,6 +84,7 @@
 
     import LoginBtn from './LoginBtn.vue';
     import AjaxForm from './AjaxForm.vue';
+    import Checkbox from './Checkbox.vue';
     import PlaylistSelector from './PlaylistSelector.vue';
 
     export default {
@@ -103,6 +118,7 @@
         components: {
             LoginBtn,
             AjaxForm,
+            Checkbox,
             PlaylistSelector
         },
 

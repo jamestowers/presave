@@ -50,31 +50,6 @@ input[type="date"]{
 input.datepicker{
   width:100%;
 }
-.checkbox-group{
-  label{
-    text-align: left;
-  }
-}
-.checkbox{
-  width: 50%;
-  display: block;
-  float: left;
-  padding: 5px 0;
-  .field_with_errors{
-    display: inline;
-  }
-}
-input[type="checkbox"], 
-input[type="radio"] {
-  display: inline;
-  margin-right: 5px;
-  & + label{
-    clear: none;
-    display: inline;
-    margin-right: 10px;
-    padding-right:0;
-  }
-}
 
 .addon-field{
   i{
