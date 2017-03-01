@@ -86,6 +86,9 @@
             //console.log('[Campaign]');
             this.fetchCampaign()
         },
+        beforeRouteUpdate(){
+            document.title = this.campaign.release_title
+        },
 
         computed: {
             isLoggedIn(){
@@ -109,6 +112,7 @@
             },
             onSuccess(response){
                 this.campaign = response.data.campaign
+                document.title = this.campaign.release_title
             },
             onError(error){
                 if(error.status === 404){

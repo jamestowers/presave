@@ -206,7 +206,7 @@
             margin: 0;
         }
         a, input[type="text"]{
-            color: currentColor;
+            color: $grey2;
             display: block;
             padding: 9px 6px;
         }
