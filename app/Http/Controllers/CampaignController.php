@@ -72,6 +72,7 @@ class CampaignController extends Controller
         $campaign->text_color = $request->text_color;
         $campaign->release_artwork = $request->release_artwork;
         $campaign->background_image = $request->background_image;
+        $campaign->preview_url = $request->preview_url;
         $campaign->release_date = \Carbon\Carbon::parse($request->release_date);
         $campaign->created_by = \Auth::user()->id;
 
@@ -153,6 +154,7 @@ class CampaignController extends Controller
         $campaign->release_artwork = $request->release_artwork;
         $campaign->text_color = $request->text_color;
         $campaign->background_image = $request->background_image;
+        $campaign->preview_url = $request->preview_url;
         $campaign->release_date = \Carbon\Carbon::parse($request->release_date);
         //$campaign->created_by = \Auth::user()->id;
         

@@ -45,7 +45,11 @@
             </fieldset>
 
             <fieldset>
-            
+                <div class="form-row">
+                    <label>Preview url</label>
+                    <p class="description"><a href="https://developer.spotify.com/technologies/widgets/spotify-play-button/" target="_blank" role="button" class="btn-sm pull-left">help</a></p>
+                    <input type="text" v-model="campaign.preview_url" placeholder="Enter preview code" />
+                </div>
                 <div class="form-row">
                     <label>Description</label>
                     <textarea v-model="campaign.description"></textarea>
@@ -164,6 +168,7 @@
                     release_artwork: null,
                     background_image: null,
                     release_date: null,
+                    preview_url: null,
                     text_color: null,
                     artist: {}
                 },

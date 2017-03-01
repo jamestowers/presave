@@ -73,8 +73,20 @@
                         </div>
                     </transition>
                 </div>
+                
+                <div v-else>
+                    <login-btn :redirect="campaign.slug"></login-btn>
 
-                <login-btn v-else :redirect="campaign.slug"></login-btn>
+                    <iframe 
+                        v-if="campaign.preview_url" 
+                        :src="`https://embed.spotify.com/?uri=${campaign.preview_url}`" 
+                        width="300" 
+                        height="380" 
+                        frameborder="0" 
+                        allowtransparency="true"
+                        ></iframe>
+                </div>
+
             </transition>
         </div>
     </div>
@@ -171,6 +183,7 @@
             z-index: -1;
         }
         .thumbnail{
+            border: $padding solid rgba(255,255,255,0.4);
             max-width: 300px;
         }
     }

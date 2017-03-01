@@ -405,6 +405,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -428,6 +432,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 release_artwork: null,
                 background_image: null,
                 release_date: null,
+                preview_url: null,
                 text_color: null,
                 artist: {}
             },
@@ -901,6 +906,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])])])]), _vm._v(" "), _c('fieldset', [_c('div', {
     staticClass: "form-row"
+  }, [_c('label', [_vm._v("Preview url")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.campaign.preview_url),
+      expression: "campaign.preview_url"
+    }],
+    attrs: {
+      "type": "text",
+      "placeholder": "Enter preview code"
+    },
+    domProps: {
+      "value": (_vm.campaign.preview_url)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.campaign.preview_url = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-row"
   }, [_c('label', [_vm._v("Description")]), _vm._v(" "), _c('textarea', {
     directives: [{
       name: "model",
@@ -1014,7 +1041,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "target": "_blank"
     }
   }, [_vm._v("Preview campaign")]) : _vm._e()])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "description"
+  }, [_c('a', {
+    staticClass: "btn-sm pull-left",
+    attrs: {
+      "href": "https://developer.spotify.com/technologies/widgets/spotify-play-button/",
+      "target": "_blank",
+      "role": "button"
+    }
+  }, [_vm._v("help")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

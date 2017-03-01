@@ -13,6 +13,7 @@
         "jwilsson/spotify-web-api-php": "^1.0.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "doctrine/dbal": "~2.3",
         "laravelcollective/html": "^5.4.0",
         "rtheunissen/guzzle-rate-limiter": "^0.3.0",
         "tymon/jwt-auth": "^0.5.10"

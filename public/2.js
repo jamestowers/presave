@@ -1079,6 +1079,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1301,6 +1313,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1324,6 +1340,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 release_artwork: null,
                 background_image: null,
                 release_date: null,
+                preview_url: null,
                 text_color: null,
                 artist: {}
             },
@@ -2249,7 +2266,7 @@ exports = module.exports = __webpack_require__(8)();
 
 
 // module
-exports.push([module.i, "\n#campaign {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-height: 100vh;\n}\n#campaign .background {\n    background-size: cover;\n    background-position: 50% 50%;\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    z-index: -1;\n}\n#campaign .thumbnail {\n    max-width: 300px;\n}\n.campaign-description {\n  margin-bottom: 30px;\n}\n", ""]);
+exports.push([module.i, "\n#campaign {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-height: 100vh;\n}\n#campaign .background {\n    background-size: cover;\n    background-position: 50% 50%;\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    z-index: -1;\n}\n#campaign .thumbnail {\n    border: 30px solid rgba(255, 255, 255, 0.4);\n    max-width: 300px;\n}\n.campaign-description {\n  margin-bottom: 30px;\n}\n", ""]);
 
 // exports
 
@@ -3414,6 +3431,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])])])]), _vm._v(" "), _c('fieldset', [_c('div', {
     staticClass: "form-row"
+  }, [_c('label', [_vm._v("Preview url")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.campaign.preview_url),
+      expression: "campaign.preview_url"
+    }],
+    attrs: {
+      "type": "text",
+      "placeholder": "Enter preview code"
+    },
+    domProps: {
+      "value": (_vm.campaign.preview_url)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.campaign.preview_url = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-row"
   }, [_c('label', [_vm._v("Description")]), _vm._v(" "), _c('textarea', {
     directives: [{
       name: "model",
@@ -3527,7 +3566,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "target": "_blank"
     }
   }, [_vm._v("Preview campaign")]) : _vm._e()])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "description"
+  }, [_c('a', {
+    staticClass: "btn-sm pull-left",
+    attrs: {
+      "href": "https://developer.spotify.com/technologies/widgets/spotify-play-button/",
+      "target": "_blank",
+      "role": "button"
+    }
+  }, [_vm._v("help")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -3878,11 +3928,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "d": "M240 464c-4.1 0-8.2-1.6-11.3-4.7l-96-96c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0l84.7 84.7 212.7-212.7c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6l-224 224c-3.1 3.1-7.2 4.7-11.3 4.7z"
     }
-  })])])])], 1) : _c('login-btn', {
+  })])])])], 1) : _c('div', [_c('login-btn', {
     attrs: {
       "redirect": _vm.campaign.slug
     }
-  })], 1)], 1)]) : _vm._e()
+  }), _vm._v(" "), (_vm.campaign.preview_url) ? _c('iframe', {
+    attrs: {
+      "src": ("https://embed.spotify.com/?uri=" + (_vm.campaign.preview_url)),
+      "width": "300",
+      "height": "380",
+      "frameborder": "0",
+      "allowtransparency": "true"
+    }
+  }) : _vm._e()], 1)])], 1)]) : _vm._e()
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
