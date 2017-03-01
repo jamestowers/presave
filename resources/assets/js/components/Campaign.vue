@@ -17,9 +17,9 @@
                 <section v-if="!isLoggedIn">
                     
                     <h1>{{ campaign.release_title }}</h1>
-                    <!-- <div v-if="campaign.release_artwork" class="thumbnail col4">
-                        <img :src="`uploads/${campaign.release_artwork}`" alt="" />
-                    </div> -->
+                    <div v-if="campaign.release_artwork" class="thumbnail">
+                        <img :src="`images/thumbnail/${campaign.release_artwork}`" :alt="`${campaign.release_title} artwork`" />
+                    </div>
 
                     <div class="campaign-description">{{ campaign.description }}</div>
 
@@ -152,6 +152,9 @@
             bottom: 0;
             right:0;
             z-index: -1;
+        }
+        .thumbnail{
+            max-width: 300px;
         }
     }
     .campaign-description{

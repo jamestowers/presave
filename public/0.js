@@ -746,7 +746,7 @@ exports = module.exports = __webpack_require__(8)();
 
 
 // module
-exports.push([module.i, "\n#campaign {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-height: 100vh;\n}\n#campaign .background {\n    background-size: cover;\n    background-position: 50% 50%;\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    z-index: -1;\n}\n.campaign-description {\n  margin-bottom: 30px;\n}\n", ""]);
+exports.push([module.i, "\n#campaign {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-height: 100vh;\n}\n#campaign .background {\n    background-size: cover;\n    background-position: 50% 50%;\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    z-index: -1;\n}\n#campaign .thumbnail {\n    max-width: 300px;\n}\n.campaign-description {\n  margin-bottom: 30px;\n}\n", ""]);
 
 // exports
 
@@ -1492,7 +1492,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "name": "fade"
     }
-  }, [(!_vm.isLoggedIn) ? _c('section', [_c('h1', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), _c('div', {
+  }, [(!_vm.isLoggedIn) ? _c('section', [_c('h1', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), (_vm.campaign.release_artwork) ? _c('div', {
+    staticClass: "thumbnail"
+  }, [_c('img', {
+    attrs: {
+      "src": ("images/thumbnail/" + (_vm.campaign.release_artwork)),
+      "alt": ((_vm.campaign.release_title) + " artwork")
+    }
+  })]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "campaign-description"
   }, [_vm._v(_vm._s(_vm.campaign.description))])]) : _vm._e()]), _vm._v(" "), _c('transition', {
     attrs: {
