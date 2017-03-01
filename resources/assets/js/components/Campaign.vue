@@ -146,11 +146,10 @@
             onError(error){
                 if(error.status === 404){
                     console.error(error.statusText)
-                    //this.$router.push({ name: '404'})
+                    this.$router.push({ name: '404'})
                 }
             },
             onCampaignFollowed(response){
-                //console.log(response);
                 this.saved = true
             },
             onPlaylistSelected(playlist) {

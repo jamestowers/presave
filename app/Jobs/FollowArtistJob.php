@@ -2,6 +2,8 @@
 
 namespace App\Jobs;
 
+use App\Fan;
+use App\Artist;
 use App\Libraries\Spotify\SpotifyWebAPI;
 use Artisan;
 
@@ -11,12 +13,14 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class AddReleaseToUserAccountsJob implements ShouldQueue
+class FollowArtistJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $fan;
-    protected $spotify_release_id;
+
+    protected $artist;
+
     protected $spotify;
 
     /**
@@ -24,11 +28,10 @@ class AddReleaseToUserAccountsJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(\App\Fan $fan, $spotify_release_id)
+    public function __construct(Fan $fan, Artist $artist)
     {
         $this->fan = $fan;
-        $this->spotify_release_id = $spotify_release_id;
-
+        $this->artist = $artist;
     }
 
     /**
@@ -41,9 +44,8 @@ class AddReleaseToUserAccountsJob implements ShouldQueue
         if($this->fan->expires_at < \Carbon\Carbon::now()->subSeconds(60)){
             Artisan::call('fan:refreshToken', ['fan' => $this->fan->id]);
         }
-
         $this->spotify = new SpotifyWebAPI($this->fan->access_token);
 
-        $this->spotify->addMyAlbums([$this->spotify_release_id]);
+        $this->spotify->followArtists([$this->artist->spotify_id]);
     }
 }

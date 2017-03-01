@@ -15,13 +15,13 @@ webpackJsonp([0],[
 
 
 /* styles */
-__webpack_require__(97)
+__webpack_require__(102)
 
 var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(53),
+  __webpack_require__(54),
   /* template */
-  __webpack_require__(86),
+  __webpack_require__(90),
   /* scopeId */
   null,
   /* cssModules */
@@ -94,9 +94,9 @@ var showErrors = {
 
 var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(49),
+  __webpack_require__(50),
   /* template */
-  __webpack_require__(78),
+  __webpack_require__(82),
   /* scopeId */
   null,
   /* cssModules */
@@ -130,13 +130,51 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(89)
+__webpack_require__(94)
 
 var Component = __webpack_require__(7)(
   /* script */
   __webpack_require__(58),
   /* template */
-  __webpack_require__(74),
+  __webpack_require__(79),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/james/projects/presaver/resources/assets/js/components/Checkbox.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Checkbox.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2e211169", Component.options)
+  } else {
+    hotAPI.reload("data-v-2e211169", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(93)
+
+var Component = __webpack_require__(7)(
+  /* script */
+  __webpack_require__(60),
+  /* template */
+  __webpack_require__(77),
   /* scopeId */
   null,
   /* cssModules */
@@ -163,19 +201,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 44 */,
-/* 45 */
+/* 45 */,
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(98)
+__webpack_require__(103)
 
 var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(60),
+  __webpack_require__(62),
   /* template */
-  __webpack_require__(88),
+  __webpack_require__(92),
   /* scopeId */
   null,
   /* cssModules */
@@ -202,15 +240,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */,
-/* 47 */
+/* 47 */,
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(62),
+  __webpack_require__(64),
   /* template */
-  __webpack_require__(80),
+  __webpack_require__(84),
   /* scopeId */
   null,
   /* cssModules */
@@ -237,13 +275,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 48 */,
-/* 49 */
+/* 49 */,
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_form_to_object__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_form_to_object__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_form_to_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_form_to_object__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins__ = __webpack_require__(39);
 //
@@ -340,21 +378,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 50 */,
 /* 51 */,
 /* 52 */,
-/* 53 */
+/* 53 */,
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LoginBtn_vue__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LoginBtn_vue__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LoginBtn_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__LoginBtn_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__AjaxForm_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Checkbox_vue__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Checkbox_vue__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Checkbox_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Checkbox_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PlaylistSelector_vue__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PlaylistSelector_vue__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PlaylistSelector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__PlaylistSelector_vue__);
 //
 //
@@ -503,11 +541,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onError: function onError(error) {
             if (error.status === 404) {
                 console.error(error.statusText);
-                //this.$router.push({ name: '404'})
+                this.$router.push({ name: '404' });
             }
         },
         onCampaignFollowed: function onCampaignFollowed(response) {
-            //console.log(response);
             this.saved = true;
         },
         onPlaylistSelected: function onPlaylistSelected(playlist) {
@@ -517,11 +554,66 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 54 */,
 /* 55 */,
 /* 56 */,
 /* 57 */,
 /* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = {
+
+    props: {
+        isChecked: {
+            type: Boolean,
+            default: false
+        },
+        label: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        value: {
+            type: String,
+            required: true
+        },
+        small: {
+            type: Boolean,
+            default: false
+        }
+    },
+
+    computed: {
+        id: function id() {
+            return _.snakeCase(this.name);
+        }
+    }
+
+};
+
+/***/ }),
+/* 59 */,
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -670,8 +762,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 59 */,
-/* 60 */
+/* 61 */,
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -727,13 +819,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 61 */,
-/* 62 */
+/* 63 */,
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Dropdown_vue__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Dropdown_vue__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Dropdown_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Dropdown_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins__ = __webpack_require__(39);
 //
@@ -794,7 +886,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
@@ -808,14 +900,28 @@ exports.push([module.i, "\n.select-dropdown {\n  margin-bottom: 30px;\n  min-hei
 
 
 /***/ }),
-/* 64 */,
-/* 65 */,
-/* 66 */,
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)();
+// imports
+
+
+// module
+exports.push([module.i, "\n.checkbox,\n.checkbox-small {\n  position: relative;\n  margin: 15px auto;\n}\n.checkbox label,\n  .checkbox-small label {\n    position: relative;\n    cursor: pointer;\n    display: inline-block;\n    padding-right: 4px;\n    text-align: left;\n}\n.checkbox input[type=\"checkbox\"] {\n  position: absolute;\n  opacity: 0;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n}\n.checkbox input[type=\"checkbox\"] + div {\n    cursor: pointer;\n    display: inline-block;\n    margin-right: 4px;\n    vertical-align: middle;\n    width: 42px;\n    height: 26px;\n    border: 1px solid #CCC;\n    border-radius: 999px;\n    background: #E8E8E8;\n    overflow: hidden;\n    -webkit-transition: all 0.2s cubic-bezier(0, 0.85, 0.33, 1.02);\n    transition: all 0.2s cubic-bezier(0, 0.85, 0.33, 1.02);\n}\n.checkbox input[type=\"checkbox\"] + div:before {\n      content: '';\n      float: left;\n      width: 24px;\n      height: 24px;\n      margin: 0;\n      border-radius: inherit;\n      background: #FFF;\n}\n.checkbox input[type=\"checkbox\"]:checked + div {\n    background-color: #51FFB7;\n    padding-left: 16px;\n}\n.checkbox-small input[type=\"checkbox\"] + div {\n  width: 34px;\n  height: 20px;\n}\n.checkbox-small input[type=\"checkbox\"] + div:before {\n    width: 19px;\n    height: 19px;\n}\n.checkbox-small input[type=\"checkbox\"]:checked + div {\n  padding-left: 14px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 67 */,
 /* 68 */,
 /* 69 */,
 /* 70 */,
-/* 71 */
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
@@ -829,7 +935,7 @@ exports.push([module.i, "\n#campaign {\n  display: -webkit-box;\n  display: -ms-
 
 
 /***/ }),
-/* 72 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(8)();
@@ -843,7 +949,7 @@ exports.push([module.i, "\n.login-btn {\n  color: #222;\n  padding: 10px;\n}\n",
 
 
 /***/ }),
-/* 73 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;(function (window, document, undefined) {
@@ -1365,7 +1471,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;(function (window, document, undefined) {
 
 
 /***/ }),
-/* 74 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1453,10 +1559,44 @@ if (false) {
 }
 
 /***/ }),
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */
+/* 78 */,
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "checkbox",
+    class: {
+      'checkbox-small': _vm.small
+    }
+  }, [_c('input', {
+    attrs: {
+      "type": "checkbox",
+      "name": _vm.name,
+      "id": _vm.id
+    },
+    domProps: {
+      "checked": _vm.isChecked,
+      "value": _vm.value
+    }
+  }), _vm._v(" "), _c('div'), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": _vm.id
+    }
+  }, [_vm._v(_vm._s(_vm.label))])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2e211169", module.exports)
+  }
+}
+
+/***/ }),
+/* 80 */,
+/* 81 */,
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1510,8 +1650,8 @@ if (false) {
 }
 
 /***/ }),
-/* 79 */,
-/* 80 */
+/* 83 */,
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1538,12 +1678,12 @@ if (false) {
 }
 
 /***/ }),
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
 /* 85 */,
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1662,8 +1802,8 @@ if (false) {
 }
 
 /***/ }),
-/* 87 */,
-/* 88 */
+/* 91 */,
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1696,13 +1836,13 @@ if (false) {
 }
 
 /***/ }),
-/* 89 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(63);
+var content = __webpack_require__(65);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1722,20 +1862,46 @@ if(false) {
 }
 
 /***/ }),
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(71);
+var content = __webpack_require__(66);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(9)("2daf38c2", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2e211169!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Checkbox.vue", function() {
+     var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2e211169!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Checkbox.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(74);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1755,13 +1921,13 @@ if(false) {
 }
 
 /***/ }),
-/* 98 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(72);
+var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1772,188 +1938,6 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-eab4a04e!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginBtn.vue", function() {
      var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-eab4a04e!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LoginBtn.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(114)
-
-var Component = __webpack_require__(7)(
-  /* script */
-  __webpack_require__(109),
-  /* template */
-  __webpack_require__(110),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Users/james/projects/presaver/resources/assets/js/components/Checkbox.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Checkbox.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2e211169", Component.options)
-  } else {
-    hotAPI.reload("data-v-2e211169", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 109 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = {
-
-    props: {
-        isChecked: {
-            type: Boolean,
-            default: false
-        },
-        label: {
-            type: String,
-            required: true
-        },
-        name: {
-            type: String,
-            required: true
-        },
-        value: {
-            type: String,
-            required: true
-        },
-        small: {
-            type: Boolean,
-            default: false
-        }
-    },
-
-    computed: {
-        id: function id() {
-            return _.snakeCase(this.name);
-        }
-    }
-
-};
-
-/***/ }),
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "checkbox",
-    class: {
-      'checkbox-small': _vm.small
-    }
-  }, [_c('input', {
-    attrs: {
-      "type": "checkbox",
-      "name": _vm.name,
-      "id": _vm.id
-    },
-    domProps: {
-      "checked": _vm.isChecked,
-      "value": _vm.value
-    },
-    on: {
-      "click": _vm.onClick
-    }
-  }), _vm._v(" "), _c('div'), _vm._v(" "), _c('label', {
-    attrs: {
-      "for": _vm.id
-    }
-  }, [_vm._v(_vm._s(_vm.label))])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2e211169", module.exports)
-  }
-}
-
-/***/ }),
-/* 111 */,
-/* 112 */,
-/* 113 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(8)();
-// imports
-
-
-// module
-exports.push([module.i, "\n.checkbox,\n.checkbox-small {\n  position: relative;\n  margin: 15px auto;\n}\n.checkbox label,\n  .checkbox-small label {\n    position: relative;\n    cursor: pointer;\n    display: inline-block;\n    padding-right: 4px;\n    text-align: left;\n}\n.checkbox input[type=\"checkbox\"] {\n  position: absolute;\n  opacity: 0;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n}\n.checkbox input[type=\"checkbox\"] + div {\n    cursor: pointer;\n    display: inline-block;\n    margin-right: 4px;\n    vertical-align: middle;\n    width: 42px;\n    height: 26px;\n    border: 1px solid #CCC;\n    border-radius: 999px;\n    background: #E8E8E8;\n    overflow: hidden;\n    -webkit-transition: all 0.2s cubic-bezier(0, 0.85, 0.33, 1.02);\n    transition: all 0.2s cubic-bezier(0, 0.85, 0.33, 1.02);\n}\n.checkbox input[type=\"checkbox\"] + div:before {\n      content: '';\n      float: left;\n      width: 24px;\n      height: 24px;\n      margin: 0;\n      border-radius: inherit;\n      background: #FFF;\n}\n.checkbox input[type=\"checkbox\"]:checked + div {\n    background-color: #51FFB7;\n    padding-left: 16px;\n}\n.checkbox-small input[type=\"checkbox\"] + div {\n  width: 34px;\n  height: 20px;\n}\n.checkbox-small input[type=\"checkbox\"] + div:before {\n    width: 19px;\n    height: 19px;\n}\n.checkbox-small input[type=\"checkbox\"]:checked + div {\n  padding-left: 14px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 114 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(113);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(9)("2daf38c2", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2e211169!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Checkbox.vue", function() {
-     var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2e211169!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Checkbox.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

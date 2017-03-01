@@ -11,7 +11,9 @@ class FanController extends Controller
 
     public function followCampaign(Request $request)
     {
+        
         $accessToken = $this->getTokenFromHeader($request);
+
         $fan = Fan::where('access_token', $accessToken)->firstOrFail();
 
         $campaign = Campaign::findOrFail($request->campaignId);
@@ -21,11 +23,19 @@ class FanController extends Controller
         }
 
         if(!$fan->artists->contains($campaign->artist->id)){
-            $fan->artists()->attach($campaign->artist->id, ['mailing_list_opt_in' => $request->has('mailing_list')]);
+            $fan->artists()->attach($campaign->artist->id, [
+                'mailing_list_opt_in' => $request->has('mailing-list'),
+                'follow' => $request->has('follow')
+                ]);
+        }
+
+        if($request->has('follow')){
+            dispatch(new \App\Jobs\FollowArtistJob($fan, $campaign->artist));
         }
 
         return response()->json(['fan' => $fan, 'campaign' => $campaign]);
     }
+
 
     private function getTokenFromHeader(Request $request)
     {

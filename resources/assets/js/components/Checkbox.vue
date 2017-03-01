@@ -1,7 +1,6 @@
 <template>
     <div class="checkbox" :class="{'checkbox-small': small}">
         <input 
-            @click="onClick" 
             type="checkbox" 
             :checked="isChecked"
             :name="name" 
@@ -44,7 +43,7 @@ export default {
         id(){
             return _.snakeCase(this.name)
         }
-    },
+    }
 
 }
 

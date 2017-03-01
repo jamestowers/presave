@@ -5,16 +5,16 @@
             <img :src="`/uploads/${campaign.release_artwork}`" />
         </div>
         <div class="">
-            <h2>{{ campaign.release_title}}</h2>
-            
-            <router-link 
+            <h2>{{ campaign.release_title}} <router-link 
                 v-if="campaign.id" 
                 :to="{ name: 'campaigns-edit', params: { campaignId: campaign.id }}"
                 role="button"
-                class="btn-sm"
-                >Edit</router-link>
+                class="btn-sm btn-tertiary no-flex"
+                >Edit</router-link></h2>
+            
+            
 
-            <p class="small"><em>Released: {{ campaign.release_date }}</em></p>
+            <p class="small">Released: {{ campaign.release_date }} | {{ campaign.fans_count }} presaves</p>
             
             <p>{{ campaign.description }}</p>
         </div>

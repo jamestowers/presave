@@ -2,7 +2,10 @@
     
     <div class="campaigns">
         
-        <h1 class="page-title">Campaigns</h1>
+        <div class="row masthead">
+            <h1 class="page-title pull-left">Campaigns</h1>
+            <router-link :to="{ name: 'campaigns-create'}" role="button" class="btn-sm no-flex pull-right">Create a campaign</router-link>
+        </div>
         
         <div v-if="campaigns.length > 0">
             <campaign-tile 
@@ -24,8 +27,11 @@
 <script>
 
     import CampaignTile from './CampaignTile.vue';
+    import {showErrors} from '../mixins';
 
     export default {
+
+        mixins: [showErrors],
 
         data(){
             return {
@@ -51,7 +57,7 @@
                 this.campaigns = response.data.campaigns
             },
             onError(error){
-                console.error(error.data)
+                this.showErrors(error)
             }  
         }
     }

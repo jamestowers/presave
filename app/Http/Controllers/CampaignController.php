@@ -28,6 +28,7 @@ class CampaignController extends Controller
     public function index()
     {
         $campaigns = $this->campaigns
+            ->withCount('fans')
             ->whereCreatedBy(\Auth::user()->id)
             ->get();
 

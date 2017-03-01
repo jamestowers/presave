@@ -520,64 +520,56 @@
 	"buffers":
 	[
 		{
-			"file": "resources/assets/js/components/CampaignEdit.vue",
+			"file": "app/Campaign.php",
 			"settings":
 			{
-				"buffer_size": 9868,
+				"buffer_size": 1231,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/assets/js/components/Checkbox.vue",
+			"file": "resources/assets/js/components/CampaignTile.vue",
 			"settings":
 			{
-				"buffer_size": 2436,
+				"buffer_size": 1281,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/assets/js/components/Campaign.vue",
+			"file": "resources/assets/js/components/Campaigns.vue",
 			"settings":
 			{
-				"buffer_size": 6206,
+				"buffer_size": 1651,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/assets/js/components/Dropdown.vue",
+			"file": "resources/assets/sass/_layout.scss",
 			"settings":
 			{
-				"buffer_size": 5896,
+				"buffer_size": 157,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/assets/sass/forms/_forms-text-fields.scss",
+			"file": "app/Http/Controllers/CampaignController.php",
 			"settings":
 			{
-				"buffer_size": 1681,
+				"buffer_size": 5961,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/assets/sass/forms/_forms.scss",
+			"file": "resources/assets/sass/_utils.scss",
 			"settings":
 			{
-				"buffer_size": 1775,
+				"buffer_size": 1752,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/james/projects/accounts/resources/assets/js/components/Checkbox.vue",
-			"settings":
-			{
-				"buffer_size": 2973,
 				"line_ending": "Unix"
 			}
 		}
@@ -672,39 +664,46 @@
 		"/Users/james/projects/presaver/app/Console",
 		"/Users/james/projects/presaver/app/Console/Commands",
 		"/Users/james/projects/presaver/app/Jobs",
+		"/Users/james/projects/presaver/database",
 		"/Users/james/projects/presaver/resources",
 		"/Users/james/projects/presaver/resources/assets",
 		"/Users/james/projects/presaver/resources/assets/js",
-		"/Users/james/projects/presaver/resources/assets/js/vuex",
+		"/Users/james/projects/presaver/resources/assets/js/components",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/modules",
 		"/Users/james/projects/presaver/resources/assets/sass",
 		"/Users/james/projects/presaver/resources/assets/sass/forms"
 	],
 	"file_history":
 	[
+		"/Users/james/projects/presaver/resources/assets/sass/_type.scss",
+		"/Users/james/projects/accounts/resources/assets/js/components/Checkbox.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/Checkbox.vue",
+		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit.vue",
+		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms.scss",
+		"/Users/james/projects/presaver/database/migrations/2017_03_01_132918_change_preview_column_name.php",
+		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms-text-fields.scss",
+		"/Users/james/projects/presaver/resources/assets/js/components/Campaign.vue",
+		"/Users/james/projects/presaver/app/Http/Controllers/CampaignController.php",
+		"/Users/james/projects/presaver/composer.json",
+		"/Users/james/projects/presaver/resources/assets/js/components/Dropdown.vue",
 		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms-buttons.scss",
 		"/Users/james/projects/presaver/resources/views/app.blade.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/Campaign.vue",
 		"/Users/james/projects/presaver/routes/web.php",
 		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyController.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/Dropdown.vue",
 		"/Users/james/projects/presaver/config/image.php",
 		"/Users/james/projects/presaver/app/Campaign.php",
-		"/Users/james/projects/presaver/resources/assets/js/components/CampaignEdit.vue",
 		"/Users/james/projects/presaver/routes/api.php",
 		"/Users/james/projects/presaver/resources/assets/js/app.js",
 		"/Users/james/projects/presaver/.env",
 		"/Users/james/projects/presaver/node_modules/vue/dist/vue.js",
 		"/Users/james/projects/presaver/public/js/app.js",
 		"/Users/james/projects/presaver/config/app.php",
-		"/Users/james/projects/presaver/app/Http/Controllers/CampaignController.php",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/modules/app.js",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/actions.js",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/mutation-types.js",
 		"/Users/james/projects/presaver/resources/assets/js/vuex/store.js",
 		"/Users/james/projects/presaver/app/Libraries/Spotify/SpotifyWebAPI.php",
 		"/Users/james/projects/presaver/app/Http/Controllers/SpotifyAdminController.php",
-		"/Users/james/projects/presaver/resources/assets/sass/forms/_forms.scss",
 		"/Users/james/projects/presaver/database/migrations/2017_02_14_134110_create_campaigns_table.php",
 		"/Users/james/projects/presaver/app/Exceptions/Handler.php",
 		"/Users/james/projects/presaver/resources/assets/js/components/PlaylistSelector.vue",
@@ -761,14 +760,12 @@
 		"/Users/james/projects/presaver/app/Http/Controllers/Auth/RegisterController.php",
 		"/Users/james/projects/presaver/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
 		"/Users/james/projects/presaver/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/Users/james/projects/presaver/resources/assets/sass/_type.scss",
 		"/Users/james/projects/presaver/resources/assets/js/mixins.js",
 		"/Users/james/projects/presaver/node_modules/request/lib/auth.js",
 		"/Users/james/projects/presaver/app/User.php",
 		"/Users/james/projects/presaver/app/Http/Kernel.php",
 		"/Users/james/projects/presaver/app/Providers/AuthServiceProvider.php",
 		"/Users/james/projects/presaver/config/auth.php",
-		"/Users/james/projects/presaver/composer.json",
 		"/Users/james/projects/presaver/vendor/laravel/passport/src/Http/Middleware/CreateFreshApiToken.php",
 		"/Users/james/projects/presaver/resources/assets/sass/_layout.scss",
 		"/Users/james/projects/presaver/resources/assets/sass/_utils.scss",
@@ -805,15 +802,11 @@
 		"/Users/james/projects/presaver/resources/assets/js/components/passport/PersonalAccessTokens.vue",
 		"/Users/james/projects/presaver/vendor/psy/psysh/src/Psy/ConfigPaths.php",
 		"/Users/james/projects/presaver/resources/views/createOrUpdate.blade.php",
-		"/Users/james/projects/presaver/node_modules/less/test/css/variables.css",
-		"/Users/james/projects/presaver/app/Jobs/AddAlbumToUserAccount.php",
-		"/Users/james/projects/presaver/config/services.php",
-		"/Users/james/projects/presaver/app/Libraries/Request.php",
-		"/Users/james/projects/presaver/resources/assets/js/vuex/modules/errors.js"
+		"/Users/james/projects/presaver/node_modules/less/test/css/variables.css"
 	],
 	"find":
 	{
-		"height": 64.0
+		"height": 48.0
 	},
 	"find_in_files":
 	{
@@ -868,6 +861,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"aggregate",
+			"order",
+			"background_image",
 			">\n",
 			"checkbox",
 			"AjaxForm",
@@ -992,10 +988,7 @@
 			"168",
 			"70",
 			"router-view",
-			"\"",
-			"var",
-			"Campaign",
-			"files"
+			"\""
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1141,24 +1134,54 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "resources/assets/js/components/CampaignEdit.vue",
+					"file": "app/Campaign.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9868,
+						"buffer_size": 1231,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9404,
-								9368
+								594,
+								594
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 314.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/assets/js/components/CampaignTile.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192,
+								192
 							]
 						],
 						"settings":
@@ -1168,35 +1191,65 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5197.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "resources/assets/js/components/Checkbox.vue",
+					"buffer": 2,
+					"file": "resources/assets/js/components/Campaigns.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2436,
+						"buffer_size": 1651,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1084,
-								1084
+								128,
+								128
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 720.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "resources/assets/sass/_layout.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 157,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								118,
+								118
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1205,120 +1258,60 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
-					"buffer": 2,
-					"file": "resources/assets/js/components/Campaign.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6206,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1728,
-								1728
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 791.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "resources/assets/js/components/Dropdown.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5896,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4473,
-								4473
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2968.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
 					"buffer": 4,
-					"file": "resources/assets/sass/forms/_forms-text-fields.scss",
+					"file": "app/Http/Controllers/CampaignController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1681,
+						"buffer_size": 5961,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1016,
-								1016
+								5,
+								5
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1013.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "resources/assets/sass/forms/_forms.scss",
+					"buffer": 2,
+					"file": "resources/assets/js/components/Campaigns.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1775,
+						"buffer_size": 1651,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								145,
-								112
+								903,
+								903
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1329,33 +1322,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "/Users/james/projects/accounts/resources/assets/js/components/Checkbox.vue",
+					"buffer": 5,
+					"file": "resources/assets/sass/_utils.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2973,
+						"buffer_size": 1752,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1002,
-								1111
+								903,
+								903
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 344.0,
+						"translation.y": 617.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1421,6 +1414,38 @@
 		"selected_items":
 		[
 			[
+				"campaigns",
+				"resources/assets/js/components/Campaigns.vue"
+			],
+			[
+				"utils.s",
+				"resources/assets/sass/_utils.scss"
+			],
+			[
+				"type",
+				"resources/assets/sass/_type.scss"
+			],
+			[
+				"campaigncontr",
+				"app/Http/Controllers/CampaignController.php"
+			],
+			[
+				"campaign.p",
+				"app/Campaign.php"
+			],
+			[
+				"campaigncon",
+				"app/Http/Controllers/CampaignController.php"
+			],
+			[
+				"composer",
+				"composer.json"
+			],
+			[
+				"campaign",
+				"resources/assets/js/components/Campaign.vue"
+			],
+			[
 				"dropd",
 				"resources/assets/js/components/Dropdown.vue"
 			],
@@ -1485,10 +1510,6 @@
 				"config/app.php"
 			],
 			[
-				"campaign",
-				"resources/assets/js/components/Campaign.vue"
-			],
-			[
 				"spotify",
 				"app/Http/Controllers/SpotifyController.php"
 			],
@@ -1547,10 +1568,6 @@
 			[
 				"spotifycon",
 				"app/Http/Controllers/SpotifyController.php"
-			],
-			[
-				"campaigncontr",
-				"app/Http/Controllers/CampaignController.php"
 			],
 			[
 				"addre",
@@ -1615,10 +1632,6 @@
 			[
 				"auth",
 				"resources/assets/js/auth.js"
-			],
-			[
-				"campaigns",
-				"resources/assets/js/components/Campaigns.vue"
 			],
 			[
 				"loginb",
@@ -1781,10 +1794,6 @@
 				"app/Http/Controllers/SpotifyController.php"
 			],
 			[
-				"type",
-				"resources/assets/sass/_type.scss"
-			],
-			[
 				"app.blad",
 				"resources/views/app.blade.php"
 			],
@@ -1827,10 +1836,6 @@
 			[
 				"user",
 				"app/User.php"
-			],
-			[
-				"composer",
-				"composer.json"
 			],
 			[
 				"utils.sc",
@@ -1885,10 +1890,6 @@
 				"resources/views/campaigns/show.blade.php"
 			],
 			[
-				"campaigncon",
-				"app/Http/Controllers/CampaignController.php"
-			],
-			[
 				"spotifyweb",
 				"app/Libraries/Spotify/SpotifyWebAPI.php"
 			],
@@ -1923,14 +1924,6 @@
 			[
 				"variab",
 				"resources/assets/sass/_variables.scss"
-			],
-			[
-				"campaign.vue",
-				"resources/assets/js/components/Campaign.vue"
-			],
-			[
-				"spotifuco",
-				"app/Providers/SpotifyUserServiceProvider.php"
 			]
 		],
 		"width": 0.0
@@ -1989,7 +1982,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

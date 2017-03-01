@@ -41,4 +41,20 @@ class Campaign extends Model
     {
         return $this->belongsToMany('App\Fan');
     }
+
+    /*public function fansCount()
+    {
+        return $this->belongsToMany('App\Fan')
+            ->selectRaw('count(fans.id) as followers')
+            ->groupBy('pivot_campaign_id');
+    }
+
+    public function getFansCountAttribute()
+    {
+        if ( ! array_key_exists('fansCount', $this->relations)) $this->load('fansCount');
+
+        $related = $this->getRelation('fansCount')->first();
+
+        return ($related) ? $related->followers : 0;
+    }*/
 }

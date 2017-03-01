@@ -17,6 +17,7 @@ class SpotifyWebAPI
     protected $session;
     
     protected $userScopes = [
+        'user-follow-modify',
         'user-read-email',
         'user-library-read',
         'user-library-modify',
@@ -86,6 +87,17 @@ class SpotifyWebAPI
 
         return $this->request->api('GET', $uri, [], $headers);
 
+    }
+
+    public function followArtists($ids)
+    {
+        $ids = json_encode([
+            'ids' => (array) $ids,
+        ]);
+
+        $headers = $this->authHeaders();
+
+        return $this->lastResponse = $this->request->api('PUT', '/me/following?type=artist', $ids, $headers);
     }
 
 
