@@ -57,6 +57,7 @@ Route::get('/images/{size}/{name}', function($size = NULL, $name = NULL)
 
 Route::get('/{slug}', 'CampaignController@showBySlug')
     ->where('slug', '[^0-9]+')
+    ->where('slug', '!=', 'dashboard')
     ->name('campaign');
 
 Route::get('/{vue_capture?}', function () {
