@@ -17,6 +17,7 @@
                 <section v-if="!isLoggedIn">
                     
                     <h1>{{ campaign.release_title }}</h1>
+                    <h3>Released {{ campaign.release_date }}</h3>
                     <div v-if="campaign.release_artwork" class="thumbnail">
                         <img :src="`images/thumbnail/${campaign.release_artwork}`" :alt="`${campaign.release_title} artwork`" />
                     </div>

@@ -29,7 +29,7 @@ class Campaign extends Model
 
     public function getReleaseDateAttribute($value)
     {   
-        return \Carbon\Carbon::parse($value)->toFormattedDateString();
+        return \Carbon\Carbon::parse($value)->format('j M Y');
     }
 
     public function artist()

@@ -1061,6 +1061,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -3781,7 +3782,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "name": "fade"
     }
-  }, [(!_vm.isLoggedIn) ? _c('section', [_c('h1', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), (_vm.campaign.release_artwork) ? _c('div', {
+  }, [(!_vm.isLoggedIn) ? _c('section', [_c('h1', [_vm._v(_vm._s(_vm.campaign.release_title))]), _vm._v(" "), _c('h3', [_vm._v("Released " + _vm._s(_vm.campaign.release_date))]), _vm._v(" "), (_vm.campaign.release_artwork) ? _c('div', {
     staticClass: "thumbnail"
   }, [_c('img', {
     attrs: {
