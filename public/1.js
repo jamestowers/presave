@@ -498,6 +498,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //console.log(response.data)
             this.loading = false;
             this.success = true;
+            this.editing = true;
             var vm = this;
             setTimeout(function () {
                 vm.success = false;
@@ -1005,7 +1006,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "submit"
     }
-  }, [_vm._v(_vm._s(_vm.submitButtonText))]), _vm._v(" "), (_vm.success || _vm.editing) ? _c('a', {
+  }, [_vm._v(_vm._s(_vm.submitButtonText))]), _vm._v(" "), (_vm.editing) ? _c('a', {
     staticClass: "btn-tertiary pull-right",
     attrs: {
       "href": ("/" + (_vm.campaign.slug)),

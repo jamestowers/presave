@@ -130,7 +130,7 @@
             <button type="submit" class="pull-right">{{ submitButtonText }}</button>
             
             <a :href="`/${campaign.slug}`"
-                v-if="success || editing"
+                v-if="editing"
                 role="button" 
                 target="_blank"
                 class="btn-tertiary pull-right"
@@ -238,6 +238,7 @@
                 //console.log(response.data)
                 this.loading = false
                 this.success = true
+                this.editing = true
                 let vm = this
                 setTimeout(function(){
                     vm.success = false
