@@ -47,12 +47,20 @@ class AddReleasesToUserAccounts extends Command
         $now = \Carbon\Carbon::now();
         $pendingCampaigns = $campaigns
             ->where('release_date', '<', $now)
+            ->whereNotNull('release_spotify_id')
             ->whereStatus('pending')
             ->get();
 
         foreach($pendingCampaigns as $campaign){
+            $processedCount = 0;
+            $fanCount = $campaign->fans->count();
             foreach($campaign->fans as $fan){
                 $this->dispatch(new AddReleaseToUserAccountsJob($fan, $campaign->release_spotify_id));
+                $processedCount++;
+                if($processedCount === $fanCount){
+                    $campaign->status = 'complete';
+                    $campaign->save();
+                }
             }
         };
 
