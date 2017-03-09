@@ -64,7 +64,6 @@ class APIRequest
         $options = $this->getOptions($method, $parameters);
 
         $options['headers'] = $this->provider->authHeaders();
-        \Log::info($options);
         //dd($options);
         $response = $this->client->request($method, $this->provider->baseUrl . $uri, $options);
 

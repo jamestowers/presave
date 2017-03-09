@@ -53,7 +53,6 @@ class CampaignController extends Controller
      */
     public function store(Request $request)
     {
-        //\Log::info($request->all());
 
         if($request->release_spotify_id !== null && $this->exists($request->release_spotify_id)){
             abort(501, 'There is already a campaign for this album');
